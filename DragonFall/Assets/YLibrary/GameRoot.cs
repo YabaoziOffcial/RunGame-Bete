@@ -30,6 +30,11 @@ namespace YBZ.Core
         private void Update()
         {
             GameHelper.Instance.Update();
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Time.timeScale = 1f;
+            }
         }
         private void LateUpdate()
         {
@@ -63,9 +68,9 @@ namespace YBZ.Core
 
         }
 
-        private void OnGUI()
+        public void OnGUI()
         {
-
+            
         }
 
         [SerializeField] bool IsDrawCameraLine;
