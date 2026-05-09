@@ -1,0 +1,24 @@
+Create an original anime-style full-body character illustration for Dragonfall, a western fantasy sword-and-magic bullet-heaven game.
+
+Subject:
+A young adult female arcane mage heroine, elegant, clever, confident, and battle-ready.
+
+Required elements:
+- Large pointed mage hat
+- Long flowing mage robe
+- Wooden magic staff clearly visible
+
+Design direction:
+Inspired by classic anime fantasy witches, but make the character original. Do not copy any existing character, outfit, pose, face, or exact color layout from the reference. Use a readable game character design with a strong silhouette: oversized pointed mage hat with ribbon, layered robe with capelet, visible staff held diagonally, arcane ornament details, small glowing magic gem, long flowing hair. Slightly cute but not childish. No sexualized framing.
+
+Art style:
+Polished 2D anime game character standing art, clean linework, soft cel shading, high-quality character concept art. Western fantasy, sword and magic atmosphere.
+
+Palette:
+Deep navy and violet mage robe, warm gold accents, cream inner cloth, blonde or silver-blonde hair, purple-blue arcane glow.
+
+Composition:
+Vertical full-body portrait, character centered, dynamic relaxed pose, one hand near the mage hat brim or casting magic, the other holding the staff diagonally. Leave margin around the character for UI cropping. White or simple light background.
+
+Negative:
+Pixel art, chibi, blurry, low quality, extra limbs, malformed hands, copied character, exact reference pose, modern clothes, school uniform, weapon other than staff, text, watermark, logo, busy background, sexualized framing.

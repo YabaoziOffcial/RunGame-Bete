@@ -1,0 +1,5 @@
+DragonFall/Logs/
+DragonFall/Library/
+DragonFall/.vscode/
+*.csproj
+*.sln
