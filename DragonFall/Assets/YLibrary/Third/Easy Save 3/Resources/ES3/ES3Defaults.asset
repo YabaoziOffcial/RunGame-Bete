@@ -32,6 +32,7 @@ MonoBehaviour:
     - Assembly-CSharp
     - StompyRobot.SRDebugger
     - BestHTTP
+    - PsdPlugin
     - VFolders
     - StompyRobot.SRF
     - StompyRobot.SRDebugger.Editor
