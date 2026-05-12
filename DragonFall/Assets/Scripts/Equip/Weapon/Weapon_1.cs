@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon_1 : EquipBase
 {
-    private const string BulletResPath = "Weapon_1_Bullet";
+    private const string BulletResPath = "Weapon/Weapon_1_Bullet";
     private const string EnemyTag = "Enemy";
 
     public float FireInterval = 1f;
@@ -12,6 +12,7 @@ public class Weapon_1 : EquipBase
     public float BulletSpeed = 10f;
     public float BulletLifeTime = 5f;
     public float SpreadAngle = 8f;
+    public float Damage = 10f;
 
     private float m_FireTimer;
     private GameObject m_BulletPrefab;
@@ -44,6 +45,7 @@ public class Weapon_1 : EquipBase
         m_BulletPrefab = null;
     }
 
+    // 查找最近的敌人
     private Transform FindNearestEnemy(Vector3 origin)
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(EnemyTag);
@@ -62,6 +64,7 @@ public class Weapon_1 : EquipBase
         return nearestEnemy;
     }
 
+    // 开火
     private void Fire(Vector3 firePosition, Vector3 targetPosition)
     {
         if (m_BulletPrefab == null)
@@ -79,27 +82,23 @@ public class Weapon_1 : EquipBase
         for (int i = 0; i < count; i++)
         {
             Vector2 bulletDirection = Quaternion.Euler(0f, 0f, startAngle + SpreadAngle * i) * direction;
-            GameObject bullet = Object.Instantiate(m_BulletPrefab, firePosition, Quaternion.identity);
+            GameObject bullet = ObjectPool.GetObj(m_BulletPrefab);
+            bullet.transform.position = firePosition;
+            bullet.transform.rotation = Quaternion.identity;
             bullet.transform.right = bulletDirection;
             LaunchBullet(bullet, bulletDirection);
         }
     }
 
+    // 发射子弹
     private void LaunchBullet(GameObject bullet, Vector2 direction)
     {
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            rb.velocity = direction.normalized * BulletSpeed;
-            return;
-        }
-
         Weapon_1_Bullet bulletMove = bullet.GetComponent<Weapon_1_Bullet>();
         if (bulletMove == null)
         {
             bulletMove = bullet.AddComponent<Weapon_1_Bullet>();
         }
-        bulletMove.Init(direction, BulletSpeed, BulletLifeTime);
+        bulletMove.Init(direction, BulletSpeed, BulletLifeTime, Damage);
     }
 }
 

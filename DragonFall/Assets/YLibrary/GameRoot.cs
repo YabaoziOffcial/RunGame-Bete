@@ -19,6 +19,7 @@ namespace YBZ.Core
             GameHelper.Instance.Init();                    // 游戏辅助类
             GameDataManager.Instance.Init();              // 数据控制器
             GameConfig.Init();                            // 配置 ————
+            GameController.Instance.Init();
             Debug.Log("GameRoot Initialized!");
         }
 
@@ -30,7 +31,8 @@ namespace YBZ.Core
         private void Update()
         {
             GameHelper.Instance.Update();
-
+            GameController.Instance.Update();
+            
             if (Input.GetKeyDown(KeyCode.R))
             {
                 Time.timeScale = 1f;

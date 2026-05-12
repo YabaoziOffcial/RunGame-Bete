@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EquipConst
 {
-    public GameObject GetWeaponPrefab(string name)
+    public static GameObject GetWeaponPrefab(string name)
     {
         string path = $"Weapon/{name}";
         return ResourceManager.Instance.LoadRes<GameObject>(path);
