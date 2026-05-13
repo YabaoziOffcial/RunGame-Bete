@@ -62,7 +62,6 @@ public class Player : MonoBehaviour
 
     }
 
-
     // 每帧更新所有装备逻辑
     public void UpdateEquip()
     {
@@ -88,6 +87,7 @@ public class Player : MonoBehaviour
     // 碰撞器拾取经验物体
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Y_Debug.Log($"OnCollisionEnter2D: {collision.gameObject.name}");
         CollectEx(collision.gameObject);
     }
 
@@ -95,9 +95,9 @@ public class Player : MonoBehaviour
     private void CollectEx(GameObject ex)
     {
         if (ex == null || !ex.CompareTag(ExTag)) return;
-
         GameController.Instance.Model.AddExp(GameConst.ExExpValue);
         ObjectPool.PushObj(ex);
+        EventManager.SendEvent(GameConst.PlayerExAndLvChangedEvent);
     }
 }
 
