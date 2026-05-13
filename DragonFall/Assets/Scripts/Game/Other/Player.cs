@@ -3,13 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 玩家控制、装备更新和经验拾取入口
 public class Player : MonoBehaviour
 {
+    // 经验物体使用的 Tag
+    private const string ExTag = "EX";
+
+    // 玩家基础属性数据
     [SerializeField] PlayerData m_PlayerData = new PlayerData();
     public PlayerData PlayerData { get => m_PlayerData; private set => m_PlayerData = value; }
 
+    // 当前已装备的装备列表
     public List<EquipBase> EquipList { get; private set; } = new List<EquipBase>();
 
+    // 初始化玩家默认属性和初始装备
     public void Start()
     {
         SetPlayerData(new PlayerData()
@@ -19,6 +26,7 @@ public class Player : MonoBehaviour
             attackRate = 1f,
             defenseBase = 10f,
             hpBase = 100f,
+            ExDropRate = 0.3f,
         });
 
         AddEquip("Weapon_1");
@@ -30,11 +38,13 @@ public class Player : MonoBehaviour
     }
 
 
+    // 设置玩家属性数据
     public void SetPlayerData(PlayerData playerData)
     {
         m_PlayerData = playerData;
     }
 
+    // 根据装备类名创建并添加装备
     public void AddEquip(string id)
     {
         Type equipType = typeof(EquipBase).Assembly.GetType(id);
@@ -46,12 +56,14 @@ public class Player : MonoBehaviour
         EquipList.Add((EquipBase)Activator.CreateInstance(equipType));
     }
 
+    // 升级指定装备，后续装备升级逻辑在这里扩展
     public void UpgradeEquip(string id)
     {
 
     }
 
 
+    // 每帧更新所有装备逻辑
     public void UpdateEquip()
     {
         foreach (var equip in EquipList)
@@ -60,14 +72,36 @@ public class Player : MonoBehaviour
         }
     }
 
+    // 根据输入移动玩家
     private void Move()
     {
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         transform.position += (Vector3)(input * PlayerData.speed * Time.deltaTime);
     }
+
+    // 触发器拾取经验物体
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        CollectEx(other.gameObject);
+    }
+
+    // 碰撞器拾取经验物体
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        CollectEx(collision.gameObject);
+    }
+
+    // 收集 EX 经验物体并回收到对象池
+    private void CollectEx(GameObject ex)
+    {
+        if (ex == null || !ex.CompareTag(ExTag)) return;
+
+        GameController.Instance.Model.AddExp(GameConst.ExExpValue);
+        ObjectPool.PushObj(ex);
+    }
 }
 
-[SerializeField]
+[System.Serializable]
 public class PlayerData
 {
     public float speed;     // 移动速度
@@ -79,5 +113,5 @@ public class PlayerData
 
     public float hpBase;// 生命值
 
-    public float ExDrogRate; // 经验掉落率
+    public float ExDropRate; // 经验掉落率
 }

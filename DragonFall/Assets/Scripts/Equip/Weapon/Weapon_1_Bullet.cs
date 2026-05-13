@@ -2,15 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Weapon_1 发射的子弹
 public class Weapon_1_Bullet : MonoBehaviour
 {
+    // 自动补碰撞体时使用的默认半径
     private const float ColliderRadius = 0.1f;
 
+    // 飞行方向
     private Vector2 m_Direction;
+    // 飞行速度
     private float m_Speed;
+    // 剩余存活时间
     private float m_LifeTimer;
+    // 命中造成的伤害
     private float m_Damage;
 
+    // 初始化物理和触发器碰撞
     private void Awake()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
@@ -31,6 +38,7 @@ public class Weapon_1_Bullet : MonoBehaviour
         collider2d.radius = ColliderRadius;
     }
 
+    // 发射前写入本次子弹参数
     public void Init(Vector2 direction, float speed, float lifeTime, float damage)
     {
         m_Direction = direction.sqrMagnitude > 0f ? direction.normalized : Vector2.right;
@@ -39,6 +47,7 @@ public class Weapon_1_Bullet : MonoBehaviour
         m_Damage = damage;
     }
 
+    // 推进子弹并检查生命周期
     private void Update()
     {
         transform.position += (Vector3)(m_Direction * m_Speed * Time.deltaTime);
@@ -49,16 +58,19 @@ public class Weapon_1_Bullet : MonoBehaviour
         }
     }
 
+    // 触发器命中敌人
     private void OnTriggerEnter2D(Collider2D other)
     {
         HitEnemy(other.GetComponent<Enemy>());
     }
 
+    // 碰撞器命中敌人
     private void OnCollisionEnter2D(Collision2D collision)
     {
         HitEnemy(collision.collider.GetComponent<Enemy>());
     }
 
+    // 对敌人造成伤害后回收子弹
     private void HitEnemy(Enemy enemy)
     {
         if (enemy == null) return;
@@ -67,6 +79,7 @@ public class Weapon_1_Bullet : MonoBehaviour
         Recycle();
     }
 
+    // 回收到对象池
     private void Recycle()
     {
         ObjectPool.PushObj(gameObject);
