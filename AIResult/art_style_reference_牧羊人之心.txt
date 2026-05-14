@@ -1,0 +1,193 @@
+## 《牧羊人之心》美术风格分析 v0.0.1
+## 用途：Dragonfall（恶龙陨落）角色立绘 / UI / 道具 的美术参考与 AI 提示词模板
+## 创建时间：2026-05-15
+
+================================================================================
+一、核心美术定位
+================================================================================
+
+维度             描述
+--------------------------------------------------------------
+画风             日式二次元赛璐璐风格 (Cel Shading)，干净勾线 + 柔和上色
+基调             萌系可爱、温暖治愈，略带奇幻冒险感
+角色设计         魔物娘/兽耳娘为主，人外娘化，高度拟人 + 保留魔物特征
+体型比例         正常头身比 (非Q版)，约 5-6 头身，少女体型为主
+配色             柔和暖色调，低饱和但不清淡，有辨识度的属性配色体系
+线条             干净利落的黑色描边，粗细均匀，类似动画原画风格
+
+================================================================================
+二、角色设计核心要素
+================================================================================
+
+【魔物娘特征融合公式】
+可爱少女 + 魔物特征（兽耳/角/尾巴/翅膀/鳞片/半透明身体）= 魔物娘
+
+【具体范例】
+史莱姆娘： 半透明果冻质感身体 + 少女上半身，圆润Q弹
+猫娘 MIO： 猫耳 + 猫尾 + 水手服风格服饰，活泼感
+狐狸娘：   狐耳 + 多条尾巴 + 和风巫女服
+妖精/精灵：半透明翅膀 + 轻盈服饰 + 自然元素装饰
+
+【服饰风格】
+- 日式幻想风（和风 + 西式混搭）
+- 轻量铠甲、软甲为主（不厚重）
+- 大量使用蝴蝶结、缎带、花边装饰
+- 属性配色体系：风=绿、火=红、水=蓝、地=黄/棕
+
+【面部特征】
+- 大眼睛（日式动画风格）
+- 小鼻子（点状或简化）
+- 表情丰富活泼（笑脸、wink、困惑等）
+- 腮红常用
+
+================================================================================
+三、敌人/怪物设计参考
+================================================================================
+
+以下分类来自牧羊人之心 BWIKI 魔物图鉴，可作为 Dragonfall 各 Tier 敌人设计参考：
+
+【史莱姆系 - T1 参考】
+绿史莱姆、蓝史莱姆、红史莱姆、黄史莱姆、黄金史莱姆、公主史莱姆
+特征：圆润半透明果冻体，简单五官，色彩鲜艳
+
+【植物系 - T1 参考】
+阳葵、紫阳葵、海藻杜吉芽、水藻杜吉芽
+特征：花/海藻人形化，保留植物元素（花瓣、叶子）
+
+【兽系 - T1/T2 参考】
+水猫呜拉喵、山猫呜拉喵、地鸟喳喳布林
+特征：小型兽类拟人，Q萌风格
+
+【元素系 - T1/T2 参考】
+风仙炭玻玻、水仙炭玻玻、风精NANO、土精NANO
+特征：元素结晶/气团拟人，半透明材质
+
+【高阶魔物 - T3/T4 参考】
+雷素·鸣、真护·天茧 (龙娘)、莉安夕 (鲨鱼娘)、卡库拉拉兹巴 (青蛙娘)
+特征：更接近完整人形，带华丽特效和装备
+
+================================================================================
+四、场景/UI 美术
+================================================================================
+
+农场主界面： 暖色调田园风，木结构建筑，绿植环绕
+大地图：     手绘风格，柔和色彩，地形 icon 化
+UI 元素：    圆角设计，羊皮纸纹理背景，金色边框装饰
+字体：       可爱圆体，与整体萌系风格统一
+
+================================================================================
+五、适用于 Dragonfall 的 AI 提示词模板
+================================================================================
+
+--- A. 敌人/怪物提示词模板 ---
+Anime-style 2D game enemy sprite, [怪物类型], cute but menacing monster design.
+Clean cel-shading, soft warm color palette, Japanese anime game art style
+(牧羊人之心 / Monster Girl Farm style).
+Simple readable silhouette for top-down game view.
+[属性配色: 绿=forest/wind, 红=fire/lava, 蓝=water/ice, 紫=dark/shadow].
+要素: [具体特征: slime body, cat ears, skeleton armor, plant leaves, etc.].
+White/transparent background, game asset format.
+Negative: pixel art, 3D, realistic, dark gritty, complex background, chibi proportions.
+
+--- B. 英雄立绘提示词模板 ---
+Anime-style full-body character illustration in the style of 牧羊人之心 (Monster Girl Farm).
+Young female [职业: mage/knight/archer], elegant adventure fantasy design.
+Clean linework, soft cel shading, warm but vibrant color palette, polished 2D game character art.
+[特征: pointed mage hat, magic staff, flowing robe / heavy armor, holy sword, shield / elf ears, bow, light leather armor].
+Vertical portrait format, centered, dynamic relaxed pose, simple light background.
+Slightly cute, confident expression, western fantasy atmosphere.
+Negative: pixel art, 3D, chibi, sexualized, dark gritty, busy background.
+
+--- C. 道具/掉落物提示词模板 ---
+Anime-style 2D game item sprite, [物品: experience crystal / magic bullet / health orb].
+牧羊人之心 style, clean cel-shading, soft warm colors, rounded cute design.
+[特征: glowing effect, gem-like texture, small decorative sparkles].
+Game asset on white/transparent background, top-down view friendly.
+Negative: realistic, 3D, complex backgrounds.
+
+--- D. UI/图标提示词模板 ---
+Anime-style 2D game UI icon, [图标类型: skill icon / item icon / buff icon].
+牧羊人之心 style, clean cel-shading, soft warm palette, rounded design.
+Simple readable shape, decorative gold border, slight glow effect.
+Fantasy RPG theme, 256x256 game asset.
+Negative: realistic, 3D, text, complex detail.
+
+================================================================================
+六、Dragonfall vs 牧羊人之心 风格差异对照
+================================================================================
+
+方面           牧羊人之心               Dragonfall
+--------------------------------------------------------------------
+视角           横版 2D                  俯视/顶视角
+角色类型       魔物娘收集养成           3 位女英雄 + 大量敌人
+战斗           自动普攻 + 手动技能      弹幕天堂/幸存者类
+敌人风格       萌系魔物娘 (可收集)      Roguelite 怪物 (敌方)
+像素化         高清 2D                  GDD: 16bit 像素 + 高清立绘
+
+【建议策略】
+立绘/UI 用牧羊人之心风格（高清赛璐璐），战斗画面用 16bit 像素，
+形成 "立绘精美 + 战斗像素" 的经典日式独立游戏组合（参考《歧路旅人》思路）。
+
+================================================================================
+七、英雄角色提示词速查卡
+================================================================================
+
+--- 艾琳 Elara (奥术法师) ---
+Subject: Young female arcane mage, elegant and confident.
+Features: Large pointed mage hat with ribbon, layered flowing mage robe,
+  wooden magic staff with glowing arcane gem, long flowing blonde or silver-blonde hair.
+Palette: Deep navy/violet robe, warm gold accents, cream inner cloth, purple-blue arcane glow.
+See: AIResult/mage_portrait_anime_v01_prompt.txt (已有详细提示词)
+
+--- 塞拉 Seraphina (审判官/女祭司) ---
+Subject: Female paladin/pontiff, noble and resolute.
+Features: Heavy steel armor with gold trim, giant holy sword, blindfold or eye cover,
+  balance scale ornament, shield, armored gauntlets, short or tied-back hair.
+Palette: Silver/white armor, gold accents, deep red cape or inner cloth, holy light glow.
+待生成提示词
+
+--- 莉瑞亚 Lyria (精灵射手) ---
+Subject: Female elf archer, agile and sharp, close to nature.
+Features: Pointed elf ears, light leather/cloth armor, longbow, quiver on back,
+  long flowing hair (braided or loose), forest-green cloak, leaf/nature ornaments.
+Palette: Forest green, warm brown leather, cream cloth, silver accents.
+待生成提示词
+
+================================================================================
+八、Boss 提示词速查卡
+================================================================================
+
+--- 史莱姆王 (翠绿森林 Boss) ---
+Subject: Giant king slime monster, massive gelatinous body.
+Features: Crown/regal ornament on top, multiple smaller slime cores visible inside,
+  translucent green-blue body with glossy highlights, angry/menacing cute face.
+Palette: Emerald green, cyan highlights, golden crown.
+待生成提示词
+
+--- 水晶骷髅 (暗影墓地 Boss) ---
+Subject: Giant crystal skull floating boss, undead/necromancer theme.
+Features: Oversized skull made of dark crystal/mineral, floating in purple miasma,
+  glowing eye sockets (purple or red), skeletal hands emerging from shadow.
+Palette: Dark purple crystal, bone white, necrotic green glow.
+待生成提示词
+
+--- 深渊恶龙 (龙巢火山 Boss) ---
+Subject: Abyssal dragon boss, western fantasy dragon silhouette for top-down.
+Features: Dark scaled dragon, molten lava veins on body, bat-like wings spread,
+  glowing orange/red eyes and mouth, volcanic rock texture on scales.
+Palette: Charcoal black, molten orange/red, volcanic ash gray.
+待生成提示词
+
+================================================================================
+九、参考来源
+================================================================================
+
+- 牧羊人之心 BWIKI: https://wiki.biligame.com/myrzx/魔物图鉴
+- 牧羊人之心 百度百科: https://baike.baidu.com/item/牧羊人之心
+- 牧羊人之心 官方: YAMAYURI GAMES / 第一弹游戏
+- 英文名: KarDia tou ABel
+- 游戏类型: 魔物娘收集养成 + 牧场经营 + 横版战斗
+
+================================================================================
+版本记录
+v0.0.1 - 2026-05-15 - 初版，包含牧羊人之心风格分析、提示词模板、英雄/Boss速查卡
