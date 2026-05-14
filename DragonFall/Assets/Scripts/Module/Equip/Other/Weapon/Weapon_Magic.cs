@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // 基础自动射击武器
-public class Weapon_1 : EquipBase
+public class Weapon_Magic : EquipBase
 {
     // 未配置武器数据时使用的默认子弹 Resources 路径
-    private const string DefaultBulletResPath = "Prefab/Weapon/Weapon_1_Bullet";
+    private const string DefaultBulletResPath = "Prefab/Weapon/Weapon_Magic_Bullet";
     // 自动索敌使用的敌人 Tag
     private const string EnemyTag = "Enemy";
 

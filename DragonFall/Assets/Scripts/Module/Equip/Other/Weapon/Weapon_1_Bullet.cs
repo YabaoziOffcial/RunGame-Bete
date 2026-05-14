@@ -61,21 +61,25 @@ public class Weapon_1_Bullet : MonoBehaviour
     // 触发器命中敌人
     private void OnTriggerEnter2D(Collider2D other)
     {
-        HitEnemy(other.GetComponent<Enemy>());
+        Enemy enemy = other.GetComponent<Enemy>();
+        Vector3 hitPosition = other.ClosestPoint(transform.position);
+        HitEnemy(enemy, hitPosition);
     }
 
     // 碰撞器命中敌人
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        HitEnemy(collision.collider.GetComponent<Enemy>());
+        Enemy enemy = collision.collider.GetComponent<Enemy>();
+        Vector3 hitPosition = collision.contactCount > 0 ? collision.GetContact(0).point : transform.position;
+        HitEnemy(enemy, hitPosition);
     }
 
     // 对敌人造成伤害后回收子弹
-    private void HitEnemy(Enemy enemy)
+    private void HitEnemy(Enemy enemy, Vector3 hitPosition)
     {
         if (enemy == null) return;
 
-        enemy.TakeDamage(m_Damage);
+        enemy.TakeDamage(m_Damage, hitPosition);
         Recycle();
     }
 

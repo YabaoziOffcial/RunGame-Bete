@@ -40,10 +40,7 @@ public class Player : MonoBehaviour
             ExDropRate = 0.3f,
         });
 
-        if (m_DefaultWeaponConfig != null)
-            AddEquip(m_DefaultWeaponConfig);
-        else
-            AddEquip("Weapon_1");
+        AddEquip("Weapon_Magic");
     }
 
     void Update()

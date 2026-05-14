@@ -9,9 +9,9 @@ public class Enemy : MonoBehaviour
     private const float ColliderRadius = 0.5f;
 
     // 敌人基础属性数据
-    [SerializeField] private EnemyData m_EnemyData = new EnemyData() { hp = 10f, attack = 10f, speed = 2f};
+    [SerializeField] private EnemyData m_EnemyData = new EnemyData() { hp = 10f, attack = 10f, speed = 2f };
     public EnemyData EnemyData { get => m_EnemyData; private set => m_EnemyData = value; }
-    
+
     // 对象池复用时用于重置生命值
     private float m_MaxHp;
     // 防止死亡逻辑重复触发
@@ -63,10 +63,17 @@ public class Enemy : MonoBehaviour
     // 承受伤害，生命值归零后结算击杀和掉落
     public void TakeDamage(float damage)
     {
+        TakeDamage(damage, transform.position);
+    }
+
+    // 承受伤害，并在指定命中位置显示伤害数字
+    public void TakeDamage(float damage, Vector3 hitPosition)
+    {
         if (m_IsDead) return;
         if (damage <= 0f) return;
 
         m_EnemyData.hp -= damage;
+        ShowDamageNumber(damage, hitPosition);
         if (m_EnemyData.hp <= 0f)
         {
             m_IsDead = true;
@@ -78,6 +85,33 @@ public class Enemy : MonoBehaviour
             TryDropEx();
             ObjectPool.PushObj(gameObject);
         }
+    }
+
+    // 在敌人位置显示伤害数字
+    private void ShowDamageNumber(float damage, Vector3 hitPosition)
+    {
+        GameObject damageNumberPrefab = GameConst.GetDamageNumberPrefab();
+        if (damageNumberPrefab == null)
+        {
+            Debug.LogError("DamageNumberPrefab is null");
+            return;
+        }
+
+        Transform damageNumberParent = UIManager.Instance.canvasWorldTransform;
+        if (damageNumberParent == null)
+        {
+            Debug.LogError("canvasWorldTransform 空引用");
+            return;
+        }
+
+        GameObject damageNumberTextGo = ObjectPool.GetObj(damageNumberPrefab, damageNumberParent);
+        DamageNumberText damageNumberText = damageNumberTextGo.GetComponent<DamageNumberText>();
+        if (damageNumberText == null)
+        {
+            Debug.LogError("DamageNumberText 空引用");
+            damageNumberText = damageNumberTextGo.AddComponent<DamageNumberText>();
+        }
+        damageNumberText.Init(damage, hitPosition);
     }
 
     // 根据玩家经验掉落率在死亡位置生成 EX

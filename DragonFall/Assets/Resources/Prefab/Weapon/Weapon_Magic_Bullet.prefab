@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8829159974122192100}
   - component: {fileID: 5835024846203965474}
+  - component: {fileID: 4474376970611765831}
   m_Layer: 0
-  m_Name: Weapon_1_Bullet
+  m_Name: Weapon_Magic_Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,6 +46,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec757c17622c14d4999ea6864cb2e486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!210 &4474376970611765831
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936124638413255026}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 4
+  m_SortAtRoot: 0
 --- !u!1 &7820308774019092813
 GameObject:
   m_ObjectHideFlags: 0

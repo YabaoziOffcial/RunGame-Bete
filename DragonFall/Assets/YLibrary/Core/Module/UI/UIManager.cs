@@ -13,6 +13,7 @@ public class UIManager : O_MonoSingleton<UIManager>
 {
     #region Transform: canvas, Panel, PopUp, Other
     public Transform canvasTransform;
+    public Transform canvasWorldTransform;
     private Transform m_PanelTransform;
     public Transform PanelTransform
     {
