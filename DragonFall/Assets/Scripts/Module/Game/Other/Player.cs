@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,8 +12,20 @@ public class Player : MonoBehaviour
     [SerializeField] PlayerData m_PlayerData = new PlayerData();
     public PlayerData PlayerData { get => m_PlayerData; private set => m_PlayerData = value; }
 
-    // 当前已装备的装备列表
-    public List<EquipBase> EquipList { get; private set; } = new List<EquipBase>();
+    [Header("Equip")]
+    // 默认武器配置；为空时仍按类名添加 Weapon_1
+    [SerializeField] private WeaponConfigSO m_DefaultWeaponConfig;
+
+    // 玩家装备管理器，负责装备添加、升级和生命周期更新
+    private EquipManager m_EquipManager;
+    // 当前已装备的只读列表，供 UI 或其它系统查询
+    public IReadOnlyList<EquipBase> EquipList => m_EquipManager != null ? m_EquipManager.Equips : null;
+
+    private void Awake()
+    {
+        // 在玩家初始化时创建装备管理器，后续装备都通过它管理
+        m_EquipManager = new EquipManager(this);
+    }
 
     // 初始化玩家默认属性和初始装备
     public void Start()
@@ -29,14 +40,23 @@ public class Player : MonoBehaviour
             ExDropRate = 0.3f,
         });
 
-        AddEquip("Weapon_1");
+        if (m_DefaultWeaponConfig != null)
+            AddEquip(m_DefaultWeaponConfig);
+        else
+            AddEquip("Weapon_1");
     }
+
     void Update()
     {
         Move();
         UpdateEquip();
     }
 
+    private void FixedUpdate()
+    {
+        // 物理相关装备逻辑统一放到固定帧入口
+        m_EquipManager.FixedUpdateAll();
+    }
 
     // 设置玩家属性数据
     public void SetPlayerData(PlayerData playerData)
@@ -45,30 +65,33 @@ public class Player : MonoBehaviour
     }
 
     // 根据装备类名创建并添加装备
-    public void AddEquip(string id)
+    public EquipBase AddEquip(string id)
     {
-        Type equipType = typeof(EquipBase).Assembly.GetType(id);
-        if (equipType == null || equipType.IsAbstract || !typeof(EquipBase).IsAssignableFrom(equipType))
-        {
-            Debug.LogError($"未找到装备类: {id}");
-            return;
-        }
-        EquipList.Add((EquipBase)Activator.CreateInstance(equipType));
+        return m_EquipManager.AddEquip(id);
+    }
+
+    // 根据配置创建并添加装备
+    public EquipBase AddEquip(WeaponConfigSO config)
+    {
+        return m_EquipManager.AddEquip(config);
     }
 
     // 升级指定装备，后续装备升级逻辑在这里扩展
-    public void UpgradeEquip(string id)
+    public bool UpgradeEquip(string id)
     {
-
+        return m_EquipManager.UpgradeEquip(id);
     }
 
-    // 每帧更新所有装备逻辑
+    // 每帧更新所有装备逻辑，由装备管理器分发到具体装备
     public void UpdateEquip()
     {
-        foreach (var equip in EquipList)
-        {
-            equip.OnEquipUpdate(this);
-        }
+        m_EquipManager.UpdateAll();
+    }
+
+    private void OnDestroy()
+    {
+        // 玩家销毁时让装备释放运行时状态
+        m_EquipManager.Clear();
     }
 
     // 根据输入移动玩家
