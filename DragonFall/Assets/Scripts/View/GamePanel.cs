@@ -11,6 +11,11 @@ public class GamePanel : Y_PanelBase
 
     private bool m_IsListeningPlayerExAndLvChanged;
 
+    public void Start()
+    {
+        Show();
+    }
+
     public override void Show()
     {
         base.Show();

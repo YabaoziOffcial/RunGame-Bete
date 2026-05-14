@@ -95,7 +95,15 @@ public class Player : MonoBehaviour
     private void CollectEx(GameObject ex)
     {
         if (ex == null || !ex.CompareTag(ExTag)) return;
-        GameController.Instance.Model.AddExp(GameConst.ExExpValue);
+
+        int exp = ex.name switch
+        {
+            "EX_1" => GameConst.ExExpValue,
+            "EX_2" => GameConst.ExExpValue * 2,
+            "EX_3" => GameConst.ExExpValue * 3,
+            _ => GameConst.ExExpValue,
+        };
+        GameController.Instance.Model.AddExp(exp);
         ObjectPool.PushObj(ex);
         EventManager.SendEvent(GameConst.PlayerExAndLvChangedEvent);
     }
