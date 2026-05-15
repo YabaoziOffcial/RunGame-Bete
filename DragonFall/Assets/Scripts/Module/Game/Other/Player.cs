@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
 
     // 玩家装备管理器，负责装备添加、升级和生命周期更新
     private EquipManager m_EquipManager;
+    public EquipManager EquipManager => m_EquipManager;
     // 当前已装备的只读列表，供 UI 或其它系统查询
     public IReadOnlyList<EquipBase> EquipList => m_EquipManager != null ? m_EquipManager.Equips : null;
 

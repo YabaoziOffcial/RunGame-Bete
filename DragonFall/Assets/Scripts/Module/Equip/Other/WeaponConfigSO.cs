@@ -12,6 +12,10 @@ public class WeaponConfigSO : ScriptableObject
     public int quality;
     public int rarity;
     public int icon;
+    // UI 直接显示用的武器图标
+    public Sprite iconSprite;
+    // 未直接配置 Sprite 时，从 Resources/YooAsset 使用该路径加载
+    public string iconPath;
     // Inspector 和 UI 中显示的武器名
     public string weaponName = "Weapon_1";
     [TextArea]
@@ -41,6 +45,8 @@ public class WeaponConfigSO : ScriptableObject
             quality = quality,
             rarity = rarity,
             icon = icon,
+            iconSprite = iconSprite,
+            iconPath = iconPath,
             name = weaponName,
             description = description,
             weaponConfig = this

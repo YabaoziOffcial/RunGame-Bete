@@ -7,11 +7,14 @@ public class EquipManager
 {
     // 装备所属玩家，所有装备生命周期都围绕它执行
     private readonly Player m_Owner;
-    // 当前玩家已拥有的运行时装备实例
-    private readonly List<EquipBase> m_Equips = new List<EquipBase>();
 
-    // 只读暴露给外部查询，避免外部直接改列表
-    public IReadOnlyList<EquipBase> Equips => m_Equips;
+    // 当前玩家已拥有的运行时装备实例
+    public List<EquipBase> CurrentEquips { get; private set; } = new List<EquipBase>();
+    // 装备列表变化时通知 UI 刷新
+    public event Action CurrentEquipsChanged;
+
+    // 兼容外部只读查询，避免外部必须改调用点
+    public IReadOnlyList<EquipBase> Equips => CurrentEquips;
 
     public EquipManager(Player owner)
     {
@@ -53,8 +56,9 @@ public class EquipManager
 
         EquipBase equip = (EquipBase)Activator.CreateInstance(equipType);
         EquipData equipData = CreateEquipData(className, config);
-        m_Equips.Add(equip);
+        CurrentEquips.Add(equip);
         equip.Enter(m_Owner, equipData);
+        NotifyCurrentEquipsChanged();
         return equip;
     }
 
@@ -65,59 +69,67 @@ public class EquipManager
         if (equip == null) return false;
 
         equip.LevelUp();
+        NotifyCurrentEquipsChanged();
         return true;
     }
 
     // 每帧驱动所有装备
     public void UpdateAll()
     {
-        for (int i = 0; i < m_Equips.Count; i++)
+        for (int i = 0; i < CurrentEquips.Count; i++)
         {
-            m_Equips[i].Tick(m_Owner);
+            CurrentEquips[i].Tick(m_Owner);
         }
     }
 
     // 固定帧驱动所有装备
     public void FixedUpdateAll()
     {
-        for (int i = 0; i < m_Equips.Count; i++)
+        for (int i = 0; i < CurrentEquips.Count; i++)
         {
-            m_Equips[i].FixedTick(m_Owner);
+            CurrentEquips[i].FixedTick(m_Owner);
         }
     }
 
     // 移除单件装备，并触发退出清理
     public bool RemoveEquip(EquipBase equip)
     {
-        if (equip == null || !m_Equips.Remove(equip)) return false;
+        if (equip == null || !CurrentEquips.Remove(equip)) return false;
 
         equip.Exit(m_Owner);
+        NotifyCurrentEquipsChanged();
         return true;
     }
 
     // 清空装备列表，通常用于玩家销毁或重开一局
     public void Clear()
     {
-        for (int i = m_Equips.Count - 1; i >= 0; i--)
+        for (int i = CurrentEquips.Count - 1; i >= 0; i--)
         {
-            m_Equips[i].Exit(m_Owner);
+            CurrentEquips[i].Exit(m_Owner);
         }
 
-        m_Equips.Clear();
+        CurrentEquips.Clear();
+        NotifyCurrentEquipsChanged();
     }
 
     // 按类名查找当前已装备的装备
     public EquipBase GetEquip(string className)
     {
-        for (int i = 0; i < m_Equips.Count; i++)
+        for (int i = 0; i < CurrentEquips.Count; i++)
         {
-            if (m_Equips[i].EquipData != null && m_Equips[i].EquipData.className == className)
+            if (CurrentEquips[i].EquipData != null && CurrentEquips[i].EquipData.className == className)
             {
-                return m_Equips[i];
+                return CurrentEquips[i];
             }
         }
 
         return null;
+    }
+
+    private void NotifyCurrentEquipsChanged()
+    {
+        CurrentEquipsChanged?.Invoke();
     }
 
     // 将配置资产转换成运行时装备数据

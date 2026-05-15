@@ -81,6 +81,10 @@ public class EquipData
     public int rarity;
     // 图标 id
     public int icon;
+    // UI 直接显示用的图标
+    public Sprite iconSprite;
+    // 未直接配置 Sprite 时，从 ResourceManager 加载的图标路径
+    public string iconPath;
     // 装备名称
     public string name;
     // 装备描述

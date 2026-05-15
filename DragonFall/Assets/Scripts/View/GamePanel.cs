@@ -8,10 +8,19 @@ public class GamePanel : Y_PanelBase
     [SerializeField] Transform m_KillEnemyCountText, m_GameTimeText, m_LvText;
 
     [SerializeField] Slider m_HpSlider;
+    [SerializeField] private EquipUnit m_EquipUnity;
 
     private bool m_IsListeningPlayerExAndLvChanged;
 
-    public void Start()
+    private new void Awake()
+    {
+        if (m_EquipUnity == null)
+        {
+            m_EquipUnity = GetComponentInChildren<EquipUnit>(true);
+        }
+    }
+
+    private new void Start()
     {
         Show();
     }
@@ -21,6 +30,10 @@ public class GamePanel : Y_PanelBase
         base.Show();
         AddPlayerExAndLvListener();
         UpdatePlayerExAndLv();
+        if (m_EquipUnity != null)
+        {
+            m_EquipUnity.Refresh();
+        }
     }
 
     public override void Close()

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using YBZ.Design;
 
@@ -9,6 +8,7 @@ using YBZ.Design;
 public class ObjectPool
 {
     private readonly static Dictionary<string, Queue<GameObject>> m_Pool = new();
+    private readonly static Dictionary<string, HashSet<GameObject>> m_PoolSet = new();
     private static GameObject m_PoolPos = GameObject.Find("ObjectPool");
 
     /// <summary>
@@ -20,8 +20,9 @@ public class ObjectPool
     {
         GameObject result;
         string poolKey = prefab.name.Replace("(Clone)", string.Empty);
+        Queue<GameObject> pool = GetOrCreatePool(poolKey);
         // 池中物体不够
-        if (!m_Pool.ContainsKey(poolKey) || m_Pool[poolKey].Count == 0)
+        if (pool.Count == 0)
         {
             result = GameObject.Instantiate(prefab);
             result.name = poolKey;
@@ -37,14 +38,12 @@ public class ObjectPool
                 child = childObj.transform;
             }
             result.transform.SetParent(child);
-            if (!m_Pool.ContainsKey(poolKey))
-            {
-                m_Pool.Add(poolKey, new Queue<GameObject>());
-            }
-            m_Pool[poolKey].Enqueue(result);
+            pool.Enqueue(result);
+            m_PoolSet[poolKey].Add(result);
         }
 
-        result = m_Pool[poolKey].Dequeue();
+        result = pool.Dequeue();
+        m_PoolSet[poolKey].Remove(result);
         if (!result.activeSelf)
         {
             result.SetActive(true);
@@ -66,18 +65,17 @@ public class ObjectPool
     public static bool PushObj(GameObject prefab, bool use_pool_pos = true)
     {
         string name = prefab.name.Replace("(Clone)", string.Empty);
-        if (!m_Pool.ContainsKey(name))
-        {
-            m_Pool.Add(name, new Queue<GameObject>());
-        }
-        if (m_Pool[name].Contains(prefab))
+        Queue<GameObject> pool = GetOrCreatePool(name);
+        HashSet<GameObject> poolSet = m_PoolSet[name];
+        if (poolSet.Contains(prefab))
         {
             Y_Debug.Log("物体已存在:", name);
             return false;
         }
 
         prefab.SetActive(false);
-        m_Pool[name].Enqueue(prefab);
+        pool.Enqueue(prefab);
+        poolSet.Add(prefab);
 
         if (use_pool_pos)
         {
@@ -93,6 +91,22 @@ public class ObjectPool
             prefab.transform.localPosition = Vector3.zero;
         }
         return true;
+    }
+
+    private static Queue<GameObject> GetOrCreatePool(string key)
+    {
+        if (!m_Pool.TryGetValue(key, out Queue<GameObject> pool))
+        {
+            pool = new Queue<GameObject>();
+            m_Pool.Add(key, pool);
+        }
+
+        if (!m_PoolSet.ContainsKey(key))
+        {
+            m_PoolSet.Add(key, new HashSet<GameObject>());
+        }
+
+        return pool;
     }
 
     /// <summary>
@@ -132,6 +146,10 @@ public class ObjectPool
         {
             m_Pool.Remove(key);
         }
+        if (m_PoolSet.ContainsKey(key))
+        {
+            m_PoolSet.Remove(key);
+        }
     }
 
     /// <summary>
@@ -140,5 +158,6 @@ public class ObjectPool
     public static void ClearAll()
     {
         m_Pool.Clear();
+        m_PoolSet.Clear();
     }
 }
