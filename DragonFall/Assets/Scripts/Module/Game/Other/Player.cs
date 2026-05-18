@@ -16,6 +16,10 @@ public class Player : MonoBehaviour
     // 默认武器配置；为空时仍按类名添加 Weapon_1
     [SerializeField] private WeaponConfigSO m_DefaultWeaponConfig;
 
+
+    private Animation m_MoveAnimation;
+    private bool m_WasMoving;
+
     // 当前已装备的只读列表，供 UI 或其它系统查询
     public IReadOnlyList<EquipBase> EquipList => EquipManager.Instance.Equips;
 
@@ -23,6 +27,7 @@ public class Player : MonoBehaviour
     {
         // 在玩家初始化时设置装备管理器宿主，后续装备都通过单例管理
         EquipManager.Instance.Init(this);
+        m_MoveAnimation = GetComponent<Animation>();
     }
 
     // 初始化玩家默认属性和初始装备
@@ -95,7 +100,40 @@ public class Player : MonoBehaviour
     {
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         transform.position += (Vector3)(input * PlayerData.speed * Time.deltaTime);
+
+        bool isMoving = input.sqrMagnitude > 0f;
+
+        if (m_MoveAnimation == null) return;
+        if (isMoving)
+        {
+            if (!m_WasMoving)
+            {
+                m_MoveAnimation.Play();
+            }
+        }
+        else if (m_WasMoving)
+        {
+            ResetMoveAnimationToStart();
+        }
+
+        m_WasMoving = isMoving;
     }
+
+    private void ResetMoveAnimationToStart()
+    {
+        if (m_MoveAnimation == null || m_MoveAnimation.clip == null) return;
+        string clipName = m_MoveAnimation.clip.name;
+        AnimationState state = m_MoveAnimation[clipName];
+        if (state == null) return;
+        m_MoveAnimation.Play(clipName);
+        state.enabled = true;
+        state.weight = 1f;
+        state.normalizedTime = 0f;
+        state.time = 0f;
+        m_MoveAnimation.Sample();
+        m_MoveAnimation.Stop(clipName);
+    }
+
 
     // 触发器拾取经验物体
     private void OnTriggerEnter2D(Collider2D other)

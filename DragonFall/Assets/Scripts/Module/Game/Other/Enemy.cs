@@ -17,11 +17,14 @@ public class Enemy : MonoBehaviour
     // 防止死亡逻辑重复触发
     private bool m_IsDead;
     private Rigidbody2D m_Rigidbody2D;
+    private Animation m_MoveAnimation;
+    private bool m_WasMoving;
 
     // 初始化物理组件和默认碰撞体
     private void Awake()
     {
         m_MaxHp = m_EnemyData.hp;
+        m_MoveAnimation = GetComponent<Animation>();
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         if (m_Rigidbody2D == null)
         {
@@ -43,6 +46,8 @@ public class Enemy : MonoBehaviour
             m_EnemyData.hp = m_MaxHp;
         }
         m_IsDead = false;
+        m_WasMoving = false;
+        ResetMoveAnimationToStart();
     }
 
 
@@ -81,6 +86,7 @@ public class Enemy : MonoBehaviour
             {
                 m_Rigidbody2D.velocity = Vector2.zero;
             }
+            ResetMoveAnimationToStart();
             GameController.Instance.Model.AddKillEnemyCount();
             TryDropEx();
             ObjectPool.PushObj(gameObject);
@@ -132,16 +138,59 @@ public class Enemy : MonoBehaviour
     private void MoveToPlayer()
     {
         Player player = GameController.Instance.Player;
-        if (player == null || m_Rigidbody2D == null) return;
+        if (player == null || m_Rigidbody2D == null)
+        {
+            SetMoveAnimationPlaying(false);
+            return;
+        }
 
         Vector2 direction = player.transform.position - transform.position;
         if (direction.sqrMagnitude <= 0f)
         {
             m_Rigidbody2D.velocity = Vector2.zero;
+            SetMoveAnimationPlaying(false);
             return;
         }
 
         m_Rigidbody2D.velocity = direction.normalized * m_EnemyData.speed;
+        SetMoveAnimationPlaying(true);
+    }
+
+    private void SetMoveAnimationPlaying(bool isMoving)
+    {
+        if (m_MoveAnimation == null) return;
+
+        if (isMoving)
+        {
+            if (!m_WasMoving)
+            {
+                m_MoveAnimation.Play();
+            }
+        }
+        else if (m_WasMoving)
+        {
+            ResetMoveAnimationToStart();
+        }
+
+        m_WasMoving = isMoving;
+    }
+
+    private void ResetMoveAnimationToStart()
+    {
+        if (m_MoveAnimation == null || m_MoveAnimation.clip == null) return;
+
+        string clipName = m_MoveAnimation.clip.name;
+        AnimationState state = m_MoveAnimation[clipName];
+        if (state == null) return;
+
+        m_MoveAnimation.Play(clipName);
+        state.enabled = true;
+        state.weight = 1f;
+        state.normalizedTime = 0f;
+        state.time = 0f;
+        m_MoveAnimation.Sample();
+        m_MoveAnimation.Stop(clipName);
+        m_WasMoving = false;
     }
 }
 
