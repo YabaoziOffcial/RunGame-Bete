@@ -8,16 +8,11 @@ public class GamePanel : Y_PanelBase
     [SerializeField] Transform m_KillEnemyCountText, m_GameTimeText, m_LvText;
 
     [SerializeField] Slider m_HpSlider;
-    [SerializeField] private EquipUnit m_EquipUnity;
-
-    private bool m_IsListeningPlayerExAndLvChanged;
+    [SerializeField] List<Transform> m_EquipTemplates; // 装备模版 用来显示装备的icon
 
     private new void Awake()
     {
-        if (m_EquipUnity == null)
-        {
-            m_EquipUnity = GetComponentInChildren<EquipUnit>(true);
-        }
+
     }
 
     private new void Start()
@@ -28,23 +23,19 @@ public class GamePanel : Y_PanelBase
     public override void Show()
     {
         base.Show();
-        AddPlayerExAndLvListener();
+        EventManager.AddListener(GameConst.PlayerExAndLvChangedEvent, UpdatePlayerExAndLv);
+        EventManager.AddListener(GameConst.PlayerEquipChangedEvent, UpdatePlayerEquip);
         UpdatePlayerExAndLv();
-        if (m_EquipUnity != null)
-        {
-            m_EquipUnity.Refresh();
-        }
+        UpdatePlayerEquip();
     }
 
     public override void Close()
     {
-        RemovePlayerExAndLvListener();
         base.Close();
     }
 
     protected override void OnDestroy()
     {
-        RemovePlayerExAndLvListener();
         base.OnDestroy();
     }
 
@@ -67,6 +58,8 @@ public class GamePanel : Y_PanelBase
         m_GameTimeText.SetText($"{minutes:00}:{seconds:00}");
     }
 
+
+    // 更新玩家经验值和等级
     public void UpdatePlayerExAndLv(params object[] value)
     {
         GameModel model = GameController.Instance.Model;
@@ -74,19 +67,26 @@ public class GamePanel : Y_PanelBase
         m_LvText.SetText($"Lv.{model.Level} {model.Exp}/{model.LevelUpExp}");
     }
 
-    private void AddPlayerExAndLvListener()
+    // 更新玩家装备图标
+    private void UpdatePlayerEquip(params object[] value)
     {
-        if (m_IsListeningPlayerExAndLvChanged) return;
+        IReadOnlyList<EquipBase> equipList = EquipManager.Instance.Equips;
+        Debug.Log($"equipList.Count: {equipList.Count}");
+        int equipCount = Mathf.Min(equipList.Count, m_EquipTemplates.Count);
+        for (int i = 0; i < equipCount; i++)
+        {
+            EquipData equipData = equipList[i].EquipData;
+            Sprite icon = equipData.iconSprite;
+            if (icon == null && !string.IsNullOrEmpty(equipData.iconPath))
+            {
+                icon = ResourceManager.Instance.LoadRes<Sprite>(equipData.iconPath);
+            }
+            if (icon == null && !string.IsNullOrEmpty(equipData.name))
+            {
+                icon = EquipConst.GetWeaponIconPath(equipData.name);
+            }
 
-        EventManager.AddListener(GameConst.PlayerExAndLvChangedEvent, UpdatePlayerExAndLv);
-        m_IsListeningPlayerExAndLvChanged = true;
-    }
-
-    private void RemovePlayerExAndLvListener()
-    {
-        if (!m_IsListeningPlayerExAndLvChanged) return;
-
-        EventManager.RemoveListener(GameConst.PlayerExAndLvChangedEvent, UpdatePlayerExAndLv);
-        m_IsListeningPlayerExAndLvChanged = false;
+            m_EquipTemplates[i].Find("Icon").SetSprite(icon);
+        }
     }
 }

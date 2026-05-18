@@ -16,16 +16,13 @@ public class Player : MonoBehaviour
     // 默认武器配置；为空时仍按类名添加 Weapon_1
     [SerializeField] private WeaponConfigSO m_DefaultWeaponConfig;
 
-    // 玩家装备管理器，负责装备添加、升级和生命周期更新
-    private EquipManager m_EquipManager;
-    public EquipManager EquipManager => m_EquipManager;
     // 当前已装备的只读列表，供 UI 或其它系统查询
-    public IReadOnlyList<EquipBase> EquipList => m_EquipManager != null ? m_EquipManager.Equips : null;
+    public IReadOnlyList<EquipBase> EquipList => EquipManager.Instance.Equips;
 
     private void Awake()
     {
-        // 在玩家初始化时创建装备管理器，后续装备都通过它管理
-        m_EquipManager = new EquipManager(this);
+        // 在玩家初始化时设置装备管理器宿主，后续装备都通过单例管理
+        EquipManager.Instance.Init(this);
     }
 
     // 初始化玩家默认属性和初始装备
@@ -33,7 +30,7 @@ public class Player : MonoBehaviour
     {
         SetPlayerData(new PlayerData()
         {
-            speed = 3f,
+            speed = 1f,
             attackBase = 10f,
             attackRate = 1f,
             defenseBase = 10f,
@@ -53,7 +50,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         // 物理相关装备逻辑统一放到固定帧入口
-        m_EquipManager.FixedUpdateAll();
+        EquipManager.Instance.FixedUpdateAll();
     }
 
     // 设置玩家属性数据
@@ -63,33 +60,34 @@ public class Player : MonoBehaviour
     }
 
     // 根据装备类名创建并添加装备
-    public EquipBase AddEquip(string id)
+    public void AddEquip(string id)
     {
-        return m_EquipManager.AddEquip(id);
+        EquipManager.Instance.AddEquip(id);
+        EventManager.SendEvent(GameConst.PlayerEquipChangedEvent);
     }
 
     // 根据配置创建并添加装备
     public EquipBase AddEquip(WeaponConfigSO config)
     {
-        return m_EquipManager.AddEquip(config);
+        return EquipManager.Instance.AddEquip(config);
     }
 
     // 升级指定装备，后续装备升级逻辑在这里扩展
     public bool UpgradeEquip(string id)
     {
-        return m_EquipManager.UpgradeEquip(id);
+        return EquipManager.Instance.UpgradeEquip(id);
     }
 
     // 每帧更新所有装备逻辑，由装备管理器分发到具体装备
     public void UpdateEquip()
     {
-        m_EquipManager.UpdateAll();
+        EquipManager.Instance.UpdateAll();
     }
 
     private void OnDestroy()
     {
         // 玩家销毁时让装备释放运行时状态
-        m_EquipManager.Clear();
+        EquipManager.Instance.Clear();
     }
 
     // 根据输入移动玩家

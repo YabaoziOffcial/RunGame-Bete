@@ -1,0 +1,59 @@
+Create an original anime-style full-body character illustration for Dragonfall.
+
+Use case: illustration-story
+Asset type: game character standing illustration
+Primary request: a green slime monster girl full-body portrait in the project's default art direction
+
+Style baseline:
+Follow the established Dragonfall art direction based on 《牧羊人之心》:
+- polished Japanese anime 2D character art
+- clean black linework with even stroke weight
+- soft cel shading
+- warm, gentle, slightly cute fantasy atmosphere
+- non-chibi body proportions, about 5 to 6 heads tall
+- highly anthropomorphic monster-girl design while preserving slime traits
+- soft warm palette with clear attribute readability
+
+Subject:
+A young female slime monster girl, cute, lively, friendly, and slightly mischievous. She should feel like a collectible fantasy monster-girl character, not a villain horror creature.
+
+Design requirements:
+- Translucent green slime body elements
+- Human-like young female upper body and silhouette
+- Rounded glossy gelatin texture
+- Slime hair or semi-liquid hair ends
+- Soft transparent slime skirt or lower-body slime mass
+- Visible slime core or magical nucleus inside the body
+- Small fantasy accessories such as ribbon, leaf ornament, tiny gold trim, or slime-jewel decoration
+- Big expressive anime eyes, small nose, light blush
+- Slight smile or playful confident expression
+
+Costume direction:
+Light fantasy outfit integrated into the slime body, not heavy armor.
+Use a cute anime fantasy design with soft fabric accents, small ribbons, decorative trim, and a readable silhouette.
+The outfit should look magical and clean, with parts partially merged into the translucent slime body.
+
+Color palette:
+Main color emerald green and soft mint green, with cyan highlights inside the translucent slime.
+Secondary accents in cream, pale gold, and a little sky blue.
+Overall warm and soft, low saturation but still vivid enough for game key art.
+
+Composition/framing:
+Vertical full-body portrait, character centered, standing pose, readable silhouette, relaxed dynamic posture.
+Leave clean margin around the character for later UI cropping.
+Simple white or very light background only.
+
+Rendering notes:
+Polished 2D anime game illustration, clean edges, soft highlight control, glossy jelly material, subtle magical glow inside the slime body.
+The character must look original and production-ready for a fantasy game.
+
+Constraints:
+- keep the result as a full-body standing illustration
+- keep the mood cute, warm, fantasy, and approachable
+- preserve obvious slime traits
+- no heavy armor
+- no horror gore
+- no excessive fanservice
+
+Avoid:
+pixel art, 3D, realistic rendering, gritty dark fantasy, chibi proportions, horror monster, giant breasts, latex fetish look, complex background, text, watermark, logo, extra limbs, malformed hands, muddy colors

@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using YBZ.Design;
 
 // 玩家身上的装备运行时管理器
-public class EquipManager
+public class EquipManager : Singleton<EquipManager>
 {
     // 装备所属玩家，所有装备生命周期都围绕它执行
-    private readonly Player m_Owner;
+    private Player m_Owner;
 
     // 当前玩家已拥有的运行时装备实例
     public List<EquipBase> CurrentEquips { get; private set; } = new List<EquipBase>();
@@ -16,7 +17,7 @@ public class EquipManager
     // 兼容外部只读查询，避免外部必须改调用点
     public IReadOnlyList<EquipBase> Equips => CurrentEquips;
 
-    public EquipManager(Player owner)
+    public void Init(Player owner)
     {
         m_Owner = owner;
     }

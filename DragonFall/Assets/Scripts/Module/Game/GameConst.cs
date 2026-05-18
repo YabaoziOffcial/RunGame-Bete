@@ -19,6 +19,8 @@ public class GameConst
     public const int BaseLevelUpExp = 100;
     // 玩家经验或等级变化事件
     public const string PlayerExAndLvChangedEvent = "PlayerExAndLvChanged";
+    // 玩家装备变化事件
+    public const string PlayerEquipChangedEvent = "PlayerEquipChanged";
 
     // 缓存 EX 预制体，避免重复加载
     private static GameObject m_ExPrefab;

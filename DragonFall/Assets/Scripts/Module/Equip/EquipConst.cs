@@ -11,4 +11,9 @@ public class EquipConst
         string path = $"Weapon/{name}";
         return ResourceManager.Instance.LoadRes<GameObject>(path);
     }
+
+    public static Sprite GetWeaponIconPath(string name)
+    {
+        return ResourceManager.Instance.LoadRes<Sprite>($"Sprite/Icon/{name}_Icon");
+    }
 }
