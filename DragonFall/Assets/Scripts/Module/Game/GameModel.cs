@@ -1,4 +1,6 @@
 // 游戏运行时数据模型
+using System;
+
 public class GameModel
 {
     // 已击杀敌人数量
@@ -17,6 +19,23 @@ public class GameModel
     public bool ExpChanged { get; set; }
     public bool LevelChanged { get; set; }
 
+    // 玩家属性数据 生命上限，回复，吸血，防御，移动速度
+    public float MaxHp, Heal, Vampire, Defense, MoveSpeed;
+
+    // 玩家技能数据 力量，弹幕速度，弹幕持续时间，攻击范围
+    public float Strength, BarrageSpeed, BarrageDuration, AttackRange;
+
+    // 技能冷却时间，弹幕数量，复活次数，心灵传动
+    public float BarrageCD, BarrageCount, ReliveNumber, Telekinesis;
+
+    // 幸运，成长，贪婪，诅咒
+    public float Luck, Growth, Greed, Curse;
+
+    // 重选，跳过，排除
+    public float Reselect, Skip, Exclude;
+
+
+    public Action LevelUpCallBack;
     // 初始化一局游戏的默认数据
     public GameModel()
     {
@@ -50,6 +69,8 @@ public class GameModel
             Level++;
             LevelUpExp += GameConst.BaseLevelUpExp;
             LevelChanged = true;
+
+            LevelUpCallBack?.Invoke();
         }
     }
 

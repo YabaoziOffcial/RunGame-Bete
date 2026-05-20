@@ -31,6 +31,6 @@ namespace YBZ.Core
 {
     public class Y_Utility
     {
-
+        
     }
 }

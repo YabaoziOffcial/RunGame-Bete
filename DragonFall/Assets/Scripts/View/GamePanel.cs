@@ -10,6 +10,16 @@ public class GamePanel : Y_PanelBase
     [SerializeField] Slider m_HpSlider;
     [SerializeField] List<Transform> m_EquipTemplates; // 装备模版 用来显示装备的icon
 
+    #region Player Values
+    [SerializeField] Text m_MaxHpText, m_HealText, m_VampireText, m_DefenseText, m_MoveSpeedText;
+    [SerializeField] Text m_StrengthText, m_BarrageSpeedText, m_BarrageDurationText, m_AttackRangeText;
+    [SerializeField] Text m_BarrageCDText, m_BarrageCountText, m_ReliveNumberText, m_TelekinesisText;
+    [SerializeField] Text m_LuckText, m_GrowthText, m_GreedText, m_CurseText;
+    [SerializeField] Text m_ReselectText, m_SkipText, m_ExcludeText;
+    #endregion
+
+    [SerializeField] Transform m_SelectPanel;
+
     private new void Awake()
     {
 
@@ -27,6 +37,13 @@ public class GamePanel : Y_PanelBase
         EventManager.AddListener(GameConst.PlayerEquipChangedEvent, UpdatePlayerEquip);
         UpdatePlayerExAndLv();
         UpdatePlayerEquip();
+
+
+        GameController.Instance.Model.LevelUpCallBack += () =>
+        {
+            m_SelectPanel.SetActive(true);
+            // 更新数值
+        };
     }
 
     public override void Close()
