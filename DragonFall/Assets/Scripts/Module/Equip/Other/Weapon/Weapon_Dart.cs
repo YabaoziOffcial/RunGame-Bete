@@ -5,22 +5,20 @@ using UnityEngine;
 // 飞镖武器
 public class Weapon_Dart : EquipBase
 {
-    // 默认飞镖预制体 Resources 路径
-    private const string DefaultBulletResPath = "Prefab/Weapon/Weapon_Dart_Bullet";
-
+    private const string configPath = "Config/WeaponDartConfig";
     // 当前发射冷却计时
     private float m_FireTimer;
     // 武器配置
     private WeaponConfigSO m_Config;
     // 当前等级参数
-    private WeaponLevelData m_LevelData = WeaponLevelData.Default;
+    private WeaponLevelData m_WeaponData = WeaponLevelData.Default;
     // 飞镖预制体缓存
     private GameObject m_BulletPrefab;
     // 当前发射方向，默认向左
     private Vector2 m_FireDirection = Vector2.right;
 
     // 装备进入时初始化冷却和飞镖资源
-    public override void OnEquipEnter(Player player)
+    public override void Enter(Player player)
     {
         m_FireTimer = 0f;
         m_FireDirection = Vector2.left;
@@ -29,7 +27,7 @@ public class Weapon_Dart : EquipBase
     }
 
     // 每隔一段时间按当前记录的八方向发射飞镖
-    public override void OnEquipUpdate(Player player)
+    public override void Update(Player player)
     {
         if (player == null) return;
 
@@ -38,26 +36,26 @@ public class Weapon_Dart : EquipBase
         if (m_FireTimer > 0f) return;
 
         Fire(player.transform.position, m_FireDirection);
-        m_FireTimer = Mathf.Max(0.01f, m_LevelData.fireInterval);
+        m_FireTimer = m_WeaponData.fireInterval;
     }
 
     // 固定帧更新入口，当前武器暂不使用
-    public override void OnEquipFixedUpdate(Player player)
+    public override void FixedUpdate(Player player)
     {
     }
 
     // 装备离开时清理运行时状态
-    public override void OnEquipExit(Player player)
+    public override void Exit(Player player)
     {
         m_FireTimer = 0f;
         m_Config = null;
-        m_LevelData = WeaponLevelData.Default;
+        m_WeaponData = WeaponLevelData.Default;
         m_BulletPrefab = null;
         m_FireDirection = Vector2.left;
     }
 
     // 升级后刷新当前等级参数
-    protected override void OnEquipLevelUp(Player player)
+    public override void LevelUp(Player player)
     {
         ApplyLevelData();
     }
@@ -65,8 +63,12 @@ public class Weapon_Dart : EquipBase
     // 应用配置中的当前等级参数
     private void ApplyLevelData()
     {
-        m_Config = EquipData != null ? EquipData.weaponConfig : null;
-        m_LevelData = m_Config != null ? m_Config.GetLevelData(Level) : WeaponLevelData.Default;
+        m_Config = ResourceManager.Instance.LoadRes<WeaponConfigSO>(configPath);
+        if (m_Config == null && EquipData != null)
+        {
+            m_Config = EquipData.weaponConfig;
+        }
+        m_WeaponData = m_Config != null ? m_Config.GetLevelData(Level) : WeaponLevelData.Default;
     }
 
     // 加载或读取配置中的飞镖预制体
@@ -77,11 +79,7 @@ public class Weapon_Dart : EquipBase
             m_BulletPrefab = m_Config.bulletPrefab;
             return;
         }
-
-        string bulletPath = m_Config != null && !string.IsNullOrEmpty(m_Config.bulletPrefabPath)
-            ? m_Config.bulletPrefabPath
-            : DefaultBulletResPath;
-        m_BulletPrefab = ResourceManager.Instance.LoadRes<GameObject>(bulletPath);
+        m_BulletPrefab = null;
     }
 
     // 接收到输入时更新为平面八方向；无输入时保留上一次方向
@@ -111,12 +109,12 @@ public class Weapon_Dart : EquipBase
         }
         if (m_BulletPrefab == null) return;
 
-        int count = Mathf.Max(1, m_LevelData.bulletCount);
-        float startAngle = count == 1 ? 0f : -m_LevelData.spreadAngle * (count - 1) * 0.5f;
+        int count = Mathf.Max(1, m_WeaponData.bulletCount);
+        float startAngle = count == 1 ? 0f : -m_WeaponData.spreadAngle * (count - 1) * 0.5f;
         for (int i = 0; i < count; i++)
         {
-            Vector2 bulletDirection = Quaternion.Euler(0f, 0f, startAngle + m_LevelData.spreadAngle * i) * direction;
-            GameObject bullet = ObjectPool.GetObj(m_BulletPrefab);
+            Vector2 bulletDirection = Quaternion.Euler(0f, 0f, startAngle + m_WeaponData.spreadAngle * i) * direction;
+            GameObject bullet = ObjectPool.GetObj(m_BulletPrefab, m_Config != null && m_Config.isPlayerChild ? Owner.BulletPool : null);
             bullet.transform.position = firePosition;
             bullet.transform.rotation = Quaternion.identity;
             bullet.transform.right = bulletDirection;
@@ -127,11 +125,11 @@ public class Weapon_Dart : EquipBase
     // 发射飞镖
     private void LaunchBullet(GameObject bullet, Vector2 direction)
     {
-        Weapon_1_Bullet bulletMove = bullet.GetComponent<Weapon_1_Bullet>();
+        WeaponCommonBullet bulletMove = bullet.GetComponent<WeaponCommonBullet>();
         if (bulletMove == null)
         {
-            bulletMove = bullet.AddComponent<Weapon_1_Bullet>();
+            bulletMove = bullet.AddComponent<WeaponCommonBullet>();
         }
-        bulletMove.Init(direction, m_LevelData.bulletSpeed, m_LevelData.bulletLifeTime, m_LevelData.damage);
+        bulletMove.Init(direction, m_WeaponData.bulletSpeed, m_WeaponData.bulletLifeTime, m_WeaponData.damage);
     }
 }

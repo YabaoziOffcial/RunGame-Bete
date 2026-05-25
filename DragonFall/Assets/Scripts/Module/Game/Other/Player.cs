@@ -12,10 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] PlayerData m_PlayerData = new PlayerData();
     public PlayerData PlayerData { get => m_PlayerData; private set => m_PlayerData = value; }
 
-    [Header("Equip")]
-    // 默认武器配置；为空时仍按类名添加 Weapon_1
-    [SerializeField] private WeaponConfigSO m_DefaultWeaponConfig;
-
+    public Transform BulletPool;
 
     private Animation m_MoveAnimation;
     private bool m_WasMoving;
@@ -43,7 +40,9 @@ public class Player : MonoBehaviour
             ExDropRate = 0.3f,
         });
 
-        AddEquip("Weapon_Magic");
+        // AddEquip("Weapon_Magic");
+        // AddEquip("Weapon_Dart");
+        AddEquip("Weapon_Sword");
     }
 
     void Update()
@@ -65,9 +64,9 @@ public class Player : MonoBehaviour
     }
 
     // 根据装备类名创建并添加装备
-    public void AddEquip(string id)
+    public void AddEquip(string key)
     {
-        EquipManager.Instance.AddEquip(id);
+        EquipManager.Instance.AddEquip(key);
         EventManager.SendEvent(GameConst.PlayerEquipChangedEvent);
     }
 

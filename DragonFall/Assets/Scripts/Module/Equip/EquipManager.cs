@@ -57,8 +57,12 @@ public class EquipManager : Singleton<EquipManager>
 
         EquipBase equip = (EquipBase)Activator.CreateInstance(equipType);
         EquipData equipData = CreateEquipData(className, config);
+
+        // 赋值
+        equip.EquipData = equipData;
+        equip.Owner = m_Owner;
         CurrentEquips.Add(equip);
-        equip.Enter(m_Owner, equipData);
+        equip.Enter(m_Owner);
         NotifyCurrentEquipsChanged();
         return equip;
     }
@@ -68,8 +72,7 @@ public class EquipManager : Singleton<EquipManager>
     {
         EquipBase equip = GetEquip(className);
         if (equip == null) return false;
-
-        equip.LevelUp();
+        equip.LevelUp(m_Owner as Player);
         NotifyCurrentEquipsChanged();
         return true;
     }
@@ -79,7 +82,7 @@ public class EquipManager : Singleton<EquipManager>
     {
         for (int i = 0; i < CurrentEquips.Count; i++)
         {
-            CurrentEquips[i].Tick(m_Owner);
+            CurrentEquips[i].Update(m_Owner);
         }
     }
 
@@ -88,7 +91,7 @@ public class EquipManager : Singleton<EquipManager>
     {
         for (int i = 0; i < CurrentEquips.Count; i++)
         {
-            CurrentEquips[i].FixedTick(m_Owner);
+            CurrentEquips[i].FixedUpdate(m_Owner);
         }
     }
 

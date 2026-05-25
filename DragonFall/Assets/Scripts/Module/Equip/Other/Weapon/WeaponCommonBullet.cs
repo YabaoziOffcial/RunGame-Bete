@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Weapon_1 发射的子弹
-public class Weapon_1_Bullet : MonoBehaviour
+// 普通的子弹，打到人之后就会回收
+public class WeaponCommonBullet : MonoBehaviour
 {
     // 自动补碰撞体时使用的默认半径
     private const float ColliderRadius = 0.1f;
-
     // 飞行方向
     private Vector2 m_Direction;
     // 飞行速度
@@ -28,14 +27,7 @@ public class Weapon_1_Bullet : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Kinematic;
         rb.gravityScale = 0f;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
-
-        CircleCollider2D collider2d = GetComponent<CircleCollider2D>();
-        if (collider2d == null)
-        {
-            collider2d = gameObject.AddComponent<CircleCollider2D>();
-        }
-        collider2d.isTrigger = true;
-        collider2d.radius = ColliderRadius;
+       
     }
 
     // 发射前写入本次子弹参数

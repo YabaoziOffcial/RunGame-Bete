@@ -38,6 +38,7 @@ public class GamePanel : Y_PanelBase
         UpdatePlayerExAndLv();
         UpdatePlayerEquip();
 
+m_SelectPanel.SetActive(false);
 
         GameController.Instance.Model.LevelUpCallBack += () =>
         {
