@@ -3,7 +3,6 @@ using UnityEngine;
 // 长剑武器：按玩家移动方向定期释放静止刀光
 public class Weapon_Sword : EquipBase
 {
-    private const string configPath = "Config/WeaponSwordConfig";
     private float m_FireTimer;
     private WeaponConfigSO m_Config;
     private WeaponLevelData m_WeaponData = WeaponLevelData.Default;
@@ -50,7 +49,7 @@ public class Weapon_Sword : EquipBase
 
     private void ApplyLevelData()
     {
-        m_Config = ResourceManager.Instance.LoadRes<WeaponConfigSO>(configPath);
+        m_Config = ResourceManager.Instance.LoadRes<WeaponConfigSO>(PathConst.GetWeaponConfigPath("WeaponSwordConfig"));
         m_WeaponData = m_Config.GetLevelData(Level);
     }
 

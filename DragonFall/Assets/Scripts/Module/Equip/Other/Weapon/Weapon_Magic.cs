@@ -5,7 +5,6 @@ using UnityEngine;
 // 基础自动射击武器
 public class Weapon_Magic : EquipBase
 {
-    private const string configPath = "Config/WeaponMagicConfig";
     // 自动索敌使用的敌人 Tag
     private const string EnemyTag = "Enemy";
     // 当前开火冷却计时
@@ -67,7 +66,7 @@ public class Weapon_Magic : EquipBase
     // 应用配置中的当前等级参数
     private void ApplyLevelData()
     {
-        m_Config = ResourceManager.Instance.LoadRes<WeaponConfigSO>(configPath);
+        m_Config = ResourceManager.Instance.LoadRes<WeaponConfigSO>(PathConst.GetWeaponConfigPath("WeaponMagicConfig"));
         if (m_Config == null && EquipData != null)
         {
             m_Config = EquipData.weaponConfig;

@@ -14,10 +14,10 @@ public class Player : MonoBehaviour
 
     // 玩家当前的生命值
     public float currentHp;
-    public Transform BulletPool, PlayerHP, PlayerHPFill;
+    public Transform BulletPool, PlayerHPFill;
 
     private Animation m_MoveAnimation;
-    private bool m_WasMoving;
+    private bool m_IsMoving;
 
     // 当前已装备的只读列表，供 UI 或其它系统查询
     public IReadOnlyList<EquipBase> EquipList => EquipManager.Instance.Equips;
@@ -32,10 +32,6 @@ public class Player : MonoBehaviour
     // 初始化玩家默认属性和初始装备
     public void Start()
     {
-        float maxHp = m_PlayerData.hpBase; // 最大生命值（每次需要重新计算）
-        float hpFill = currentHp / maxHp;
-        PlayerHPFill.SetFillAmount(hpFill);
-
         SetPlayerData(new PlayerData()
         {
             speed = 1f,
@@ -45,16 +41,17 @@ public class Player : MonoBehaviour
             hpBase = 100f,
             ExDropRate = 0.3f,
         });
+        currentHp = m_PlayerData.hpBase;
+        UpdateHpFill();
 
         // AddEquip("Weapon_Magic");
         // AddEquip("Weapon_Dart");
-        AddEquip("Weapon_Sword");
+        EquipManager.Instance.AddEquip("Weapon_Sword");
     }
 
     void Update()
     {
         Move();
-        UpdateEquip();
     }
 
     private void FixedUpdate()
@@ -69,29 +66,26 @@ public class Player : MonoBehaviour
         m_PlayerData = playerData;
     }
 
-    // 根据装备类名创建并添加装备
-    public void AddEquip(string key)
+    public void TakeDamage(float damage)
     {
-        EquipManager.Instance.AddEquip(key);
-        EventManager.SendEvent(GameConst.PlayerEquipChangedEvent);
+        if (damage <= 0f) return;
+        currentHp = Mathf.Max(0f, currentHp - damage);
+        UpdateHpFill();
+
+        // 如果当前生命值归零，并且没有复活的激活
+        if(currentHp <= 0f)
+        {
+            GameController.Instance.GameOver();
+        }
     }
 
-    // 根据配置创建并添加装备
-    public EquipBase AddEquip(WeaponConfigSO config)
+    private void UpdateHpFill()
     {
-        return EquipManager.Instance.AddEquip(config);
-    }
-
-    // 升级指定装备，后续装备升级逻辑在这里扩展
-    public bool UpgradeEquip(string id)
-    {
-        return EquipManager.Instance.UpgradeEquip(id);
-    }
-
-    // 每帧更新所有装备逻辑，由装备管理器分发到具体装备
-    public void UpdateEquip()
-    {
-        EquipManager.Instance.UpdateAll();
+        if (PlayerHPFill == null) return;
+        float maxHp = m_PlayerData.hpBase;
+        float hpFill = maxHp > 0f ? currentHp / maxHp : 0f;
+        Y_Debug.Log($"UpdateHpFill: {hpFill}");
+        PlayerHPFill.SetFillAmount(Mathf.Clamp01(hpFill));
     }
 
     private void OnDestroy()
@@ -111,17 +105,17 @@ public class Player : MonoBehaviour
         if (m_MoveAnimation == null) return;
         if (isMoving)
         {
-            if (!m_WasMoving)
+            if (!m_IsMoving)
             {
                 m_MoveAnimation.Play();
             }
         }
-        else if (m_WasMoving)
+        else if (m_IsMoving)
         {
             ResetMoveAnimationToStart();
         }
 
-        m_WasMoving = isMoving;
+        m_IsMoving = isMoving;
     }
 
     private void ResetMoveAnimationToStart()
@@ -152,12 +146,12 @@ public class Player : MonoBehaviour
         Y_Debug.Log($"OnCollisionEnter2D: {collision.gameObject.name}");
         CollectEx(collision.gameObject);
     }
+    
 
     // 收集 EX 经验物体并回收到对象池
     private void CollectEx(GameObject ex)
     {
         if (ex == null || !ex.CompareTag(ExTag)) return;
-
         int exp = ex.name switch
         {
             "EX_1" => GameConst.ExExpValue,
@@ -167,7 +161,7 @@ public class Player : MonoBehaviour
         };
         GameController.Instance.Model.AddExp(exp);
         ObjectPool.PushObj(ex);
-        EventManager.SendEvent(GameConst.PlayerExAndLvChangedEvent);
+        EventManager.SendEvent(GameConst.CollectExEvent);
     }
 }
 

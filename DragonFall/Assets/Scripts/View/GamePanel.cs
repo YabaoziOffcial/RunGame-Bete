@@ -33,12 +33,12 @@ public class GamePanel : Y_PanelBase
     public override void Show()
     {
         base.Show();
-        EventManager.AddListener(GameConst.PlayerExAndLvChangedEvent, UpdatePlayerExAndLv);
+        EventManager.AddListener(GameConst.CollectExEvent, UpdatePlayerExAndLv);
         EventManager.AddListener(GameConst.PlayerEquipChangedEvent, UpdatePlayerEquip);
         UpdatePlayerExAndLv();
         UpdatePlayerEquip();
 
-m_SelectPanel.SetActive(false);
+        m_SelectPanel.SetActive(false);
 
         GameController.Instance.Model.LevelUpCallBack += () =>
         {

@@ -5,7 +5,6 @@ using UnityEngine;
 // 飞镖武器
 public class Weapon_Dart : EquipBase
 {
-    private const string configPath = "Config/WeaponDartConfig";
     // 当前发射冷却计时
     private float m_FireTimer;
     // 武器配置
@@ -63,7 +62,7 @@ public class Weapon_Dart : EquipBase
     // 应用配置中的当前等级参数
     private void ApplyLevelData()
     {
-        m_Config = ResourceManager.Instance.LoadRes<WeaponConfigSO>(configPath);
+        m_Config = ResourceManager.Instance.LoadRes<WeaponConfigSO>(PathConst.GetWeaponConfigPath("WeaponDartConfig"));
         if (m_Config == null && EquipData != null)
         {
             m_Config = EquipData.weaponConfig;

@@ -10,10 +10,13 @@ public class Enemy : MonoBehaviour
 
     // 敌人基础属性数据
     [SerializeField] private EnemyData m_EnemyData = new EnemyData() { hp = 10f, attack = 10f, speed = 2f };
-    public EnemyData EnemyData { get => m_EnemyData; private set => m_EnemyData = value; }
 
     // 对象池复用时用于重置生命值
-    private float m_MaxHp;
+    [SerializeField] float m_MaxHp;
+    public float currentHP;
+    public float attackInterval = 0.2f;
+    private float m_AttackTimer;
+
     // 防止死亡逻辑重复触发
     private bool m_IsDead;
     private Rigidbody2D m_Rigidbody2D;
@@ -47,6 +50,7 @@ public class Enemy : MonoBehaviour
         }
         m_IsDead = false;
         m_WasMoving = false;
+        m_AttackTimer = 0f;
         ResetMoveAnimationToStart();
     }
 
@@ -54,6 +58,10 @@ public class Enemy : MonoBehaviour
     public void Update()
     {
         if (m_IsDead) return;
+        if (m_AttackTimer > 0f)
+        {
+            m_AttackTimer -= Time.deltaTime;
+        }
         MoveToPlayer();
     }
 
@@ -156,6 +164,7 @@ public class Enemy : MonoBehaviour
         SetMoveAnimationPlaying(true);
     }
 
+    // 播放移动的动画
     private void SetMoveAnimationPlaying(bool isMoving)
     {
         if (m_MoveAnimation == null) return;
@@ -175,6 +184,7 @@ public class Enemy : MonoBehaviour
         m_WasMoving = isMoving;
     }
 
+    // 重置移动动画到开始状态
     private void ResetMoveAnimationToStart()
     {
         if (m_MoveAnimation == null || m_MoveAnimation.clip == null) return;
@@ -191,6 +201,31 @@ public class Enemy : MonoBehaviour
         m_MoveAnimation.Sample();
         m_MoveAnimation.Stop(clipName);
         m_WasMoving = false;
+    }
+
+    // 触发器持续攻击玩家
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (!other.CompareTag(GameConst.PlayerTag)) return;
+        Y_Debug.Log($"OnCollisionStay2D: {other.gameObject.name}");
+        TryAttackPlayer();
+    }
+
+    // 碰撞器持续攻击玩家
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (!collision.collider.CompareTag(GameConst.PlayerTag)) return;
+        Y_Debug.Log($"OnCollisionStay2D: {collision.gameObject.name}");
+        TryAttackPlayer();
+    }
+
+    private void TryAttackPlayer()
+    {
+        Player player = GameController.Instance.Player;
+        if (m_IsDead || player == null || m_AttackTimer > 0f) return;
+
+        player.TakeDamage(m_EnemyData.attack);
+        m_AttackTimer = attackInterval;
     }
 }
 

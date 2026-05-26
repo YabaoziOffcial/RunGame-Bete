@@ -6,14 +6,10 @@ public class GameController : YBZ.Design.Singleton<GameController>
 {
     private GameModel m_Model;
     public GameModel Model => m_Model;
-
+    public Player Player { get; private set; }
 
     private float m_EnemySpawnTimer;
     private GameObject m_EnemyPrefab;
-
-
-    public Player Player;
-
 
 
     public void Init()
@@ -22,7 +18,7 @@ public class GameController : YBZ.Design.Singleton<GameController>
         m_Model.SetStartGameTime(Time.time);
         m_EnemyPrefab = ResourceManager.Instance.LoadRes<GameObject>(GameConst.EnemyPrefabPath);
         m_EnemySpawnTimer = 0f;
-        Player = Object.FindObjectOfType<Player>();
+        Player = GameObject.FindObjectOfType<Player>();
     }
 
 
@@ -40,6 +36,12 @@ public class GameController : YBZ.Design.Singleton<GameController>
 
         GameObject enemy = ObjectPool.GetObj(m_EnemyPrefab);
         enemy.transform.position = GetRandomSpawnPosition();
+    }
+
+    public void GameOver()
+    {
+        Debug.Log("GameOver");
+        UIManager.Instance.OpenUI<GameOverPanel>();
     }
 
     private Vector3 GetRandomSpawnPosition()
@@ -71,4 +73,6 @@ public class GameController : YBZ.Design.Singleton<GameController>
 
         return new Vector3(x, y, 0f);
     }
+
+
 }

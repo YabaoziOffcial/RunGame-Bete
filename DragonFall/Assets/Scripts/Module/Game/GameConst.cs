@@ -17,8 +17,13 @@ public class GameConst
     public const int ExExpValue = 10;
     // 基础升级经验，每升一级额外增加同等需求
     public const int BaseLevelUpExp = 100;
+
+    public const string PlayerTag = "Player";
+    public const string EnemyTag = "Enemy";
+
     // 玩家经验或等级变化事件
-    public const string PlayerExAndLvChangedEvent = "PlayerExAndLvChanged";
+    public const string CollectExEvent = "CollectEx";
+
     // 玩家装备变化事件
     public const string PlayerEquipChangedEvent = "PlayerEquipChanged";
 
