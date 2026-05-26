@@ -429,8 +429,8 @@ public static class TransformExtensions
         return null;
     }
 
-
-    public static void SetPercent(this Transform t, float val)
+    // 设置填充量
+    public static void SetFillAmount(this Transform t, float val)
     {
         Image img = t.GetCachedComponent<Image>();
         if (img != null)
@@ -439,7 +439,8 @@ public static class TransformExtensions
         }
     }
 
-    public static float GetPercent(this Transform t)
+    // 获取填充量
+    public static float GetFillAmount(this Transform t)
     {
         Image img = t.GetCachedComponent<Image>();
         if (img != null)

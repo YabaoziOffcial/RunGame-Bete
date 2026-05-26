@@ -12,7 +12,9 @@ public class Player : MonoBehaviour
     [SerializeField] PlayerData m_PlayerData = new PlayerData();
     public PlayerData PlayerData { get => m_PlayerData; private set => m_PlayerData = value; }
 
-    public Transform BulletPool;
+    // 玩家当前的生命值
+    public float currentHp;
+    public Transform BulletPool, PlayerHP, PlayerHPFill;
 
     private Animation m_MoveAnimation;
     private bool m_WasMoving;
@@ -30,6 +32,10 @@ public class Player : MonoBehaviour
     // 初始化玩家默认属性和初始装备
     public void Start()
     {
+        float maxHp = m_PlayerData.hpBase; // 最大生命值（每次需要重新计算）
+        float hpFill = currentHp / maxHp;
+        PlayerHPFill.SetFillAmount(hpFill);
+
         SetPlayerData(new PlayerData()
         {
             speed = 1f,
@@ -177,5 +183,5 @@ public class PlayerData
 
     public float hpBase;// 生命值
 
-    public float ExDropRate; // 经验掉落率
+    public float ExDropRate; // 经验掉落率 贪婪因子
 }
