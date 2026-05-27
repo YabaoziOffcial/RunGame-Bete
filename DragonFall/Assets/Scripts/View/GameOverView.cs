@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameOverPanel : Y_PopupBase
+public class GameOverView : Y_PopupBase
 {
     [SerializeField] Button m_ExitBtn;
 

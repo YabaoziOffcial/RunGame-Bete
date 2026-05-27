@@ -41,7 +41,7 @@ public class GameController : YBZ.Design.Singleton<GameController>
     public void GameOver()
     {
         Debug.Log("GameOver");
-        UIManager.Instance.OpenUI<GameOverPanel>();
+        UIManager.Instance.OpenUI<GameOverView>(); 
     }
 
     private Vector3 GetRandomSpawnPosition()
