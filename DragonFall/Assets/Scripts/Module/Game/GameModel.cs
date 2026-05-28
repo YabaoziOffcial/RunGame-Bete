@@ -7,6 +7,8 @@ public class GameModel
     public int KillEnemyCount { get; private set; }
     // 本局游戏开始时间
     public float StartGameTime { get; private set; }
+    // 本局游戏开始时的 Unix 毫秒时间戳
+    public long StartTime { get; private set; }
     // 玩家当前等级
     public int Level { get; private set; }
     // 当前等级已获得经验
@@ -41,6 +43,7 @@ public class GameModel
     {
         KillEnemyCount = 0;
         StartGameTime = 0f;
+        StartTime = 0L;
         Level = 1;
         Exp = 0;
         LevelUpExp = GameConst.BaseLevelUpExp;
@@ -90,5 +93,10 @@ public class GameModel
     public void SetStartGameTime(float startGameTime)
     {
         StartGameTime = startGameTime;
+    }
+
+    public void SetStartTime(long startTime)
+    {
+        StartTime = startTime;
     }
 }

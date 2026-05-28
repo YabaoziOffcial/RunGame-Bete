@@ -15,6 +15,7 @@ public class WeaponCommonBullet : MonoBehaviour
     private float m_LifeTimer;
     // 命中造成的伤害
     private float m_Damage;
+    private EquipBase m_SourceEquip;
 
     // 初始化物理和触发器碰撞
     private void Awake()
@@ -31,12 +32,13 @@ public class WeaponCommonBullet : MonoBehaviour
     }
 
     // 发射前写入本次子弹参数
-    public void Init(Vector2 direction, float speed, float lifeTime, float damage)
+    public void Init(Vector2 direction, float speed, float lifeTime, float damage, EquipBase sourceEquip = null)
     {
         m_Direction = direction.sqrMagnitude > 0f ? direction.normalized : Vector2.right;
         m_Speed = speed;
         m_LifeTimer = lifeTime;
         m_Damage = damage;
+        m_SourceEquip = sourceEquip;
     }
 
     // 推进子弹并检查生命周期
@@ -70,8 +72,8 @@ public class WeaponCommonBullet : MonoBehaviour
     private void HitEnemy(Enemy enemy, Vector3 hitPosition)
     {
         if (enemy == null) return;
-
-        enemy.TakeDamage(m_Damage, hitPosition);
+        float actualDamage = enemy.TakeDamage(m_Damage, hitPosition);
+        EquipManager.Instance.AddDamage(m_SourceEquip, actualDamage);
         Recycle();
     }
 

@@ -74,19 +74,22 @@ public class Enemy : MonoBehaviour
     }
 
     // 承受伤害，生命值归零后结算击杀和掉落
-    public void TakeDamage(float damage)
+    public float TakeDamage(float damage)
     {
-        TakeDamage(damage, transform.position);
+        return TakeDamage(damage, transform.position);
     }
 
     // 承受伤害，并在指定命中位置显示伤害数字
-    public void TakeDamage(float damage, Vector3 hitPosition)
+    public float TakeDamage(float damage, Vector3 hitPosition)
     {
-        if (m_IsDead) return;
-        if (damage <= 0f) return;
+        if (m_IsDead) return 0f;
+        if (damage <= 0f) return 0f;
 
-        m_EnemyData.hp -= damage;
-        ShowDamageNumber(damage, hitPosition);
+        float actualDamage = Mathf.Min(damage, m_EnemyData.hp);
+        if (actualDamage <= 0f) return 0f;
+
+        m_EnemyData.hp -= actualDamage;
+        ShowDamageNumber(actualDamage, hitPosition);
         if (m_EnemyData.hp <= 0f)
         {
             m_IsDead = true;
@@ -99,6 +102,8 @@ public class Enemy : MonoBehaviour
             TryDropEx();
             ObjectPool.PushObj(gameObject);
         }
+
+        return actualDamage;
     }
 
     // 在敌人位置显示伤害数字

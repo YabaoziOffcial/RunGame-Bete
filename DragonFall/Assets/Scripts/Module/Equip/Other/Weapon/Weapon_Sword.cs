@@ -103,7 +103,7 @@ public class Weapon_Sword : EquipBase
             {
                 swordSlash = slash.AddComponent<Weapon_Sword_Slash>();
             }
-            swordSlash.Init(m_WeaponData.bulletLifeTime, m_WeaponData.damage);
+            swordSlash.Init(m_WeaponData.bulletLifeTime, m_WeaponData.damage, this);
         }
     }
 }

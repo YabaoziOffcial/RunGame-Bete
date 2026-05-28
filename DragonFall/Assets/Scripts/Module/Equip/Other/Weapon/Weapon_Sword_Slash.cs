@@ -5,12 +5,15 @@ using UnityEngine;
 public class Weapon_Sword_Slash : MonoBehaviour
 {
     private float m_Damage;
+    private EquipBase m_SourceEquip;
     private readonly HashSet<Enemy> m_HitEnemies = new HashSet<Enemy>();
 
-    public void Init(float lifeTime, float damage)
+    public void Init(float lifeTime, float damage, EquipBase sourceEquip = null)
     {
         m_Damage = damage;
+        m_SourceEquip = sourceEquip;
         m_HitEnemies.Clear();
+        CancelInvoke(nameof(Recycle));
         Invoke(nameof(Recycle), lifeTime);
     }
 
@@ -27,7 +30,8 @@ public class Weapon_Sword_Slash : MonoBehaviour
 
         m_HitEnemies.Add(enemy);
         Vector3 hitPosition = other.ClosestPoint(transform.position);
-        enemy.TakeDamage(m_Damage, hitPosition);
+        float actualDamage = enemy.TakeDamage(m_Damage, hitPosition);
+        EquipManager.Instance.AddDamage(m_SourceEquip, actualDamage);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -37,6 +41,7 @@ public class Weapon_Sword_Slash : MonoBehaviour
 
         m_HitEnemies.Add(enemy);
         Vector3 hitPosition = collision.contactCount > 0 ? collision.GetContact(0).point : transform.position;
-        enemy.TakeDamage(m_Damage, hitPosition);
+        float actualDamage = enemy.TakeDamage(m_Damage, hitPosition);
+        EquipManager.Instance.AddDamage(m_SourceEquip, actualDamage);
     }
 }

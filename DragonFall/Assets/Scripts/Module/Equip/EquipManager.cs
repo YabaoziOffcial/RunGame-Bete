@@ -10,12 +10,13 @@ public class EquipManager : Singleton<EquipManager>
     private Player m_Owner;
 
     // 当前玩家已拥有的运行时装备实例
-    public List<EquipBase> CurrentEquips { get; private set; } = new List<EquipBase>();
+    public Dictionary<EquipBase, EquipGameData> CurrentEquips { get; private set; } = new Dictionary<EquipBase, EquipGameData>();
+    private readonly List<EquipBase> m_EquipOrder = new List<EquipBase>();
     // 装备列表变化时通知 UI 刷新
     public event Action CurrentEquipsChanged;
 
     // 兼容外部只读查询，避免外部必须改调用点
-    public IReadOnlyList<EquipBase> Equips => CurrentEquips;
+    public IReadOnlyList<EquipBase> Equips => m_EquipOrder;
 
     public void Init(Player owner)
     {
@@ -61,7 +62,8 @@ public class EquipManager : Singleton<EquipManager>
         // 赋值
         equip.EquipData = equipData;
         equip.Owner = m_Owner;
-        CurrentEquips.Add(equip);
+        CurrentEquips.Add(equip, CreateEquipGameData());
+        m_EquipOrder.Add(equip);
         equip.Enter(m_Owner);
         NotifyCurrentEquipsChanged();
         return equip;
@@ -80,18 +82,18 @@ public class EquipManager : Singleton<EquipManager>
     // 每帧驱动所有装备
     public void UpdateAll()
     {
-        for (int i = 0; i < CurrentEquips.Count; i++)
+        for (int i = 0; i < m_EquipOrder.Count; i++)
         {
-            CurrentEquips[i].Update(m_Owner);
+            m_EquipOrder[i].Update(m_Owner);
         }
     }
 
     // 固定帧驱动所有装备
     public void FixedUpdateAll()
     {
-        for (int i = 0; i < CurrentEquips.Count; i++)
+        for (int i = 0; i < m_EquipOrder.Count; i++)
         {
-            CurrentEquips[i].FixedUpdate(m_Owner);
+            m_EquipOrder[i].FixedUpdate(m_Owner);
         }
     }
 
@@ -101,6 +103,7 @@ public class EquipManager : Singleton<EquipManager>
         if (equip == null || !CurrentEquips.Remove(equip)) return false;
 
         equip.Exit(m_Owner);
+        m_EquipOrder.Remove(equip);
         NotifyCurrentEquipsChanged();
         return true;
     }
@@ -108,32 +111,47 @@ public class EquipManager : Singleton<EquipManager>
     // 清空装备列表，通常用于玩家销毁或重开一局
     public void Clear()
     {
-        for (int i = CurrentEquips.Count - 1; i >= 0; i--)
+        for (int i = m_EquipOrder.Count - 1; i >= 0; i--)
         {
-            CurrentEquips[i].Exit(m_Owner);
+            m_EquipOrder[i].Exit(m_Owner);
         }
 
         CurrentEquips.Clear();
+        m_EquipOrder.Clear();
         NotifyCurrentEquipsChanged();
     }
 
     // 按类名查找当前已装备的装备
     public EquipBase GetEquip(string className)
     {
-        for (int i = 0; i < CurrentEquips.Count; i++)
+        for (int i = 0; i < m_EquipOrder.Count; i++)
         {
-            if (CurrentEquips[i].EquipData != null && CurrentEquips[i].EquipData.className == className)
+            if (m_EquipOrder[i].EquipData != null && m_EquipOrder[i].EquipData.className == className)
             {
-                return CurrentEquips[i];
+                return m_EquipOrder[i];
             }
         }
 
         return null;
     }
 
+    public void AddDamage(EquipBase equip, float damage)
+    {
+        if (equip == null || damage <= 0f) return;
+        if (!CurrentEquips.TryGetValue(equip, out EquipGameData equipGameData)) return;
+
+        equipGameData.AddDamage(damage);
+    }
+
     private void NotifyCurrentEquipsChanged()
     {
         CurrentEquipsChanged?.Invoke();
+    }
+
+    private EquipGameData CreateEquipGameData()
+    {
+        long addTimestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+        return new EquipGameData(addTimestamp);
     }
 
     // 将配置资产转换成运行时装备数据

@@ -129,6 +129,6 @@ public class Weapon_Dart : EquipBase
         {
             bulletMove = bullet.AddComponent<WeaponCommonBullet>();
         }
-        bulletMove.Init(direction, m_WeaponData.bulletSpeed, m_WeaponData.bulletLifeTime, m_WeaponData.damage);
+        bulletMove.Init(direction, m_WeaponData.bulletSpeed, m_WeaponData.bulletLifeTime, m_WeaponData.damage, this);
     }
 }
