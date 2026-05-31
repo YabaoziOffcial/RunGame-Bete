@@ -1,0 +1,18 @@
+{
+  "msg": "成功",
+  "code": 0,
+  "data": {
+    "id": "U3YNR7VZ23",
+    "modelName": "像素人物",
+    "modelAvailable": true,
+    "modelTags": "像素,风格化",
+    "introduction": "像素角色",
+    "modelType": "角色",
+    "styleType": "ComposeStyle",
+    "baseModel": "Holopix_A1",
+    "coverImage": "https://genai.holopix.cn/uploads/20251023/1761206435156-S6jV3IQ5mEfvYLA58RQYo.png",
+    "modelDetailsImages": "",
+    "commercialLicense": "生成的图片可商用"
+  },
+  "success": true
+}

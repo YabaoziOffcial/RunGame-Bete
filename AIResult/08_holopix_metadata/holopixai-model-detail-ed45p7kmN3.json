@@ -1,0 +1,18 @@
+{
+  "msg": "成功",
+  "code": 0,
+  "data": {
+    "id": "ed45p7kmN3",
+    "modelName": "像素游戏角色画风",
+    "modelAvailable": true,
+    "modelTags": "",
+    "introduction": "",
+    "modelType": "角色",
+    "styleType": "Style",
+    "baseModel": "Holopix_A1",
+    "coverImage": "https://genai.holopix.cn/uploads/20260330/1774863063351-Q2BX5InZlrjsmVQkgXWfW.png",
+    "modelDetailsImages": "",
+    "commercialLicense": "生成的图片可商用"
+  },
+  "success": true
+}

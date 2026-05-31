@@ -1,0 +1,175 @@
+
+
+===== PAGE 1 =====
+丰富细节
+丰富细节
+创建任务
+⽹络协议 请求地址 请求⽅法 请求格式 响应格式
+https /v1/im ages/generations/
+detail
+POST application/json application/json
+请求头
+字段 值 描述
+Content-Type application/json application/json
+Authorization 鉴权信息，参考接⼝鉴权 鉴权信息，参考接⼝鉴权
+丰富细节
+字段 类型 必填 默认值 描述
+m odelDetailList list 是  
+ m odelId
+
+integer(int
+64)
+是 ⽆ 模型U U ID值
+•
+枚举值：82751128
+•
+不同基础模型间不能相互叠加，具体
+模型规则可以从[⻛格模型叠加规则]
+查看
+•
+具体账号可⽤的模型可使⽤[查询账
+号可⽤模型列表]进⾏查询
+•
+⻛格模型列表最多为5个
+ strength num ber(d
+ouble)
+是 1 ⻛格模型的强度控制
+•
+取值范围：[0-1],数值越⼤参考强度
+越⼤
+•
+
+
+
+
+===== PAGE 2 =====
+注：模型类型为[组合⻛格模型]的情况
+下，不⽀持模型强度控制
+prom pt string 是
+
+⽆ 正向⽂本提⽰词
+•
+不能超过2000个字符
+negativeProm pt string 可选
+
+⽆ 负向⽂本提⽰词
+•
+不能超过2000个字符
+注：基础模型为Holopix-V1的情况下，
+不⽀持负向提⽰词
+seed int 是 -1 随机种⼦
+•
+-1为随机，亦可输⼊具体数值进⾏⽣
+成
+im ageGuidanceW eights
+
+int 可选 6 画⾯指导权重
+•
+取值范围：[3-6],数值越⼤⽣成的内
+容越整洁准确
+•
+当模型类型为Holopix-V1时为必填参
+数
+sourceIm age
+
+string
+
+是 ⽆
+
+参考图⽚
+•
+⽀持传⼊图⽚U RL（确保可访问）
+•
+图⽚格式⽀持.jpg/.jpeg/.png
+•
+图⽚⽂件⼤⼩不能超过10M B，图⽚
+分辨率不⼩于300*300px，图⽚宽⾼
+⽐要在1:6之内
+•
+将会按照图⽚的⽐例进⾏⽣成
+redrawW eight int 是 1-4 图⽚参考权重
+•
+枚举值：[1,2,3,4]数值越⼤参考强度
+越⼤
+传⼊图⽚⽰例
+字段 传⼊⽰例 效果 备注
+sourceIm age
+
+•
+图⽚格式⽀持.jpg/
+.jpeg/.png
+•
+在不改变整体画⾯的情
+况下丰富细节（可能会
+对画⾯进⾏修改）
+
+
+
+===== PAGE 3 =====
+
+请求⽰例
+J SON
+{ 
+        "data": { 
+                "modelDetailList": [ 
+                        { 
+                                "modelId": 82751128, 
+                                "strength": 0.9 
+                        } 
+                ], 
+                "prompt": "", 
+                "negativePrompt": "", 
+                "imageGuidanceWeights": 0, 
+                "sourceImage": "https://pino-img.yingzhongshare.com/2025-08-
+04/1754302528883-t2uy.png" 
+                "redrawWeight": 4, 
+                "seed": -1, 
+        } 
+} 
+响应参数
+字段 参数说明 类型
+code 错误代码 int
+clientId ⼈物ID string
+status ⽣图状态 string
+m sg 错误信息 string
+success 是否成功 bool
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+
+
+
+===== PAGE 4 =====
+响应⽰例
+代码块
+{ 
+        "code": 0, 
+        "data": { 
+                "clientId": "", 
+                "status": "" 
+        }, 
+        "msg": "", 
+        "success": true 
+} 
+1
+2
+3
+4
+5
+6
+7
+8
+9

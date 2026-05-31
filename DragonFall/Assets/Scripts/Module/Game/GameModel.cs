@@ -28,7 +28,7 @@ public class GameModel
     public float Strength, BarrageSpeed, BarrageDuration, AttackRange;
 
     // 技能冷却时间，弹幕数量，复活次数，心灵传动
-    public float BarrageCD, BarrageCount, ReliveNumber, Telekinesis;
+    public float BarrageCD, BarrageCount, ReliveNumber, PickupRange;
 
     // 幸运，成长，贪婪，诅咒
     public float Luck, Growth, Greed, Curse;
@@ -72,7 +72,6 @@ public class GameModel
             Level++;
             LevelUpExp += GameConst.BaseLevelUpExp;
             LevelChanged = true;
-
             LevelUpCallBack?.Invoke();
         }
     }

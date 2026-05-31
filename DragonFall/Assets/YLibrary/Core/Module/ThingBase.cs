@@ -87,7 +87,7 @@ public abstract class ThingBase : MonoBehaviour, IPointerDownHandler, IPointerUp
         OnEndDragCallBack?.Invoke(this, eventData);
     }
 
-    #region  触发器和碰撞器
+    #region  触发器和碰撞器2D
     public virtual void OnTriggerEnter2D(Collider2D other) { OnTriggerEnter2DCallBack?.Invoke(this, other); }
 
     public virtual void OnTriggerExit2D(Collider2D other) { OnTriggerExit2DCallBack?.Invoke(this, other); }
@@ -148,6 +148,4 @@ public abstract class ThingBase : MonoBehaviour, IPointerDownHandler, IPointerUp
         return true;
     }
     #endregion
-
-
 }

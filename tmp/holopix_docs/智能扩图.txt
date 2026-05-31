@@ -1,0 +1,134 @@
+
+
+===== PAGE 1 =====
+智能扩图
+创建任务
+⽹络协议 请求地址 请求⽅法 请求格式 响应格式
+https /v1/im ages/generations/
+visualExpansion
+POST application/json application/json
+请求头
+字段 值 描述
+Content-Type application/json application/json
+Authorization 鉴权信息，参考接⼝鉴权 鉴权信息，参考接⼝鉴权
+智能扩图
+相似图裂变
+字段 类型 必填 默认值 描述
+prom pt string 是
+
+⽆ 正向⽂本提⽰词
+•
+不能超过2000个字符
+seed int 是 -1 随机种⼦
+•
+-1为随机，亦可输⼊具体数值进⾏⽣成
+sourceIm age
+
+string 是 / 参考图⽚
+•
+⽀持传⼊图⽚U RL（确保可访问）
+•
+图⽚格式⽀持.jpg/.jpeg/.png
+•
+图⽚⽂件⼤⼩不能超过10M B，图⽚分辨率不⼩
+于300*300px，图⽚宽⾼⽐要在1:2.5~2.5:1之
+间
+sourceIm age
+M ask
+string 是 / 参考图⽚蒙版
+
+
+
+===== PAGE 2 =====
+
+• ⽀持传⼊图⽚Base64编码或图⽚U RL（确保可
+访问）
+•
+图⽚格式仅⽀持.png
+•
+图⽚必须⽀持RGBA且带有alpha通道
+•
+图⽚⽂件⼤⼩不能超过10M B，图⽚分辨率不⼩
+于300*300px，图⽚宽⾼⽐要在1:2.5~2.5:1之
+间
+•
+将会按照图⽚的Alpha区域进⾏⽣成
+传⼊图⽚⽰例
+字段 原始图像 传⼊⽰例 效果 备注
+sourceIm ageM a
+sk
+
+
+
+• 图⽚格式仅⽀
+持.png
+•
+图⽚必须⽀持
+RGBA且带有alpha
+通道
+•
+会基于alpha区域
+进⾏局部细化
+sourceIm age
+
+
+ 
+ 
+•
+图⽚格式⽀持.jpg
+/.jpeg/.png
+•
+需传⼊与蒙版图⼀
+致⼤⼩的图像
+
+请求⽰例
+J SON
+{ 
+        "data": { 
+                "sourceImage": "https://pino-img.yingzhongshare.com/2025-08-
+04/1754302528883-t2uy.png" 
+                "sourceImageMask": "https://pino-img.yingzhongshare.com/2025-
+08-06/1754466658579-n4ps.png" 
+                "prompt": "", 
+                "seed": -1 
+        } 
+1
+2
+3
+4
+5
+6
+7
+
+
+
+===== PAGE 3 =====
+} 
+响应参数
+字段 参数说明 类型
+code 错误代码 int
+clientId ⼈物ID string
+status ⽣图状态 string
+m sg 错误信息 string
+success 是否成功 bool
+响应⽰例
+代码块
+{ 
+        "code": 0, 
+        "data": { 
+                "clientId": "", 
+                "status": "" 
+        }, 
+        "msg": "", 
+        "success": true 
+} 
+8
+1
+2
+3
+4
+5
+6
+7
+8
+9

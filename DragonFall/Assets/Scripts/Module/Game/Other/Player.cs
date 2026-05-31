@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // 玩家控制、装备更新和经验拾取入口
-public class Player : MonoBehaviour
+public class Player : ThingBase
 {
     // 经验物体使用的 Tag
     private const string ExTag = "EX";
@@ -24,9 +24,28 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        interactable = false;
+        RegisterCollisionCallbacks();
         // 在玩家初始化时设置装备管理器宿主，后续装备都通过单例管理
         EquipManager.Instance.Init(this);
         m_MoveAnimation = GetComponent<Animation>();
+    }
+
+    private void RegisterCollisionCallbacks()
+    {
+        OnTriggerEnter2DCallBack = OnTriggerEnterHandler;
+        OnCollisionEnter2DCallBack = OnCollisionEnterHandler;
+    }
+
+    private void OnTriggerEnterHandler(ThingBase thing, Collider2D other)
+    {
+        CollectEx(other.gameObject);
+    }
+
+    private void OnCollisionEnterHandler(ThingBase thing, Collision2D collision)
+    {
+        Y_Debug.Log($"OnCollisionEnter2D: {collision.gameObject.name}");
+        CollectEx(collision.gameObject);
     }
 
     // 初始化玩家默认属性和初始装备
@@ -52,6 +71,9 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+
+        // 更新所有装备
+        EquipManager.Instance.UpdateAll();
     }
 
     private void FixedUpdate()
@@ -75,6 +97,8 @@ public class Player : MonoBehaviour
         // 如果当前生命值归零，并且没有复活的激活
         if(currentHp <= 0f)
         {
+            // 如果有失败的特效
+            ObjectPool.PushObj(gameObject);
             GameController.Instance.GameOver();
         }
     }
@@ -88,10 +112,11 @@ public class Player : MonoBehaviour
         PlayerHPFill.SetFillAmount(Mathf.Clamp01(hpFill));
     }
 
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
         // 玩家销毁时让装备释放运行时状态
         EquipManager.Instance.Clear();
+        base.OnDestroy();
     }
 
     // 根据输入移动玩家
@@ -132,21 +157,6 @@ public class Player : MonoBehaviour
         m_MoveAnimation.Sample();
         m_MoveAnimation.Stop(clipName);
     }
-
-
-    // 触发器拾取经验物体
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        CollectEx(other.gameObject);
-    }
-
-    // 碰撞器拾取经验物体
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Y_Debug.Log($"OnCollisionEnter2D: {collision.gameObject.name}");
-        CollectEx(collision.gameObject);
-    }
-    
 
     // 收集 EX 经验物体并回收到对象池
     private void CollectEx(GameObject ex)

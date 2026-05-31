@@ -1,0 +1,98 @@
+
+
+===== PAGE 1 =====
+模型参数查询
+查询对应模型的具体参数
+注：该接⼝免费调⽤，⽅便您查询对应模型的具体参数，但请您注意控制请求速率（QPS<=1）
+⽹络协议 请求地址 请求⽅法 请求格式 响应格式
+https /v1/m odel/apiDet
+ail
+POST application/json application/json
+请求头
+字段 值 描述
+id string 模型唯⼀代码
+Content-Type application/json 数据交换格式
+Authorization 鉴权信息，参考接⼝鉴权 鉴权信息，参考接⼝鉴权
+请求⽰例
+J SON
+{ 
+    "data": { 
+       "id":"15D34DF2CZ" 
+    } 
+} 
+响应参数
+字段 类型 描述
+m odelAvailable bool 是否可⽤，如果⽤⼾⽆该模型可⽤权限，则下⾯信息不展⽰
+m odelNam e string 模型名字
+1
+2
+3
+4
+5
+
+
+
+===== PAGE 2 =====
+id string 模型唯⼀代码
+m odelTags string 模型标签
+introduction string 模型简介
+m odelType string 模型类型
+styleType string ⻛格类型
+baseM odel string 基础模型
+coverIm age string 封⾯图U RL
+m odelDetailsIm ag
+es
+string 详情图U RL
+com m ercialLicens
+e
+string 商⽤许可
+响应⽰例
+J SON
+{ 
+        "code": 0, 
+        "data": { 
+                "modelAvailable": 1,  
+                "modelName": " 唯美⽇系插画⽴绘  | HOLO-A1", 
+                "id": "15D34DF2CZ", 
+                "modelTags": " 伪厚涂 , ⼆次元 ", 
+                "introduction": " 唯美的⽇系⼆次元插画⻛格 ", 
+                "modelType": " ⻛格模型 ", 
+                "styleType": " ⻆⾊ ", 
+                "BaseModel": "HOLO - A1", 
+                "CommercialLicense": " ⽣成的图⽚可商⽤ ", 
+                "CoverImage": "https://pino-img.yingzhongshare.com/2025-02-
+24/1740368441871-tzmb.png?
+watermark/1/image/aHR0cHM6Ly9waW5vLWFzc2V0cy5vc3MtY24tc2hhbmdoYWkuYWxpeXVuY3MuY
+29tL3Byb2plY3RzL3Bpbm8vcHJvZHVjdGlvbi93YXRlcm1hcmstMjAyNS0wNC0yOS12My5wbmc/diss
+olve/100/gravity/SouthEast/ws/0.35/wst/2/dx/10/dy/10/ignore-
+error/1|imageView2/2/w/500/q/90/format/webp/ignore-error/1", 
+                "ModelDetailsImages": "https://pino-
+img.yingzhongshare.com/2025-02-24/1740368441871-tzmb.png?
+watermark/1/image/aHR0cHM6Ly9waW5vLWFzc2V0cy5vc3MtY24tc2hhbmdoYWkuYWxpeXVuY3MuY
+29tL3Byb2plY3RzL3Bpbm8vcHJvZHVjdGlvbi93YXRlcm1hcmstMjAyNS0wNC0yOS12My5wbmc/diss
+olve/100/gravity/SouthEast/ws/0.35/wst/2/dx/10/dy/10/ignore-
+error/1|imageView2/2/w/500/q/90/format/webp/ignore-error/1", 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+
+
+
+===== PAGE 3 =====
+        }, 
+        "success": true 
+} 
+15
+16
+17

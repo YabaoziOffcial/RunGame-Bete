@@ -1,0 +1,18 @@
+{
+  "msg": "成功",
+  "code": 0,
+  "data": {
+    "id": "2KHH678LAU",
+    "modelName": "低像素角色模型 | HOLO-V1",
+    "modelAvailable": true,
+    "modelTags": "复古/复古时尚,像素",
+    "introduction": "本模型适合生成具有复古电子游戏风格的低像素角色。它适合创造各种年龄、职业和活动背景的角色形象，整体风格简约、经典，能够展现出低像素艺术的个性和时代感。非常适合用于需要怀旧风格和角色设计表现的项目。",
+    "modelType": "角色",
+    "styleType": "Style",
+    "baseModel": "Holopix_V1",
+    "coverImage": "https://pino-img.yingzhongshare.com/2024-12-18/1734519347953-1zgw.png",
+    "modelDetailsImages": "https://pino-img.yingzhongshare.com/2024-12-18/1734519360321-4tl4.png,https://pino-img.yingzhongshare.com/2024-12-18/1734519368408-sj8u.png,https://pino-img.yingzhongshare.com/2024-12-18/1734519368408-6v3a.png,https://pino-img.yingzhongshare.com/2024-12-18/1734519372722-j0w1.png,https://pino-img.yingzhongshare.com/2024-12-18/1734519372722-natl.png",
+    "commercialLicense": "生成的图片可商用"
+  },
+  "success": true
+}

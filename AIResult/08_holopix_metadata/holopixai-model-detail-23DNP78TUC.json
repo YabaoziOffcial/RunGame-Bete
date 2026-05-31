@@ -1,0 +1,18 @@
+{
+  "msg": "成功",
+  "code": 0,
+  "data": {
+    "id": "23DNP78TUC",
+    "modelName": "Top-Down像素风格 | HOLO-V1",
+    "modelAvailable": true,
+    "modelTags": "通用,复古/复古时尚,像素",
+    "introduction": "Top-Down像素风格 | HOLO-V1",
+    "modelType": "icon道具",
+    "styleType": "Style",
+    "baseModel": "Holopix_V1",
+    "coverImage": "https://pino-img.yingzhongshare.com/2025-05-28/1748432618158-5ndp.jpg",
+    "modelDetailsImages": "https://pino-img.yingzhongshare.com/2025-05-28/1748426233932-28ju.png,https://pino-img.yingzhongshare.com/2025-05-28/1748433344563-dpya.png,https://pino-img.yingzhongshare.com/2025-05-28/1748433344563-sw7v.png,https://pino-img.yingzhongshare.com/2025-05-28/1748433344564-2fb8.png,https://pino-img.yingzhongshare.com/2025-05-28/1748433344564-njbj.png,https://pino-img.yingzhongshare.com/2025-05-28/1748433344564-0u62.png,https://pino-img.yingzhongshare.com/2025-05-28/1748433344564-qkku.png,https://pino-img.yingzhongshare.com/2025-05-28/1748433344564-zc3a.png,https://pino-img.yingzhongshare.com/2025-05-28/1748433344564-gsxd.png,https://pino-img.yingzhongshare.com/2025-05-29/1748497683937-w9c2.png",
+    "commercialLicense": "生成的图片可商用"
+  },
+  "success": true
+}

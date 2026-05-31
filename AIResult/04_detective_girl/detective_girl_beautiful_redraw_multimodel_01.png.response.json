@@ -1,0 +1,43 @@
+{
+  "attempt": "t2i_no_ref_nohd",
+  "client_id": "10089-178023974056058515-",
+  "progress": {
+    "msg": "成功",
+    "code": 0,
+    "data": {
+      "clientList": [
+        {
+          "clientId": "10089-178023974056058515-",
+          "status": "succeed",
+          "imgUrls": [
+            "https://genai.holopix.cn/2026-05-31/17802397406361780239785053-b3a6c7f296e2abc92077e8f9e5f9d665_00001_.png"
+          ],
+          "content": null,
+          "statusMsg": null,
+          "createdTime": 1780239740000
+        }
+      ]
+    },
+    "success": true
+  },
+  "payload_note": {
+    "models": [
+      {
+        "modelId": "NT4HQ78U2Q",
+        "strength": 0.72
+      },
+      {
+        "modelId": "2KG56CLB2X",
+        "strength": 0.38
+      },
+      {
+        "modelId": "SNGA67Z9W3",
+        "strength": 0.3
+      }
+    ],
+    "has_ref": false,
+    "referenceWeight": null,
+    "hdFix": null,
+    "hdScale": null
+  }
+}

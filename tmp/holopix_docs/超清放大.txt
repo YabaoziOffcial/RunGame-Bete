@@ -1,0 +1,77 @@
+
+
+===== PAGE 1 =====
+超清放⼤
+超清放⼤
+创建任务
+⽹络协议 请求地址 请求⽅法 请求格式 响应格式
+https /v1/im ages/generations/
+ultraIm g
+POST application/json application/json
+请求头
+字段 值 描述
+Content-Type application/json application/json
+Authorization 鉴权信息，参考接⼝鉴权 鉴权信息，参考接⼝鉴权
+超清放⼤
+字段 类型 必填 默认值 描述
+sourceIm age string 是 / 参考图⽚
+•
+⽀持传⼊图⽚U RL（确保可访问）
+•
+图⽚格式⽀持.jpg/.jpeg/.png
+•
+图⽚⽂件⼤⼩不能超过10M B，图⽚分辨率不⼩
+于300*300px，图⽚宽⾼⽐要在1:6之内
+•
+将会按照图⽚的⽐例进⾏⽣成
+hdScale int 是 1.5 ⾼清修复倍数
+•
+会根据选择的⾼清倍数进⾏⽣成
+•
+枚举值：1.5（1.5倍⾼清放⼤）,2（2倍⾼清放
+⼤）
+请求⽰例
+
+
+
+===== PAGE 2 =====
+J SON{ 
+        "data": { 
+                "sourceImage": "https://pino-img.yingzhongshare.com/2025-08-
+04/1754302528883-t2uy.png" 
+                "hdScale": 1.5, 
+        } 
+} 
+响应参数
+字段 参数说明 类型
+code 错误代码 int
+clientId ⼈物ID string
+status ⽣图状态 string
+m sg 错误信息 string
+success 是否成功 bool
+响应⽰例
+代码块
+{ 
+        "code": 0, 
+        "data": { 
+                "clientId": "", 
+                "status": "" 
+        }, 
+        "msg": "", 
+        "success": true 
+} 
+1
+2
+3
+4
+5
+6
+1
+2
+3
+4
+5
+6
+7
+8
+9

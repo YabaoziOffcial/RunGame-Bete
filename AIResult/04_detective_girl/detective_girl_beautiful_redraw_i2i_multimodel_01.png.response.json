@@ -1,0 +1,27 @@
+{
+  "attempt": "i2i_weight_3",
+  "create": {
+    "msg": "创意草图权重不正确",
+    "code": -1,
+    "data": null,
+    "success": false
+  },
+  "payload_note": {
+    "models": [
+      {
+        "modelId": "NT4HQ78U2Q",
+        "strength": 0.7
+      },
+      {
+        "modelId": "2KG56CLB2X",
+        "strength": 0.25
+      },
+      {
+        "modelId": "SNGA67Z9W3",
+        "strength": 0.2
+      }
+    ],
+    "imageMode": "colorSketch",
+    "imageWeight": 3
+  }
+}

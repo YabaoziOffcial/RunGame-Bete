@@ -7,7 +7,7 @@ public class GameController : YBZ.Design.Singleton<GameController>
     private GameModel m_Model;
     public GameModel Model => m_Model;
     public Player Player { get; private set; }
-
+    public bool IsGameOver { get; private set; }
     private EnemySpawnConfigSO m_EnemySpawnConfig;
     private readonly List<EnemySpawnRuntime> m_EnemySpawnRuntimes = new List<EnemySpawnRuntime>();
 
@@ -17,13 +17,15 @@ public class GameController : YBZ.Design.Singleton<GameController>
         m_Model = new GameModel();
         m_Model.SetStartGameTime(Time.time);
         m_Model.SetStartTime(System.DateTimeOffset.UtcNow.ToUnixTimeMilliseconds());
-        InitEnemySpawnRuntimes();
-        Player = GameObject.FindObjectOfType<Player>();
+        
+        
+        GameStart();
     }
 
 
     public void Update()
     {
+        if (IsGameOver) return;
         UpdateEnemySpawnRules();
     }
 
@@ -90,10 +92,24 @@ public class GameController : YBZ.Design.Singleton<GameController>
         runtime.RemainingCount--;
     }
 
+    public void GameStart()
+    {
+        IsGameOver = false;
+        InitEnemySpawnRuntimes();
+        Player = GameObject.FindObjectOfType<Player>();
+
+        UIManager.Instance.OpenUI<GamePanel>();
+    }
+
+
     public void GameOver()
     {
         Debug.Log("GameOver");
-        UIManager.Instance.OpenUI<GameOverView>(); 
+        if (!IsGameOver)
+        {
+            IsGameOver = true;
+            UIManager.Instance.OpenUI<GameOverView>();
+        }
     }
 
     // 在摄像机视野外四周随机取一个出生点

@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // 普通的子弹，打到人之后就会回收
-public class WeaponCommonBullet : MonoBehaviour
+public class WeaponCommonBullet : ThingBase
 {
-    // 自动补碰撞体时使用的默认半径
-    private const float ColliderRadius = 0.1f;
     // 飞行方向
     private Vector2 m_Direction;
     // 飞行速度
@@ -17,9 +13,10 @@ public class WeaponCommonBullet : MonoBehaviour
     private float m_Damage;
     private EquipBase m_SourceEquip;
 
-    // 初始化物理和触发器碰撞
     private void Awake()
     {
+        interactable = false;
+
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb == null)
         {
@@ -28,20 +25,37 @@ public class WeaponCommonBullet : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Kinematic;
         rb.gravityScale = 0f;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
-       
     }
 
-    // 发射前写入本次子弹参数
     public void Init(Vector2 direction, float speed, float lifeTime, float damage, EquipBase sourceEquip = null)
     {
+        ClearCallbacks();
         m_Direction = direction.sqrMagnitude > 0f ? direction.normalized : Vector2.right;
         m_Speed = speed;
         m_LifeTimer = lifeTime;
         m_Damage = damage;
         m_SourceEquip = sourceEquip;
+        RegisterCollisionCallbacks();
     }
 
-    // 推进子弹并检查生命周期
+    private void RegisterCollisionCallbacks()
+    {
+        OnTriggerEnter2DCallBack = OnTriggerEnterHandler;
+        OnCollisionEnter2DCallBack = OnCollisionEnterHandler;
+    }
+
+    private void OnTriggerEnterHandler(ThingBase thing, Collider2D other)
+    {
+        Vector3 hitPosition = other.ClosestPoint(transform.position);
+        HitEnemy(other.GetComponent<Enemy>(), hitPosition);
+    }
+
+    private void OnCollisionEnterHandler(ThingBase thing, Collision2D collision)
+    {
+        Vector3 hitPosition = collision.contactCount > 0 ? collision.GetContact(0).point : transform.position;
+        HitEnemy(collision.collider.GetComponent<Enemy>(), hitPosition);
+    }
+
     private void Update()
     {
         transform.position += (Vector3)(m_Direction * m_Speed * Time.deltaTime);
@@ -52,23 +66,6 @@ public class WeaponCommonBullet : MonoBehaviour
         }
     }
 
-    // 触发器命中敌人
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        Enemy enemy = other.GetComponent<Enemy>();
-        Vector3 hitPosition = other.ClosestPoint(transform.position);
-        HitEnemy(enemy, hitPosition);
-    }
-
-    // 碰撞器命中敌人
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Enemy enemy = collision.collider.GetComponent<Enemy>();
-        Vector3 hitPosition = collision.contactCount > 0 ? collision.GetContact(0).point : transform.position;
-        HitEnemy(enemy, hitPosition);
-    }
-
-    // 对敌人造成伤害后回收子弹
     private void HitEnemy(Enemy enemy, Vector3 hitPosition)
     {
         if (enemy == null) return;
@@ -77,9 +74,9 @@ public class WeaponCommonBullet : MonoBehaviour
         Recycle();
     }
 
-    // 回收到对象池
     private void Recycle()
     {
+        ClearCallbacks();
         ObjectPool.PushObj(gameObject);
     }
 }

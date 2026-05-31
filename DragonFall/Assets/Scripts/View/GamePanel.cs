@@ -18,7 +18,7 @@ public class GamePanel : Y_PanelBase
     [SerializeField] Text m_ReselectText, m_SkipText, m_ExcludeText;
     #endregion
 
-    [SerializeField] Transform m_SelectPanel;
+    [SerializeField] Transform m_SelectView;
 
     private new void Awake()
     {
@@ -38,12 +38,13 @@ public class GamePanel : Y_PanelBase
         UpdatePlayerExAndLv();
         UpdatePlayerEquip();
 
-        m_SelectPanel.SetActive(false);
+        m_SelectView.SetActive(false);
 
         GameController.Instance.Model.LevelUpCallBack += () =>
         {
-            m_SelectPanel.SetActive(true);
-            // 更新数值
+            // 打开选择技能的面板
+            m_SelectView.SetActive(true);
+            
         };
     }
 

@@ -1,0 +1,13 @@
+{
+  "msg": "成功",
+  "code": 0,
+  "data": {
+    "apiId": 10089,
+    "apiQps": 1,
+    "points": 2500,
+    "availablePoints": 2500,
+    "startTime": "2026-05-31 16:05:18",
+    "endTime": "2026-06-30 16:05:18"
+  },
+  "success": true
+}

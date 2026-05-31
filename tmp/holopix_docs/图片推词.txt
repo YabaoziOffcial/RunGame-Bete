@@ -1,0 +1,58 @@
+
+
+===== PAGE 1 =====
+图⽚推词
+⼈物姿态预处理
+创建任务
+⽹络协议 请求地址 请求⽅法 请求格式 响应格式
+https /v1/im ages/generations/i
+m agetoProm pt
+POST application/json application/json
+请求头
+字段 值 描述
+Content-Type application/json application/json
+Authorization 鉴权信息，参考接⼝鉴权 鉴权信息，参考接⼝鉴权
+图⽚推词
+字段 类型 必填 默认值 描述
+sourceIm a
+ge
+string 是
+
+⽆ 参考图⽚
+•
+⽀持传⼊图⽚Base64编码或图⽚U RL（确保可访
+问）
+•
+图⽚格式⽀持.jpg/.jpeg/.png
+•
+图⽚⽂件⼤⼩不能超过10M B，图⽚分辨率不⼩于
+300*300px，图⽚宽⾼⽐要在1:2.5~2.5:1之间
+prom ptPl
+an
+int 是 ⽆ 图⽚推词模板
+•
+选择对应适合的推词模板，将对您上传的图⽚进⾏
+推词处理
+•
+枚举值：1,2具体推词模板为
+1. Holopix-V1模型[通⽤提⽰词]
+2. Holopix-A1模型及SDXL、其他模型[通⽤提⽰词]
+
+
+
+===== PAGE 2 =====
+请求⽰例
+J SON
+{ 
+        "data": { 
+                "sourceImage": "https://pino-img.yingzhongshare.com/2025-08-
+04/1754302528883-t2uy.png" 
+                "promptPlan": 4, 
+        } 
+} 
+1
+2
+3
+4
+5
+6

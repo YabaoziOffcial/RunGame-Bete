@@ -1,0 +1,120 @@
+
+
+===== PAGE 1 =====
+线稿提取
+创建任务
+⽹络协议 请求地址 请求⽅法 请求格式 响应格式
+https /v1/im ages/generations/l
+ineExtract
+POST application/json application/json
+请求头
+字段 值 描述
+Content-Type application/json application/json
+Authorization 鉴权信息，参考接⼝鉴权 鉴权信息，参考接⼝鉴权
+线稿提取
+线稿提取
+字段 类型 必填 默认值 描述
+seed int 是 -1 随机种⼦
+•
+-1为随机，亦可输⼊具体数值进⾏⽣成
+sourceIm age string 是 ⽆ 参考图⽚
+•
+⽀持传⼊图⽚U RL（确保可访问）
+•
+图⽚格式⽀持.jpg/.jpeg/.png
+•
+图⽚⽂件⼤⼩不能超过10M B，图⽚分辨率不⼩
+于300*300px，图⽚宽⾼⽐要在1:2.5~2.5:1之
+间
+im ageLinearSt
+rength
+int 是
+
+0.5 线稿提取精细度
+•
+取值范围：[0,1]，数值越⼤参考强度越⼤
+hdFix bool 可选 0 是否开启⾼清修复
+•
+枚举值：0（关闭）,1（开启）
+
+
+
+===== PAGE 2 =====
+hdScale
+
+int 否 1.5 ⾼清修复
+•
+会根据选择的⾼清倍数进⾏⽣成
+•
+枚举值：0,(不启⽤)1.5(1.5倍⽣成),2(2倍⽣成)
+batchSize
+
+int
+
+否 1 出图数
+•
+最多⽀持2张
+
+传⼊图⽚⽰例
+字段 传⼊⽰例 效果 备注
+sourceIm age
+
+•
+图⽚格式⽀持.jpg/
+.jpeg/.png
+•
+对原图像⽣成⿊⽩线稿
+图
+
+请求⽰例
+J SON
+{ 
+        "data": { 
+                "sourceImage": "https://pino-img.yingzhongshare.com/2025-08-
+04/1754302528883-t2uy.png" 
+                "imageLinearStength": 0.5, 
+                "hdScale": 1.5, 
+                "seed": -1, 
+                "hdFix":false, 
+        } 
+} 
+响应参数
+字段 参数说明 类型
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+
+===== PAGE 3 =====
+code 错误代码 int
+clientId ⼈物ID string
+status ⽣图状态 string
+m sg 错误信息 string
+success 是否成功 bool
+响应⽰例
+代码块
+{ 
+        "code": 0, 
+        "data": { 
+                "clientId": "", 
+                "status": "" 
+        }, 
+        "msg": "", 
+        "success": true 
+} 
+1
+2
+3
+4
+5
+6
+7
+8
+9

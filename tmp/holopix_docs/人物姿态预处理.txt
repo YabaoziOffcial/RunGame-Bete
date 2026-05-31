@@ -1,0 +1,47 @@
+
+
+===== PAGE 1 =====
+⼈物姿态预处理
+⼈物姿态预处理
+创建任务
+⽹络协议 请求地址 请求⽅法 请求格式 响应格式
+https /v1/im ages/generations/
+poseprocess
+POST application/json application/json
+请求头
+字段 值 描述
+Content-Type application/json application/json
+Authorization 鉴权信息，参考接⼝鉴权 鉴权信息，参考接⼝鉴权
+⼈物姿态预处理
+字段 类型 必填 默认值 描述
+sourceIm a
+ge
+string 是
+
+⽆ 参考图⽚
+•
+⽀持传⼊图⽚U RL（确保可访问）
+•
+图⽚格式⽀持.jpg/.jpeg/.png
+•
+图⽚⽂件⼤⼩不能超过10M B，图⽚分辨率不⼩于
+300*300px，图⽚宽⾼⽐要在1:6之内
+•
+将会按照图⽚的⽐例进⾏⽣成
+请求⽰例
+J SON
+{ 
+        "data": { 
+                "sourceImage": "https://pino-img.yingzhongshare.com/2025-08-
+04/1754302528883-t2uy.png" 
+1
+2
+3
+
+
+
+===== PAGE 2 =====
+        } 
+} 
+4
+5

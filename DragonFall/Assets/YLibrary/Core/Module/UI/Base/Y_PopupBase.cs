@@ -116,6 +116,7 @@ public class Y_PopupBase : ViewBase
         m_CloseBtn ??= transform.Find("CloseBtn")?.GetComponent<Button>();
         m_FinishBtn ??= transform.Find("FinishBtn")?.GetComponent<Button>();
         m_CancelBtn ??= transform.Find("CancelBtn")?.GetComponent<Button>();
+        
         transform.Find("BG").TryGetComponent<CanvasGroup>(out cgBG);
         cgBG ??=transform.GetComponent<CanvasGroup>();
         animator ??= GetComponent<Animator>();

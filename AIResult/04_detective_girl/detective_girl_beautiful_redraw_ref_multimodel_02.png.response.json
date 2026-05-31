@@ -1,0 +1,26 @@
+{
+  "attempt": "ref_weight_1_retry",
+  "create": {
+    "msg": "系统繁忙，请稍后重试",
+    "code": -1,
+    "data": null,
+    "success": false
+  },
+  "payload_note": {
+    "models": [
+      {
+        "modelId": "NT4HQ78U2Q",
+        "strength": 0.78
+      },
+      {
+        "modelId": "2KG56CLB2X",
+        "strength": 0.25
+      },
+      {
+        "modelId": "SNGA67Z9W3",
+        "strength": 0.18
+      }
+    ],
+    "referenceWeight": 1
+  }
+}

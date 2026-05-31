@@ -1,0 +1,628 @@
+
+
+===== PAGE 1 =====
+⼀键成稿
+⼀键成稿-⽂⽣图
+创建任务
+⽹络协议 请求地址 请求⽅法 请求格式 响应格式
+https /v1/im ages/generations/t
+2i
+POST application/json application/json
+请求头
+字段 值 描述
+Content-Type application/json application/json
+Authorization 鉴权信息，参考接⼝鉴权 鉴权信息，参考接⼝鉴权
+⼀键成稿⽂⽣图参数
+⼀键成稿-⽂⽣图
+字段 类型 必填 默认值 描述
+m odelDetailList list 是  
+ m odelId
+
+int 是 ⽆ 模型U U ID值
+•
+枚举值：82751128
+•
+不同基础模型间不能相互叠加，具体模
+型规则可以从[⻛格模型叠加规则]查看
+•
+具体账号可⽤的模型可使⽤[查询账号
+可⽤模型列表]进⾏查询
+•
+⻛格模型列表最多为5个
+ strength num ber
+
+是
+
+1 ⻛格模型的强度控制
+•
+取值范围：[0,1],数值越⼤参考强度越
+⼤
+
+
+
+===== PAGE 2 =====
+注：模型类型为[组合⻛格模型]的情况下，
+不⽀持模型强度控制
+prom pt string 是
+
+⽆ 正向⽂本提⽰词
+•
+不能超过2000个字符
+negativeProm pt string 可选
+
+⽆ 负向⽂本提⽰词
+•
+不能超过2000个字符
+注：基础模型为Holopix-V1的情况下，不
+⽀持负向提⽰词
+seed int 是 -1 随机种⼦
+•
+-1为随机，亦可输⼊具体数值进⾏⽣成
+im ageG uidanceW eigh
+ts
+
+int 可选 6 画⾯指导权重
+•
+取值范围：[3-6],数值越⼤⽣成的内容
+越整洁准确
+•
+当模型类型为Holopix-V1时为必填参数
+aspectRatios
+
+string 可选 16:9 ⽣成图⽚的画⾯纵横⽐（宽:⾼）
+•
+枚举值：16:9,9:16,1:1,4:3,3:4,3:2,
+2:3,21:9
+faceDetail bool 可选 0 脸部修复
+•
+开启后将在⽣成时额外对脸部进⾏细化
+⽣成
+•
+枚举值：0（关闭）,1（开启）
+hdFix
+
+bool
+
+可选 0 ⾼清修复
+•
+开启后会根据输⼊的⾼清倍数进⾏⽣成
+•
+枚举值：0（关闭）,1（开启）
+•
+当模型类型为Holopix-A1、SDXL及其
+他模型时⽣效
+ hdScale int 是 1.5 ⾼清修复倍数
+•
+会根据选择的⾼清倍数进⾏⽣成
+•
+枚举值：1.5（1.5倍⾼清放⼤）,2（2倍
+⾼清放⼤）
+•
+当开启hdFix参数后，该参数必填
+•
+当模型类型为Holopix-A1、SDXL及其
+他模型时⽣效
+
+
+
+===== PAGE 3 =====
+sim pleBackground bool 可选 0 简单画⾯背景
+•
+枚举值：0（关闭）,1（开启）
+•
+不⽀持HolopixV1模型
+enablePerturb bool 可选 0 画⾯增强
+•
+枚举值：0（关闭）,1（开启）
+•
+当模型类型为Holopix-A1、Pony、
+Anim agine模型时⽣效
+ perturb int 是 5 画⾯增强强度
+•
+取值范围:[0-5],步⻓0.1,数值越⼤画⾯
+增强幅度越⼤
+•
+当开启enablePerturb参数后，该参数
+必填
+characterPose
+
+string 可选 ⽆ ⻆⾊姿态
+•
+⽀持传⼊图⽚U RL（确保可访问）
+•
+图⽚格式⽀持.jpg/.jpeg/.png
+•
+图⽚⽂件⼤⼩不能超过10M B，图⽚分
+辨率不⼩于300*300px，图⽚宽⾼⽐要
+在1:2.5~2.5:1之间
+•
+当填⼊该参数后，将会按照图⽚的⽐例
+进⾏⽣成，aspectRatio参数将失效
+•
+当模型类型为Holopix-A1、SDXL及其
+他模型时⽣效
+batchSize int 否
+
+1 出图数
+•
+V1模型出图数最多⽀持2张
+•
+⾮V1模型出图数最多⽀持4张
+⼀键成稿-⽂⽣图-形象样式参考额外参数
+形象样式参考额外参数
+字段 类型 必填 默认值 描述
+im ageReference
+
+string 是
+
+⽆ 形象样式参考图像
+•
+⽀持传⼊图⽚U RL（确保可访问）
+•
+图⽚格式⽀持.jpg/.jpeg/.png
+
+
+
+===== PAGE 4 =====
+•
+图⽚⽂件⼤⼩不能超过10M B，图⽚分辨
+率不⼩于300*300px，图⽚宽⾼⽐要在
+1:6之内
+•
+将会按照图⽚的⽐例进⾏⽣成
+•
+当填⼊该参数后，将会按照图⽚的⽐例
+进⾏⽣成，aspect_ratio参数将失效
+•
+当模型类型为Holopix-A1及SDXL时⽣效
+referenceM ode
+
+string 是 standard 形象样式参考模式
+•
+枚举值：standard（标准参考）,color
+（氛围颜⾊）
+•
+im age_reference参数不为空时，当前
+参数必填
+referenceW eight
+
+int 是 0.8 形象样式参考权重
+•
+取值范围：[0,1]，数值越⼤参考强度越
+⼤
+•
+im age_reference参数不为空时，当前
+参数必填
+请求⽰例
+J SON
+{ 
+        "data": { 
+                "modelDetailList": [ 
+                        { 
+                                "modelId": 82751128, 
+                                "strength": 0.9 
+                        } 
+                ], 
+                "prompt": "", 
+                "negativePrompt": "", 
+                "aspectRatios": "16:9", 
+                "enablePerturb": true, 
+                "perturb": 5, 
+                "faceDetail": true, 
+                "hdFix": true, 
+                "hdScale": 1.5, 
+                "imageGuidanceWeights": 0, 
+                "simpleBackground":false 
+                "imageReference": "", 
+                "referenceMode": "", 
+                "referenceWeight": 0, 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+
+
+
+===== PAGE 5 =====
+                "seed": -1 
+                "characterPose": "", 
+        } 
+} 
+响应参数
+字段 参数说明 类型
+code 错误代码 int
+clientId ⼈物ID string
+status ⽣图状态 string
+m sg 错误信息 string
+success 是否成功 bool
+响应⽰例
+代码块
+{ 
+        "code": 0, 
+        "data": { 
+                "clientId": "", 
+                "status": "" 
+        }, 
+        "msg": "", 
+        "success": true 
+} 
+⼀键成稿图⽣图
+创建任务
+⽹络协议 请求地址 请求⽅法 请求格式 响应格式
+https /v1/im ages/generations/i
+2i
+POST application/json application/json
+22
+23
+24
+25
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+
+===== PAGE 6 =====
+请求头
+字段 值 描述
+Content-Type application/json application/json
+Authorization 鉴权信息，参考接⼝鉴权 鉴权信息，参考接⼝鉴权
+⼀键成稿图⽣图参数
+⼀键成稿-图⽣图
+字段 类型 必填 默认值 描述
+m odelDetailList list 是  
+ m odelId
+
+integer(int
+64)
+是 ⽆ 模型U U ID值
+•
+枚举值：82751128
+•
+不同基础模型间不能相互叠加，具体模
+型规则可以从[⻛格模型叠加规则]查看
+•
+具体账号可⽤的模型可使⽤[查询账号
+可⽤模型列表]进⾏查询
+•
+⻛格模型列表最多为5个
+ strength num ber(d
+ouble)
+是 1 ⻛格模型的强度控制
+•
+取值范围：[0,1],数值越⼤参考强度越
+⼤
+注：模型类型为[组合⻛格模型]的情况下，
+不⽀持模型强度控制
+prom pt string 是
+
+⽆ 正向⽂本提⽰词
+•
+不能超过2000个字符
+negativeProm pt string 可选
+
+⽆ 负向⽂本提⽰词
+•
+不能超过2000个字符
+注：基础模型为Holopix-V1的情况下，不
+⽀持负向提⽰词
+seed int 是
+
+-1 随机种⼦
+•
+-1为随机，亦可输⼊具体数值进⾏⽣成
+int 可选 6 画⾯指导权重
+
+
+
+===== PAGE 7 =====
+im ageG uidanceW eigh
+ts
+
+•
+取值范围：[3-6],数值越⼤⽣成的内容
+越整洁准确
+•
+当模型类型为Holopix-V1时为必填参数
+sourceIm age
+
+string 是 ⽆ 参考图⽚
+•
+⽀持传⼊图⽚U RL（确保可访问）
+•
+图⽚格式⽀持.jpg/.jpeg/.png
+•
+图⽚⽂件⼤⼩不能超过10M B，图⽚分
+辨率不⼩于300*300px，图⽚宽⾼⽐要
+在1:6之内
+•
+将会按照图⽚的⽐例进⾏⽣成
+im ageM ode
+
+string 是 ⽆ 参考模式
+•
+枚举值：linerSketch（线稿参
+考）,colorSketch（⾊块草稿）
+im ageColor bool 是 true 参考颜⾊
+•
+枚举值：true（参考颜⾊）,false（不
+参考颜⾊）
+im ageW eight int 是 0.5 图⽚参考权重
+•
+取值范围：[0,1]，数值越⼤参考强度越
+⼤
+faceDetail bool 可选 0 脸部修复
+•
+开启后将在⽣成时额外对脸部进⾏细化
+⽣成
+•
+枚举值：0（关闭）,1（开启）
+hdFix
+
+bool
+
+可选 0 ⾼清修复
+•
+开启后会根据输⼊的⾼清倍数进⾏⽣成
+•
+枚举值：0（关闭）,1（开启）
+•
+当模型类型为Holopix-A1、SDXL及其
+他模型时⽣效
+ hdScale int 是 1.5 ⾼清修复倍数
+•
+会根据选择的⾼清倍数进⾏⽣成
+•
+枚举值：1.5（1.5倍⾼清放⼤）,2（2倍
+⾼清放⼤）
+•
+当开启hdFix参数后，该参数必填
+•
+当模型类型为Holopix-A1、SDXL及其
+他模型时⽣效
+
+
+
+===== PAGE 8 =====
+sim pleBackground bool 可选 0 简单画⾯背景
+•
+枚举值：0（关闭）,1（开启）
+•
+不⽀持HolopixV1模型
+enablePerturb bool 可选 0 画⾯增强
+•
+枚举值：0（关闭）,1（开启）
+•
+当模型类型为Holopix-A1、Pony、
+Anim agine模型时⽣效
+ perturb int 可选 5 画⾯增强强度
+•
+取值范围:[0-5],步⻓0.1,数值越⼤画⾯
+增强幅度越⼤
+•
+当开启enablePerturb参数后，该参数
+必填
+batchSize int 否
+
+1 出图数
+•
+V1模型出图数最多⽀持2张
+•
+⾮V1模型出图数最多⽀持4张
+⼀键成稿图⽣图-形象样式参考额外参数
+形象样式参考额外参数
+字段 类型 必填 默认值 描述
+im ageReference
+
+string 是
+
+⽆ 形象样式参考图像
+•
+⽀持传⼊图⽚Base64编码或图⽚U RL
+（确保可访问）
+•
+图⽚格式⽀持.jpg/.jpeg/.png
+•
+图⽚⽂件⼤⼩不能超过10M B，图⽚分辨
+率不⼩于300*300px，图⽚宽⾼⽐要在
+1:2.5~2.5:1之间
+•
+模型类型为sdxl、pony、anim agine、
+A1时⽣效
+referenceM ode string 是 standard 形象样式参考模式
+•
+枚举值：standard（标准参考）,color
+（氛围颜⾊）
+•
+模型类型为sdxl、pony、anim agine、
+A1时⽣效
+
+
+
+===== PAGE 9 =====
+referenceW eight int 是 0.8 形象样式参考权重
+•
+取值范围：[0,1]，数值越⼤参考强度越
+⼤
+•
+模型类型为sdxl、pony、anim agine、
+A1时⽣效
+传⼊图⽚⽰例
+字段 传⼊⽰例 效果 备注
+characterPose
+• 图⽚传⼊必须为
+DwPose格式的图⽚
+•
+图⽚格式⽀持.jpg/
+.jpeg/.png
+•
+可以通过[⼈物姿态预处
+理]功能处理图⽚
+im ageReference
+↑以standard（标准）模
+式下进⾏参考
+•
+标准参考模式下会更多
+的考虑整体图⽚的内容
+•
+更适合有具体思路或具
+体画⾯创作时使⽤
+
+im ageReference
+• 以氛围颜⾊模式下进⾏
+参考会更多的考虑原图
+像中的氛围颜⾊
+•
+更适合参考原图像中的
+颜⾊时使⽤
+
+
+
+
+===== PAGE 10 =====
+↑以color（氛围颜⾊）模
+式下进⾏参考
+im ageM ode
+
+↑以linerSketch（线稿参
+考）模式下进⾏参考
+
+•
+以线稿参考模式下进⾏
+参考会以线稿边缘作为
+控制效果
+•
+更适合以⼿绘线稿或重
+新上⾊时使⽤
+im ageM ode
+↑以colorSketch（⾊块草
+稿）模式下进⾏参考
+
+•
+以⾊块草稿模式下进⾏
+参考会更多的考虑原图
+像中⾊块与轮廓
+•
+更适合参考原图像中的
+颜⾊并控制轮廓进⾏⽣
+成时使⽤
+
+请求头
+字段 类型 必填 默认值 描述
+task_id string 必须 ⽆ 图⽚⽣成的任务ID
+请求路径参数，直接将值填写在请求路径中
+
+
+
+===== PAGE 11 =====
+请求⽰例
+J SON
+{ 
+        "data": { 
+                "modelDetailList": [ 
+                        { 
+                                "modelId": 82751128, 
+                                "strength": 0.9 
+                        } 
+                ], 
+                "prompt": "", 
+                "negativePrompt": "", 
+                "enablePerturb": true, 
+                "perturb": 5, 
+                "faceDetail": true, 
+                "hdFix": true, 
+                "hdScale": 1.5, 
+                "imageGuidanceWeights": 0, 
+                "simpleBackground":false 
+                "sourceImage": "https://pino-img.yingzhongshare.com/2025-08-
+04/1754302528883-t2uy.png" 
+                "imageMode": "colorSketch", 
+                "imageColor": true, 
+                "imageWeight": 0.8, 
+                "imageReference": "", 
+                "referenceMode": "", 
+                "referenceWeight": 0, 
+                "seed": -1, 
+        } 
+} 
+响应参数
+字段 参数说明 类型
+code 错误代码 int
+clientId ⼈物ID string
+status ⽣图状态 string
+m sg 错误信息 string
+success 是否成功 bool
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+
+
+
+===== PAGE 12 =====
+响应⽰例
+代码块
+{ 
+        "code": 0, 
+        "data": { 
+                "clientId": "", 
+                "status": "" 
+        }, 
+        "msg": "", 
+        "success": true 
+} 
+1
+2
+3
+4
+5
+6
+7
+8
+9

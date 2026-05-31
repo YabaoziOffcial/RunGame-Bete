@@ -1,0 +1,150 @@
+
+
+===== PAGE 1 =====
+⽣图任务查询进度协议
+创建任务
+⽹络协议 请求地址 请求⽅法 请求格式 响应格式
+https /v1/im ages/generations/
+queryProgress
+POST application/json application/json
+请求头
+字段 值 描述
+Content-Type application/json application/json
+Authorization 鉴权信息，参考接⼝鉴权 鉴权信息，参考接⼝鉴权
+查询任务
+查询任务
+字段 类型 必填 默认值 描述
+clientIds list 是 ⽆ ⽣图任务提交成功响应信息体⾥⾯任务ID列表，最
+多1次查询10个⽣图任务。
+请求⽰例
+J SON
+{ 
+    "data":{ 
+        "clientIds":[ 
+            "10017-176371296695583034-"] 
+    } 
+} 
+响应参数
+1
+2
+3
+4
+5
+6
+
+
+
+===== PAGE 2 =====
+字段 参数说明 类型 描述
+code 错误代码 int 
+m sg 错误信息 string 
+clientList 任务状态列表 list list内部存放1~10个client_task对象
+client_task
+字段 参数说明 类型 描述
+clientId 任务ID string 
+status ⽣图状态 string //任务状态，枚举值：subm itted（已提交）、
+processing（处理中）、succeed（成功）、failed（失
+败）
+im gU rls 图⽚下载地址 list 如果status=succeed时，返回url地址，地址有效期7天
+content 图⽚推词⽂案 string 使⽤图⽚推词才会有数据，否则为空
+statusM sg 状态状态描述 string //任务状态信息，当任务失败时展⽰失败原因（如触发平
+台的内容⻛控等）
+createdTim
+e
+任务创建时间 long 任务创建时间，U nix时间戳、单位m s
+响应⽰例
+J SON
+{ 
+    "msg": " 成功 ", 
+    "code": 0, 
+    "data": { 
+        "clientList": [ 
+            { 
+                "clientId": "1-175496777499230673-test", 
+                "statusMsg": null, 
+                "imgUrls": [ 
+                    "https://pino-img.yingzhongshare.com/2025-08-
+12/17549677751001754967979506-bac08b623f2977ebbc40ed304bd4870d_00001_.png" 
+                ], 
+                "content": null, 
+                "createdTime": 1754967775000, 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+
+
+
+===== PAGE 3 =====
+                "status": "succeed" 
+            }, 
+            { 
+                "clientId": "1-175456863716797871-test", 
+                "statusMsg": " ⽣图失败 ", 
+                "imgUrls": null, 
+                "content": null, 
+                "createdTime": 1754568637000, 
+                "status": "failed" 
+            }, 
+            { 
+                "clientId": "1-175801676558361871-test", 
+                "statusMsg": null, 
+                "imgUrls": null, 
+                "createdTime": 1758016765651, 
+                "content": "police, police uniform, uniform, 1boy, male focus, 
+handcuffs, cuffs, solo, policeman, police badge, belt, brown hair, 
+policewoman, walkie-talkie, blue pants, watch, badge, pocket, blue shirt, 
+pants, tonfa, wristwatch, shirt, short sleeves", 
+                "status": "succeed" 
+            } 
+            { 
+                "clientId": "1-175438822705849777-dev", 
+                "statusMsg": null, 
+                "imgUrls": null, 
+                "content": null, 
+                "createdTime": 1754388236000, 
+                "status": "processing" 
+            } 
+        ] 
+    }, 
+    "success": true 
+} 
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43

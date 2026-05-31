@@ -1,0 +1,53 @@
+
+
+===== PAGE 1 =====
+账号信息查询
+查询账号下资源包列表及余量
+注：该接⼝免费调⽤，⽅便您查询账号下的资源包列表和余量，但请您注意控制请求速率
+（QPS<=1）
+⽹络协议 请求地址 请求⽅法 请求格式 响应格式
+https /v1/apiU ser/rights POST application/json application/json
+请求头
+字段 值 描述
+Content-Type application/json 数据交换格式
+Authorization 鉴权信息，参考接⼝鉴权 鉴权信息，参考接⼝鉴权
+响应参数
+字段 类型 描述
+apiId int 开发者id
+apiQps int 接⼝QPS
+availablePoints int 可⽤积分
+endTim e string 积分有效期结束时间
+points int 积分
+startTim e string 积分有效期开始时间
+响应⽰例
+J SON
+
+
+
+===== PAGE 2 =====
+{ 
+        "code": 0, 
+        "data": { 
+                "apiId": 0,  
+                "apiQps": 0, 
+                "availablePoints": 0, 
+                "endTime": "", 
+                "points": 0, 
+                "startTime": "" 
+        }, 
+        "msg": "", 
+        "success": true 
+} 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
