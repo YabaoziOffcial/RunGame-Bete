@@ -16,7 +16,7 @@ MonoBehaviour:
   className: Weapon_1
   iconSprite: {fileID: 21300000, guid: a4d15ccbe46094345bdc5850d4c34985, type: 3}
   weaponName: Weapon_Sword
-  isPlayerChild: 1
+  isPlayerChild: 0
   bulletPrefab: {fileID: 4263278048633971554, guid: c03c9843f937d664c8b3c2c40d462f45, type: 3}
   levels:
   - fireInterval: 2.5

@@ -25,8 +25,8 @@ public class PathConst
         return $"Config/{name}";
     }
 
-    public static string GetEnemySpawnConfigPath()
+    public static string GetEnemySpawnConfigPath(string name)
     {
-        return "Config/EnemySpawnConfig";
+        return $"Config/EnemySpawnConfig/{name}";
     }
 }

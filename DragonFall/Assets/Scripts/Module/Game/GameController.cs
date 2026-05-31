@@ -8,8 +8,6 @@ public class GameController : YBZ.Design.Singleton<GameController>
     public GameModel Model => m_Model;
     public Player Player { get; private set; }
 
-    private float m_EnemySpawnTimer;
-    private GameObject m_EnemyPrefab;
     private EnemySpawnConfigSO m_EnemySpawnConfig;
     private readonly List<EnemySpawnRuntime> m_EnemySpawnRuntimes = new List<EnemySpawnRuntime>();
 
@@ -19,30 +17,20 @@ public class GameController : YBZ.Design.Singleton<GameController>
         m_Model = new GameModel();
         m_Model.SetStartGameTime(Time.time);
         m_Model.SetStartTime(System.DateTimeOffset.UtcNow.ToUnixTimeMilliseconds());
-        m_EnemySpawnConfig = ResourceManager.Instance.LoadRes<EnemySpawnConfigSO>(PathConst.GetEnemySpawnConfigPath());
         InitEnemySpawnRuntimes();
-        m_EnemyPrefab = ResourceManager.Instance.LoadRes<GameObject>(PathConst.GetEnemyPrefabPath("Enemy_1"));
-        m_EnemySpawnTimer = 0f;
         Player = GameObject.FindObjectOfType<Player>();
     }
 
 
     public void Update()
     {
-        if (m_EnemySpawnRuntimes.Count > 0)
-        {
-            UpdateEnemySpawnRules();    // 
-            return;
-        }
-
-        m_EnemySpawnTimer -= Time.deltaTime;
-        if (m_EnemySpawnTimer > 0f) return;
-        SpawnEnemy();
-        m_EnemySpawnTimer = GameConst.EnemySpawnInterval;
+        UpdateEnemySpawnRules();
     }
 
+    // 将配置表转换为本局运行时刷怪状态
     private void InitEnemySpawnRuntimes()
     {
+        m_EnemySpawnConfig = ResourceManager.Instance.LoadRes<EnemySpawnConfigSO>(PathConst.GetEnemySpawnConfigPath("Level1"));
         m_EnemySpawnRuntimes.Clear();
         if (m_EnemySpawnConfig == null || m_EnemySpawnConfig.rules == null) return;
 
@@ -50,20 +38,19 @@ public class GameController : YBZ.Design.Singleton<GameController>
         {
             EnemySpawnRule rule = m_EnemySpawnConfig.rules[i];
             if (rule == null || string.IsNullOrEmpty(rule.enemyName)) continue;
-
             m_EnemySpawnRuntimes.Add(new EnemySpawnRuntime(rule));
         }
     }
 
+    // 逐条更新刷怪规则：条件满足、数量未耗尽、冷却结束后生成
     private void UpdateEnemySpawnRules()
     {
         for (int i = 0; i < m_EnemySpawnRuntimes.Count; i++)
         {
             EnemySpawnRuntime runtime = m_EnemySpawnRuntimes[i];
-            runtime.CleanupInactiveEnemies();
 
             if (!CanSpawn(runtime.Rule)) continue;
-            if (runtime.Rule.maxAliveCount > 0 && runtime.AliveCount >= runtime.Rule.maxAliveCount) continue;
+            if (runtime.RemainingCount <= 0) continue;
 
             runtime.SpawnTimer -= Time.deltaTime;
             if (runtime.SpawnTimer > 0f) continue;
@@ -73,22 +60,21 @@ public class GameController : YBZ.Design.Singleton<GameController>
         }
     }
 
+    // 判断当前等级和游戏时间是否处于规则允许的生成区间
     private bool CanSpawn(EnemySpawnRule rule)
     {
         if (rule == null || m_Model == null) return false;
 
         float gameTime = Time.time - m_Model.StartGameTime;
-        return m_Model.Level >= rule.unlockLevel && gameTime >= rule.unlockGameTime;
+        if (m_Model.Level < rule.unlockLevel) return false;
+        if (rule.endLevel >= 0 && m_Model.Level > rule.endLevel) return false;
+        if (gameTime < rule.unlockGameTime) return false;
+        if (rule.endGameTime >= 0f && gameTime > rule.endGameTime) return false;
+
+        return true;
     }
 
-    private void SpawnEnemy()
-    {
-        if (m_EnemyPrefab == null || Camera.main == null) return;
-
-        GameObject enemy = ObjectPool.GetObj(m_EnemyPrefab);
-        enemy.transform.position = GetRandomSpawnPosition();
-    }
-
+    // 按指定规则生成敌人，并扣减该规则剩余生成数量
     private void SpawnEnemy(EnemySpawnRuntime runtime)
     {
         if (runtime == null || runtime.Rule == null || Camera.main == null) return;
@@ -101,7 +87,7 @@ public class GameController : YBZ.Design.Singleton<GameController>
 
         GameObject enemy = ObjectPool.GetObj(runtime.EnemyPrefab);
         enemy.transform.position = GetRandomSpawnPosition();
-        runtime.AliveEnemies.Add(enemy);
+        runtime.RemainingCount--;
     }
 
     public void GameOver()
@@ -110,6 +96,7 @@ public class GameController : YBZ.Design.Singleton<GameController>
         UIManager.Instance.OpenUI<GameOverView>(); 
     }
 
+    // 在摄像机视野外四周随机取一个出生点
     private Vector3 GetRandomSpawnPosition()
     {
         Camera mainCamera = Camera.main;
@@ -141,30 +128,23 @@ public class GameController : YBZ.Design.Singleton<GameController>
     }
 
 
+    // 单条刷怪规则在本局中的运行时状态
     private class EnemySpawnRuntime
     {
+        // 原始配置规则
         public EnemySpawnRule Rule { get; private set; }
+        // 当前规则距离下一次生成的倒计时
         public float SpawnTimer;
+        // 该规则对应的敌人预制体缓存
         public GameObject EnemyPrefab;
-        public readonly List<GameObject> AliveEnemies = new List<GameObject>();
-        public int AliveCount => AliveEnemies.Count;
+        // 该规则本局剩余可生成数量
+        public int RemainingCount;
 
         public EnemySpawnRuntime(EnemySpawnRule rule)
         {
             Rule = rule;
             SpawnTimer = 0f;
-        }
-
-        public void CleanupInactiveEnemies()
-        {
-            for (int i = AliveEnemies.Count - 1; i >= 0; i--)
-            {
-                GameObject enemy = AliveEnemies[i];
-                if (enemy == null || !enemy.activeInHierarchy)
-                {
-                    AliveEnemies.RemoveAt(i);
-                }
-            }
+            RemainingCount = rule.count;
         }
     }
 }
