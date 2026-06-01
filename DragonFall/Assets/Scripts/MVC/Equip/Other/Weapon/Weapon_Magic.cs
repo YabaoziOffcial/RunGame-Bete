@@ -91,10 +91,10 @@ public class Weapon_Magic : EquipBase
     // 查找最近的敌人
     private Transform FindNearestEnemy(Vector3 origin)
     {
-        var player = GameController.Instance.Player;
-        if (player == null) return null;
+        Transform playerTransform = GameController.Instance.PlayerTransform;
+        if (playerTransform == null) return null;
 
-        Collider2D playerCollider = player.GetComponent<Collider2D>();
+        Collider2D playerCollider = playerTransform.GetComponent<Collider2D>();
         if (playerCollider == null) return null;
 
         for (int i = 0; i < enmeyTransforms.Length; i++)

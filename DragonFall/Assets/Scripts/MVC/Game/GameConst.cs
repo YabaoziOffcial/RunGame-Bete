@@ -20,12 +20,13 @@ public class GameConst
 
     public const string PlayerTag = "Player";
     public const string EnemyTag = "Enemy";
+    public const string ExTag = "EX";
 
-    // 玩家经验或等级变化事件
-    public const string CollectExEvent = "CollectEx";
-
-    // 玩家装备变化事件
-    public const string PlayerEquipChangedEvent = "PlayerEquipChanged";
+    // 局内 UI 事件请使用 GameEvents.Id / GameEvents.Raise*（以下为兼容别名，勿在新代码中使用）
+    public const string CollectExEvent = GameEvents.Id.PlayerProgressChanged;
+    public const string KillEnemyCountChangedEvent = GameEvents.Id.KillCountChanged;
+    public const string LevelUpEvent = GameEvents.Id.LevelUp;
+    public const string PlayerEquipChangedEvent = GameEvents.Id.EquipListChanged;
 
     // 缓存 EX 预制体，避免重复加载
     private static GameObject m_ExPrefab;

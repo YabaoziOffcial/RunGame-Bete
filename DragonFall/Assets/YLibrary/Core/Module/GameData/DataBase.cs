@@ -13,5 +13,6 @@ public abstract class DataBase
     }
     public System.Collections.Generic.Dictionary<string, object> Values { get; } = new();
 
+
     public abstract bool Save();
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// 敌人移动、受伤、死亡和经验掉落逻辑
+/// <summary>敌人实体：移动、受击、攻击玩家；死亡/掉落经 GameController 处理，不写 Model。</summary>
 public class Enemy : MonoBehaviour
 {
     // 自动补碰撞体时使用的默认半径
@@ -73,7 +73,7 @@ public class Enemy : MonoBehaviour
         m_MaxHp = m_EnemyData.hp;
     }
 
-    // 承受伤害，生命值归零后结算击杀和掉落
+    /// <summary>受伤；HP 归零时上报 OnEnemyKilled（击杀数与经验球由 Controller 处理）。</summary>
     public float TakeDamage(float damage)
     {
         return TakeDamage(damage, transform.position);
@@ -98,8 +98,7 @@ public class Enemy : MonoBehaviour
                 m_Rigidbody2D.velocity = Vector2.zero;
             }
             ResetMoveAnimationToStart();
-            GameController.Instance.Model.AddKillEnemyCount();
-            TryDropEx();
+            GameController.Instance.OnEnemyKilled(transform.position);
             ObjectPool.PushObj(gameObject);
         }
 
@@ -133,31 +132,17 @@ public class Enemy : MonoBehaviour
         damageNumberText.Init(damage, hitPosition);
     }
 
-    // 根据玩家经验掉落率在死亡位置生成 EX
-    private void TryDropEx()
-    {
-        Player player = GameController.Instance.Player;
-        if (player == null) return;
-        if (Random.value > player.PlayerData.ExDropRate) return;
-
-        GameObject exPrefab = GameConst.GetExPrefab();
-        if (exPrefab == null) return;
-
-        GameObject ex = ObjectPool.GetObj(exPrefab);
-        ex.transform.position = transform.position;
-    }
-
     // 持续朝玩家方向移动
     private void MoveToPlayer()
     {
-        Player player = GameController.Instance.Player;
-        if (player == null || m_Rigidbody2D == null)
+        Transform playerTransform = GameController.Instance.PlayerTransform;
+        if (playerTransform == null || m_Rigidbody2D == null)
         {
             SetMoveAnimationPlaying(false);
             return;
         }
 
-        Vector2 direction = player.transform.position - transform.position;
+        Vector2 direction = playerTransform.position - transform.position;
         if (direction.sqrMagnitude <= 0f)
         {
             m_Rigidbody2D.velocity = Vector2.zero;
@@ -224,12 +209,13 @@ public class Enemy : MonoBehaviour
         TryAttackPlayer();
     }
 
+    // 接触玩家时上报伤害，由 GameController 改 Stats 并判定 GameOver
     private void TryAttackPlayer()
     {
-        Player player = GameController.Instance.Player;
-        if (m_IsDead || player == null || m_AttackTimer > 0f) return;
+        if (m_IsDead || m_AttackTimer > 0f) return;
+        if (GameController.Instance.PlayerTransform == null) return;
 
-        player.TakeDamage(m_EnemyData.attack);
+        GameController.Instance.OnPlayerDamaged(m_EnemyData.attack);
         m_AttackTimer = attackInterval;
     }
 }

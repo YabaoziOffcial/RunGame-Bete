@@ -1,34 +1,48 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
 // 模型层
 public class TestModel
 {
-    public string TestText { get; set; }
+    private readonly TestData m_TestData;
+    public TestData TestData => m_TestData;
 
     public TestModel()
     {
-        // TestText = TextConst.Instance.textConst.TEST_TEXT;
+        // 
+        m_TestData = GameDataManager.Instance.GetData<TestData>(TextConst.TestData);
     }
 }
 
-public class TestData : DataBase
+/// <summary>
+/// MVC 示例存档模块：走 GameDataManager 版本化 Load/Save，不再直接 ES3.Save。
+/// </summary>
+[Serializable]
+public class TestData : DataBase, IVersionedGameData
 {
     public static class Keys
     {
-        public const string TestDataKey = "TestData";
-
+        public const string TestDataKey = "TestDataKey";
     }
 
-    public static readonly Dictionary<string, object> ValueType = new()
+    public string ModuleKey => TextConst.TestData;
+    public int CurrentSchemaVersion => 1;
+
+    public string TestDataValue
     {
-        { Keys.TestDataKey, typeof(string) },
-    };
-    public string TestDataValue { get => GetValue<string>(Keys.TestDataKey, ""); set => SetValue(Keys.TestDataKey, value); }
+        get => GetValue<string>(Keys.TestDataKey, "");
+        set => SetValue(Keys.TestDataKey, value);
+    }
+
+    public void UpgradeFrom(int fromSchemaVersion) { }
+
+    public void OnAfterLoaded() { }
+
+    public void OnBeforeSave() { }
+
     public override bool Save()
     {
-        ES3.Save("TestData", this);
+        GameDataManager.Instance.SaveData(TextConst.TestData, this);
+        GameDataManager.Instance.Store.Commit();
         return true;
     }
 }

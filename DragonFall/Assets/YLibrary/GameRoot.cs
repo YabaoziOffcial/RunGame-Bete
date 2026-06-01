@@ -21,22 +21,29 @@ namespace YBZ.Core
             GameConfig.Init();                            // 配置 ————
             GameController.Instance.Init();
             Debug.Log("GameRoot Initialized!");
+
+            // MVC 示例：Awake 里只 Init/写 Model；开 UI 放到 Start，等 UIManager 等 Mono 单例 Awake 完成
+            // TestController.Instance.Init();
+            // TestController.Instance.SetTestString("Hello World");
         }
 
         public void Start()
         {
             Debug.Log("GameRoot Start!");
+            GameController.Instance.GameStart();
+
+            // TestView 示例：需 Resources/Prefab/UI/TestView.prefab，正式局内可不开
+            // TestController.Instance.OpenTestView();
         }
 
         private void Update()
         {
             GameHelper.Instance.Update();
             GameController.Instance.Update();
+            EquipManager.Instance.Update();
+
+            // TestController.Instance.Update(); // 示例
             
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                Time.timeScale = 1f;
-            }
         }
         private void LateUpdate()
         {
@@ -45,19 +52,26 @@ namespace YBZ.Core
 
         private void FixedUpdate()
         {
+            EquipManager.Instance.FixedUpdate();
         }
 
 
         private void OnApplicationPause(bool pause)
         {
-
+            if (!pause) return;
+            FlushGameData();
         }
 
         private void OnApplicationQuit()
         {
-            // MaterialLoad.Instance.candy_mat.SetColor("_Color", new Color(1, 1, 1, 1));
-            // 退出时主动反注册事件，避免静态事件残留导致“内存泄漏”（尤其是编辑器关闭域重载时）
+            FlushGameData();
             EventManager.Clear();
+        }
+
+        private static void FlushGameData()
+        {
+            try { TestController.Instance.FlushPendingSave(); } catch { }
+            try { GameDataManager.Instance.SaveAll(); } catch { }
         }
 
         public void OnDisable()

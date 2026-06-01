@@ -7,8 +7,10 @@
       "clientList": [
         {
           "clientId": "10089-178024267673566135-",
-          "status": "processing",
-          "imgUrls": null,
+          "status": "succeed",
+          "imgUrls": [
+            "https://genai.holopix.cn/2026-05-31/17802426768181780242840868-45df0b36c28dbb69d18c4a0b67b238dd_00001_.png"
+          ],
           "content": null,
           "statusMsg": null,
           "createdTime": 1780242676000

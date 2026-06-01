@@ -3,32 +3,68 @@ using System.Collections.Generic;
 using UnityEngine;
 using YBZ.Design;
 
-// 玩家身上的装备运行时管理器
+// 装备控制器：局内装备增删与 Update 驱动（由 GameRoot 调用 Update / FixedUpdate）
 public class EquipManager : Singleton<EquipManager>
 {
-    // 装备所属玩家，所有装备生命周期都围绕它执行
     private Player m_Owner;
+    private bool m_IsSessionActive;
 
-    // 当前玩家已拥有的运行时装备实例
     public Dictionary<EquipBase, EquipGameData> CurrentEquips { get; private set; } = new Dictionary<EquipBase, EquipGameData>();
     private readonly List<EquipBase> m_EquipOrder = new List<EquipBase>();
-    // 装备列表变化时通知 UI 刷新
-    public event Action CurrentEquipsChanged;
 
-    // 兼容外部只读查询，避免外部必须改调用点
     public IReadOnlyList<EquipBase> Equips => m_EquipOrder;
+    public bool IsSessionActive => m_IsSessionActive;
 
-    public void Init(Player owner)
+    /// <summary>开局：绑定玩家并装备初始武器。</summary>
+    public void StartSession(Player owner)
     {
+        if (owner == null) return;
+
+        EndSession();
         m_Owner = owner;
+        m_IsSessionActive = true;
+        AddEquip("Weapon_Sword");
     }
 
+    /// <summary>结束本局装备会话（GameOver 等时机调用）。</summary>
+    public void EndSession()
+    {
+        m_IsSessionActive = false;
+        Clear();
+        m_Owner = null;
+    }
+
+    /// <summary>由 GameRoot.Update 驱动。</summary>
+    public void Update()
+    {
+        if (!m_IsSessionActive || m_Owner == null) return;
+        if (GameController.Instance != null && GameController.Instance.IsGameOver) return;
+
+        for (int i = 0; i < m_EquipOrder.Count; i++)
+        {
+            m_EquipOrder[i].Update(m_Owner);
+        }
+    }
+
+    /// <summary>由 GameRoot.FixedUpdate 驱动。</summary>
+    public void FixedUpdate()
+    {
+        if (!m_IsSessionActive || m_Owner == null) return;
+        if (GameController.Instance != null && GameController.Instance.IsGameOver) return;
+
+        for (int i = 0; i < m_EquipOrder.Count; i++)
+        {
+            m_EquipOrder[i].FixedUpdate(m_Owner);
+        }
+    }
+
+    /// <summary>按类名添加装备（无 SO 时用默认 EquipData）。</summary>
     public EquipBase AddEquip(string className)
     {
         return AddEquip(className, null);
     }
 
-    // 通过 ScriptableObject 配置添加装备
+    /// <summary>通过 WeaponConfigSO 添加装备。</summary>
     public EquipBase AddEquip(WeaponConfigSO config)
     {
         if (config == null)
@@ -40,7 +76,7 @@ public class EquipManager : Singleton<EquipManager>
         return AddEquip(config.className, config);
     }
 
-    // 根据装备类名创建运行时实例，并触发装备进入逻辑
+    /// <summary>反射创建装备实例，Enter 后广播 EquipListChanged。</summary>
     public EquipBase AddEquip(string className, WeaponConfigSO config)
     {
         if (string.IsNullOrEmpty(className))
@@ -69,7 +105,7 @@ public class EquipManager : Singleton<EquipManager>
         return equip;
     }
 
-    // 升级指定类名的第一件装备
+    /// <summary>升级当前第一件同名装备。</summary>
     public bool UpgradeEquip(string className)
     {
         EquipBase equip = GetEquip(className);
@@ -79,25 +115,7 @@ public class EquipManager : Singleton<EquipManager>
         return true;
     }
 
-    // 每帧驱动所有装备
-    public void UpdateAll()
-    {
-        for (int i = 0; i < m_EquipOrder.Count; i++)
-        {
-            m_EquipOrder[i].Update(m_Owner);
-        }
-    }
-
-    // 固定帧驱动所有装备
-    public void FixedUpdateAll()
-    {
-        for (int i = 0; i < m_EquipOrder.Count; i++)
-        {
-            m_EquipOrder[i].FixedUpdate(m_Owner);
-        }
-    }
-
-    // 移除单件装备，并触发退出清理
+    /// <summary>移除单件装备并 Exit 清理。</summary>
     public bool RemoveEquip(EquipBase equip)
     {
         if (equip == null || !CurrentEquips.Remove(equip)) return false;
@@ -108,7 +126,7 @@ public class EquipManager : Singleton<EquipManager>
         return true;
     }
 
-    // 清空装备列表，通常用于玩家销毁或重开一局
+    /// <summary>清空全部装备（EndSession / 重开一局）。</summary>
     public void Clear()
     {
         for (int i = m_EquipOrder.Count - 1; i >= 0; i--)
@@ -121,7 +139,7 @@ public class EquipManager : Singleton<EquipManager>
         NotifyCurrentEquipsChanged();
     }
 
-    // 按类名查找当前已装备的装备
+    /// <summary>按 className 查找已装备实例。</summary>
     public EquipBase GetEquip(string className)
     {
         for (int i = 0; i < m_EquipOrder.Count; i++)
@@ -135,6 +153,7 @@ public class EquipManager : Singleton<EquipManager>
         return null;
     }
 
+    /// <summary>子弹/武器命中时累计该装备本局伤害统计。</summary>
     public void AddDamage(EquipBase equip, float damage)
     {
         if (equip == null || damage <= 0f) return;
@@ -143,9 +162,10 @@ public class EquipManager : Singleton<EquipManager>
         equipGameData.AddDamage(damage);
     }
 
+    // 装备列表变化时通知 HUD 刷新图标
     private void NotifyCurrentEquipsChanged()
     {
-        CurrentEquipsChanged?.Invoke();
+        GameEvents.RaiseEquipListChanged();
     }
 
     private EquipGameData CreateEquipGameData()
