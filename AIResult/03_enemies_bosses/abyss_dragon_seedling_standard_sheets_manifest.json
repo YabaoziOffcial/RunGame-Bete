@@ -1,0 +1,23 @@
+[
+  {
+    "asset": "abyss_dragon_seedling_standard_character_sheet",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_standard_character_sheet.png",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_standard_character_sheet.payload.json",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_standard_character_sheet.response.json",
+    "client_id": "10089-178039584569988227-"
+  },
+  {
+    "asset": "abyss_dragon_seedling_standard_turnaround",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_standard_turnaround.png",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_standard_turnaround.payload.json",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_standard_turnaround.response.json",
+    "client_id": "10089-178039587018271995-"
+  },
+  {
+    "asset": "abyss_dragon_seedling_standard_expression_sheet",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_standard_expression_sheet.png",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_standard_expression_sheet.payload.json",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_standard_expression_sheet.response.json",
+    "client_id": "10089-178039589894732506-"
+  }
+]

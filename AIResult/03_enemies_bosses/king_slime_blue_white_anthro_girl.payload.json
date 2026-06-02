@@ -1,0 +1,20 @@
+{
+  "modelDetailList": [
+    {
+      "modelId": "NT4HQ78U2Q",
+      "strength": 0.78
+    },
+    {
+      "modelId": "y345YW8pyT",
+      "strength": 0.35
+    }
+  ],
+  "prompt": "Dragonfall敌方Boss拟人魔物娘立绘，参考图生图重绘。日式二次元魔物娘风格，唯美日系插画立绘，干净线稿，柔和赛璐璐与轻伪厚涂结合，软萌、清透、幻想、可爱但有Boss气场。完整单人全身立绘，白色或极浅色背景，游戏角色设定图。角色为年轻女性魔物娘比例，约5-6头身，表情可爱但带一点危险感。服装不过度暴露，偏幻想学院/轻礼服/怪物材质融合设计。把参考图中的蓝白色圆润史莱姆/海兽形态拟人化为蓝白史莱姆魔物娘。保留白色上半圆盖、蓝色下半透明身体、深蓝小眼点、扁平柔软轮廓和水滴感。角色有白到蓝渐变长发，发尾像流动史莱姆，头部或披肩像白色软盖。服装为蓝白水流质感连衣裙，裙摆像软史莱姆波浪，整体温柔、软萌、适合Boss娘化立绘。",
+  "negativePrompt": "写实照片, 3D, 厚重暗黑写实, 恐怖猎奇, 老年, 男性, 低质量, 模糊, 裁切身体, 多人, 复杂背景, 文字, logo, 水印, 过度性感, 暴露, 裸体, 巨乳, 夸张胸部, 低俗姿势, 完全丢失参考图配色, 完全丢失参考图轮廓元素",
+  "seed": -1,
+  "aspectRatios": "3:4",
+  "simpleBackground": true,
+  "batchSize": 1,
+  "reference_source": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_v2_monster_turnaround.png",
+  "mode": "t2i_from_reference_description"
+}

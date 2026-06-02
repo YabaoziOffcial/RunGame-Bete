@@ -1,0 +1,17 @@
+{
+  "modelDetailList": [
+    {
+      "modelId": "NT4HQ78U2Q",
+      "strength": 0.9
+    }
+  ],
+  "prompt": "Dragonfall game character production art, polished Japanese anime 2D game illustration, clean linework, soft cel shading, light fantasy mood, white or very light neutral background, full body, centered, no scene background, no text, no labels. single character only, Dragonfall abyss dragon seedling anthro monster-girl boss, young elegant Japanese anime girl, short white hair, small mint-green dragon horns shaped like sprouts, large translucent cyan-green dragon wings, pale mint and white long fantasy dress, white and gold shoulder armor, gold gemstone on chest, cyan crystal magic details, soft cute but boss-like aura, clear monster-girl identity. Expression variant sheet for the same single character. Six head-and-shoulder portraits only, arranged in a clean 3 by 2 grid. Expressions: gentle closed-eye smile, calm neutral, shy blush, boss-like confident smile, surprised hurt reaction, focused casting magic. Keep hairstyle, horns, color palette, eye shape, and costume collar identical in every portrait. No full-body figures, no second character, no mascot, no text labels.",
+  "negativePrompt": "multiple characters, two girls, three girls, duplicate body, clone, companion, servant, pet, mascot, chibi mascot, group composition, small inset panels, detail windows, split-screen collage, comic panels, unrelated headshots, text, labels, logo, watermark, busy background, landscape background, cropped body, half body, sitting pose, dynamic battle pose, perspective distortion, fisheye, black hair, red main color, dark gritty fantasy, photorealistic, 3D render, excessive fanservice, nude, giant breasts, horror monster",
+  "seed": -1,
+  "aspectRatios": "3:2",
+  "simpleBackground": true,
+  "batchSize": 1,
+  "imageReference": "https://genai.holopix.cn/2026-06-02/17803951517201780395221331-1c34cff5cb06f2ad8e7e69f7b4368eed_00001_.png",
+  "referenceMode": "standard",
+  "referenceWeight": 1
+}

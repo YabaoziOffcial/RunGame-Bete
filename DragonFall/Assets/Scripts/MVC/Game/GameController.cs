@@ -16,6 +16,14 @@ public class GameController : YBZ.Design.Singleton<GameController>
     private EnemySpawnConfigSO m_EnemySpawnConfig;
     private readonly List<EnemySpawnRuntime> m_EnemySpawnRuntimes = new List<EnemySpawnRuntime>();
     private bool m_UiEventsRegistered;
+    private int m_PendingLevelUpCount;   // 待处理的升级次数（连升多级时排队）
+    private bool m_IsLevelUpSelectOpen;  // 选装面板是否已打开
+
+    /// <summary>是否仍有待选装的升级。</summary>
+    public bool HasPendingLevelUp => m_PendingLevelUpCount > 0;
+
+    /// <summary>升级选装面板是否正在显示。</summary>
+    public bool IsLevelUpSelectOpen => m_IsLevelUpSelectOpen;
 
     /// <summary>GameRoot 入口：创建本局 Model（不开 UI，见 GameStart）。</summary>
     public void Init()
@@ -48,14 +56,63 @@ public class GameController : YBZ.Design.Singleton<GameController>
         {
             view.Refresh(m_Model.Stats);
             view.ShowAvailableEquips();
+            view.CloseCall = OnSelectViewClosed;
         }
         return view;
     }
 
-    /// <summary>关闭选技能弹窗（GameOver 等时机）。</summary>
+    /// <summary>关闭选技能弹窗（GameOver 等时机调用）。</summary>
     public void CloseSelectView()
     {
+        if (UIManager.Instance.UICachas.TryGetValue(typeof(SelectView), out ViewBase view))
+        {
+            (view as SelectView).CloseCall = null;
+        }
         UIManager.Instance.CloseUI<SelectView>();
+        m_IsLevelUpSelectOpen = false;
+    }
+
+    /// <summary>完成一次升级选装：消耗队列一项，关窗后若仍有待处理则再开。</summary>
+    public void CompleteCurrentLevelUpSelection()
+    {
+        if (m_PendingLevelUpCount <= 0)
+        {
+            CloseSelectView();
+            return;
+        }
+
+        m_PendingLevelUpCount--;
+        CloseSelectView();
+        TryOpenNextLevelUpSelect();
+    }
+
+    // 选装面板被关闭时（含点选完成）统一走队列消费；点选路径也会主动调用 CompleteCurrentLevelUpSelection
+    private void OnSelectViewClosed()
+    {
+        if (m_PendingLevelUpCount > 0)
+        {
+            CompleteCurrentLevelUpSelection();
+        }
+        else
+        {
+            CloseSelectView();
+        }
+    }
+
+    // 队列中有待处理升级且当前未开选装窗时，打开下一次选装
+    private void TryOpenNextLevelUpSelect()
+    {
+        if (IsGameOver || m_PendingLevelUpCount <= 0 || m_IsLevelUpSelectOpen) return;
+
+        m_IsLevelUpSelectOpen = true;
+        OpenSelectView();
+    }
+
+    // 清空升级选装队列（开局 / 结算）
+    private void ClearLevelUpQueue()
+    {
+        m_PendingLevelUpCount = 0;
+        m_IsLevelUpSelectOpen = false;
     }
 
     /// <summary>打开结算界面。</summary>
@@ -140,10 +197,11 @@ public class GameController : YBZ.Design.Singleton<GameController>
         panel.RefreshKillCount(killCount);
     }
 
-    // 升级：由 Controller 开 SelectView，View 不自行 SetActive 子节点
+    // 升级：入队后尝试打开选装（若已有窗则等当前选完再开）
     private void OnUiLevelUp(params object[] args)
     {
-        OpenSelectView();
+        m_PendingLevelUpCount++;
+        TryOpenNextLevelUpSelect();
     }
 
     // 装备列表变化：刷新 HUD 装备图标
@@ -223,6 +281,7 @@ public class GameController : YBZ.Design.Singleton<GameController>
     public void GameStart()
     {
         IsGameOver = false;
+        ClearLevelUpQueue();
         InitEnemySpawnRuntimes();
         BindPlayer();
 
@@ -249,6 +308,7 @@ public class GameController : YBZ.Design.Singleton<GameController>
         if (!IsGameOver)
         {
             IsGameOver = true;
+            ClearLevelUpQueue();
             UnregisterUiEventHandlers();
             CloseSelectView();
             EquipManager.Instance.EndSession();
@@ -287,6 +347,12 @@ public class GameController : YBZ.Design.Singleton<GameController>
     public float GetPlayerExDropRate()
     {
         return m_Model != null ? m_Model.Stats.Greed : 0f;
+    }
+
+    /// <summary>测试用：增加经验并触发升级事件与选装队列。</summary>
+    public void GrantExpForTest(int exp)
+    {
+        OnCollectExp(exp);
     }
 
     // 改 Model 经验/等级，并广播 UI 事件（连升会多次 RaiseLevelUp）

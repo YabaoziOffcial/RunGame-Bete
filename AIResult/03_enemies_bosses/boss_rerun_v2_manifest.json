@@ -1,0 +1,128 @@
+[
+  {
+    "slug": "king_slime_boss",
+    "asset": "v2_monster_design",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_v2_monster_design.png",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_v2_monster_design.response.json",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_v2_monster_design.payload.json",
+    "client_id": "10089-178038994800752999-",
+    "models": [
+      {
+        "modelId": "y345YW8pyT",
+        "strength": 0.72
+      }
+    ]
+  },
+  {
+    "slug": "king_slime_boss",
+    "asset": "v2_monster_turnaround",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_v2_monster_turnaround.png",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_v2_monster_turnaround.response.json",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_v2_monster_turnaround.payload.json",
+    "client_id": "10089-178039000086773344-",
+    "models": [
+      {
+        "modelId": "y345YW8pyT",
+        "strength": 0.72
+      }
+    ]
+  },
+  {
+    "slug": "king_slime_boss",
+    "asset": "v2_pixel_boss_sheet_16bit",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_v2_pixel_boss_sheet_16bit.png",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_v2_pixel_boss_sheet_16bit.response.json",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_v2_pixel_boss_sheet_16bit.payload.json",
+    "client_id": "10089-178039001617690341-",
+    "models": [
+      {
+        "modelId": "ed45p7kmN3",
+        "strength": 0.98
+      }
+    ]
+  },
+  {
+    "slug": "crystal_skull_boss",
+    "asset": "v2_monster_design",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_v2_monster_design.png",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_v2_monster_design.response.json",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_v2_monster_design.payload.json",
+    "client_id": "10089-178039007330425504-",
+    "models": [
+      {
+        "modelId": "y345YW8pyT",
+        "strength": 0.72
+      }
+    ]
+  },
+  {
+    "slug": "crystal_skull_boss",
+    "asset": "v2_monster_turnaround",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_v2_monster_turnaround.png",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_v2_monster_turnaround.response.json",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_v2_monster_turnaround.payload.json",
+    "client_id": "10089-178039008855265035-",
+    "models": [
+      {
+        "modelId": "y345YW8pyT",
+        "strength": 0.72
+      }
+    ]
+  },
+  {
+    "slug": "crystal_skull_boss",
+    "asset": "v2_pixel_boss_sheet_16bit",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_v2_pixel_boss_sheet_16bit.png",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_v2_pixel_boss_sheet_16bit.response.json",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_v2_pixel_boss_sheet_16bit.payload.json",
+    "client_id": "10089-178039013725240265-",
+    "models": [
+      {
+        "modelId": "ed45p7kmN3",
+        "strength": 0.98
+      }
+    ]
+  },
+  {
+    "slug": "abyss_dragon_boss",
+    "asset": "v2_monster_design",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_v2_monster_design.png",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_v2_monster_design.response.json",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_v2_monster_design.payload.json",
+    "client_id": "10089-178039016105472548-",
+    "models": [
+      {
+        "modelId": "y345YW8pyT",
+        "strength": 0.72
+      }
+    ]
+  },
+  {
+    "slug": "abyss_dragon_boss",
+    "asset": "v2_monster_turnaround",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_v2_monster_turnaround.png",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_v2_monster_turnaround.response.json",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_v2_monster_turnaround.payload.json",
+    "client_id": "10089-178039017607273422-",
+    "models": [
+      {
+        "modelId": "y345YW8pyT",
+        "strength": 0.72
+      }
+    ]
+  },
+  {
+    "slug": "abyss_dragon_boss",
+    "asset": "v2_pixel_boss_sheet_16bit",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_v2_pixel_boss_sheet_16bit.png",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_v2_pixel_boss_sheet_16bit.response.json",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_v2_pixel_boss_sheet_16bit.payload.json",
+    "client_id": "10089-178039020373070084-",
+    "models": [
+      {
+        "modelId": "ed45p7kmN3",
+        "strength": 0.98
+      }
+    ]
+  }
+]

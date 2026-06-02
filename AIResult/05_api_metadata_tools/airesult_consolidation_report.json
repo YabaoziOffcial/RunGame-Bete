@@ -1,0 +1,754 @@
+[
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\00_references_originals\\00-image.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\00_references\\00-image.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\00_references_originals\\image.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\00_references\\image.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\00_references_originals\\IY6AnyBoYPfcM7XNOZhkF.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\00_references\\IY6AnyBoYPfcM7XNOZhkF.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\00_references_originals\\JOgQ7EWfI6aPBS2hjWWsw.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\00_references\\JOgQ7EWfI6aPBS2hjWWsw.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\01_style_prompts_docs\\art_style_reference_牧羊人之心.txt",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\01_prompts_docs\\art_style_reference_牧羊人之心.txt"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\01_style_prompts_docs\\dragonfall_art_style_reference.txt",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\01_prompts_docs\\dragonfall_art_style_reference.txt"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\01_style_prompts_docs\\mage_portrait_anime_v01_prompt.txt",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\01_prompts_docs\\mage_portrait_anime_v01_prompt.txt"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\blue_slime_girl_pixel_chibi_U3YNR7VZ23.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\blue_slime_girl_pixel_chibi_U3YNR7VZ23.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\blue_slime_girl_pixel_chibi_U3YNR7VZ23.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\blue_slime_girl_pixel_chibi_U3YNR7VZ23.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\blue_slime_girl_turnaround_dragonfall_prompt_y345YW8pyT.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\blue_slime_girl_turnaround_dragonfall_prompt_y345YW8pyT.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\blue_slime_girl_turnaround_dragonfall_prompt_y345YW8pyT.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\blue_slime_girl_turnaround_dragonfall_prompt_y345YW8pyT.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\blue_slime_girl_turnaround_holopix_y345YW8pyT.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\blue_slime_girl_turnaround_holopix_y345YW8pyT.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\blue_slime_girl_turnaround_holopix_y345YW8pyT.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\blue_slime_girl_turnaround_holopix_y345YW8pyT.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\blue_slime_pixel_4head_jk_fall_A1_256_pixelated.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\blue_slime_pixel_4head_jk_fall_A1_256_pixelated.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\blue_slime_pixel_4head_jk_fall_A1_ed45p7kmN3.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\blue_slime_pixel_4head_jk_fall_A1_ed45p7kmN3.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\blue_slime_pixel_4head_jk_fall_A1_ed45p7kmN3.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\blue_slime_pixel_4head_jk_fall_A1_ed45p7kmN3.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\blue_slime_pixel_4head_jk_fall_A2_ed45p7kmN3.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\blue_slime_pixel_4head_jk_fall_A2_ed45p7kmN3.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\blue_slime_pixel_4head_jk_fall_A2_ed45p7kmN3.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\blue_slime_pixel_4head_jk_fall_A2_ed45p7kmN3.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\blue_slime_pixel_4head_jk_fall_A3_ed45p7kmN3.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\blue_slime_pixel_4head_jk_fall_A3_ed45p7kmN3.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\blue_slime_pixel_4head_jk_fall_A3_ed45p7kmN3.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\blue_slime_pixel_4head_jk_fall_A3_ed45p7kmN3.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\blue_slime_pixel_jk_falling_A_ed45p7kmN3.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\blue_slime_pixel_jk_falling_A_ed45p7kmN3.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\blue_slime_pixel_jk_falling_A_ed45p7kmN3.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\blue_slime_pixel_jk_falling_A_ed45p7kmN3.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\blue_slime_pixel_jk_falling_B_U3YNR7VZ23.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\blue_slime_pixel_jk_falling_B_U3YNR7VZ23.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\blue_slime_pixel_jk_falling_B_U3YNR7VZ23.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\blue_slime_pixel_jk_falling_B_U3YNR7VZ23.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\blue_slime_pixel_jk_falling_C_2KHH678LAU.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\blue_slime_pixel_jk_falling_C_2KHH678LAU.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\blue_slime_pixel_jk_falling_C_2KHH678LAU.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\blue_slime_pixel_jk_falling_C_2KHH678LAU.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\pink_slime_pixel_expanded_fullbody_ed45p7kmN3.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\pink_slime_pixel_expanded_fullbody_ed45p7kmN3.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\pink_slime_pixel_expanded_fullbody_ed45p7kmN3.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\pink_slime_pixel_expanded_fullbody_ed45p7kmN3.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\pink_slime_pixel_expanded_fullbody_ed45p7kmN3_256_pixelated.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\pink_slime_pixel_expanded_fullbody_ed45p7kmN3_256_pixelated.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\pink_slime_pixel_pose_i2i_ed45p7kmN3.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\pink_slime_pixel_pose_i2i_ed45p7kmN3.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\pink_slime_pixel_pose_prompt_ed45p7kmN3.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\pink_slime_pixel_pose_prompt_ed45p7kmN3.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\pink_slime_pixel_pose_prompt_ed45p7kmN3.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\pink_slime_pixel_pose_prompt_ed45p7kmN3.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\pink_slime_pixel_pose_prompt_ed45p7kmN3_256_pixelated.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\pink_slime_pixel_pose_prompt_ed45p7kmN3_256_pixelated.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\pink_slime_pixel_pose_ref_ed45p7kmN3.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\pink_slime_pixel_pose_ref_ed45p7kmN3.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\pink_slime_upper_right_mini_cutout_384h.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\pink_slime_upper_right_mini_cutout_384h.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\pink_slime_upper_right_mini_cutout_384h_clean.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\pink_slime_upper_right_mini_cutout_384h_clean.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\pink_slime_upper_right_mini_cutout_384h_clean_white_preview.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\pink_slime_upper_right_mini_cutout_384h_clean_white_preview.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\pink_slime_upper_right_mini_cutout_384h_white_preview.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\pink_slime_upper_right_mini_cutout_384h_white_preview.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\pink_slime_upper_right_mini_cutout_native.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\pink_slime_upper_right_mini_cutout_native.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\pink_slime_upper_right_mini_cutout_native_clean.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\pink_slime_upper_right_mini_cutout_native_clean.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\slime_card_character_crop.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\slime_card_character_crop.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\slime_card_character_cutout_v2.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\slime_card_character_cutout_v2.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\slime_card_character_cutout_v3.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\slime_card_character_cutout_v3.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\slime_card_character_rough_cutout.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\slime_card_character_rough_cutout.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\slime_monster_girl_portrait_prompt_v01.txt",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\slime_monster_girl_portrait_prompt_v01.txt"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_slime_girls\\slime_monster_girl_portrait_prompt_v01_short.txt",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\slime_monster_girl_portrait_prompt_v01_short.txt"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_detective_girl\\detective_girl_beautiful_redraw_i2i_multimodel_01.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\detective_girl_beautiful_redraw_i2i_multimodel_01.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_detective_girl\\detective_girl_beautiful_redraw_multimodel_01.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\detective_girl_beautiful_redraw_multimodel_01.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_detective_girl\\detective_girl_beautiful_redraw_multimodel_01.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\detective_girl_beautiful_redraw_multimodel_01.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_detective_girl\\detective_girl_beautiful_redraw_multimodel_ref.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\detective_girl_beautiful_redraw_multimodel_ref.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_detective_girl\\detective_girl_beautiful_redraw_refurl_multimodel_03.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\detective_girl_beautiful_redraw_refurl_multimodel_03.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_detective_girl\\detective_girl_beautiful_redraw_refurl_multimodel_03.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\detective_girl_beautiful_redraw_refurl_multimodel_03.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_detective_girl\\detective_girl_beautiful_redraw_ref_multimodel_02.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\detective_girl_beautiful_redraw_ref_multimodel_02.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_detective_girl\\detective_girl_standing_finished_2TMfz7te23_02.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\detective_girl_standing_finished_2TMfz7te23_02.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_detective_girl\\detective_girl_standing_finished_2TMfz7te23_02.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\detective_girl_standing_finished_2TMfz7te23_02.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_detective_girl\\detective_girl_standing_finished_EJ4NHA892S_01.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\detective_girl_standing_finished_EJ4NHA892S_01.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_detective_girl\\detective_girl_standing_finished_EJ4NHA892S_01.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\detective_girl_standing_finished_EJ4NHA892S_01.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_detective_girl\\q_chibi_detective_finished_i2i.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\q_chibi_detective_finished_i2i.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_detective_girl\\q_chibi_detective_finished_i2i_nostrength.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\q_chibi_detective_finished_i2i_nostrength.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_detective_girl\\q_chibi_detective_finished_i2i_single.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\q_chibi_detective_finished_i2i_single.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_detective_girl\\q_chibi_detective_finished_ref_t2i.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\q_chibi_detective_finished_ref_t2i.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_detective_girl\\q_chibi_detective_finished_t2i_01.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\q_chibi_detective_finished_t2i_01.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_detective_girl\\q_chibi_detective_finished_t2i_01.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\q_chibi_detective_finished_t2i_01.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_detective_girl\\q_chibi_lineart_pose_crop.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\q_chibi_lineart_pose_crop.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_deleijieen\\deleijieen_pose_floor_lie_i2i_NT4HQ78U2Q.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\deleijieen_pose_floor_lie_i2i_NT4HQ78U2Q.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_deleijieen\\deleijieen_pose_floor_lie_t2i_NT4HQ78U2Q.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\deleijieen_pose_floor_lie_t2i_NT4HQ78U2Q.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_deleijieen\\deleijieen_pose_floor_lie_t2i_NT4HQ78U2Q.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\deleijieen_pose_floor_lie_t2i_NT4HQ78U2Q.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_deleijieen\\deleijieen_redraw_NT4HQ78U2Q.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\deleijieen_redraw_NT4HQ78U2Q.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_deleijieen\\deleijieen_redraw_t2i_NT4HQ78U2Q.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\deleijieen_redraw_t2i_NT4HQ78U2Q.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_deleijieen\\deleijieen_redraw_t2i_NT4HQ78U2Q.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\deleijieen_redraw_t2i_NT4HQ78U2Q.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_deleijieen\\deleijieen_redraw_t2i_NT4HQ78U2Q_1080x1920_wallpaper.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\deleijieen_redraw_t2i_NT4HQ78U2Q_1080x1920_wallpaper.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_deleijieen\\deleijieen_redraw_t2i_NT4HQ78U2Q_512h.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\deleijieen_redraw_t2i_NT4HQ78U2Q_512h.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_deleijieen\\deleijieen_redraw_t2i_NT4HQ78U2Q_9x16_crop.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\deleijieen_redraw_t2i_NT4HQ78U2Q_9x16_crop.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_deleijieen\\deleijieen_strict_redraw_from_small_i2i_NT4HQ78U2Q.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\deleijieen_strict_redraw_from_small_i2i_NT4HQ78U2Q.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_deleijieen\\deleijieen_strict_redraw_from_small_t2i_NT4HQ78U2Q.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\deleijieen_strict_redraw_from_small_t2i_NT4HQ78U2Q.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_deleijieen\\deleijieen_strict_redraw_from_small_t2i_NT4HQ78U2Q.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\deleijieen_strict_redraw_from_small_t2i_NT4HQ78U2Q.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_deleijieen\\deleijieen_strict_redraw_i2i_NT4HQ78U2Q.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\deleijieen_strict_redraw_i2i_NT4HQ78U2Q.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_deleijieen\\pose_reference_floor_lie_1024.jpg",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\pose_reference_floor_lie_1024.jpg"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_deleijieen\\reference_deleijieen.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\reference_deleijieen.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_deleijieen\\reference_deleijieen_i2i_768.jpg",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\reference_deleijieen_i2i_768.jpg"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_deleijieen\\reference_deleijieen_small_1.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\reference_deleijieen_small_1.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_deleijieen\\reference_deleijieen_small_1_i2i.jpg",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\reference_deleijieen_small_1_i2i.jpg"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\06_jellyfish_girl\\jellyfish_blue_girl_white_dress_NT4HQ78U2Q.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\jellyfish_blue_girl_white_dress_NT4HQ78U2Q.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\06_jellyfish_girl\\jellyfish_blue_girl_white_dress_NT4HQ78U2Q.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\jellyfish_blue_girl_white_dress_NT4HQ78U2Q.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\06_jellyfish_girl\\jellyfish_blue_girl_white_dress_NT4HQ78U2Q_512h.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\jellyfish_blue_girl_white_dress_NT4HQ78U2Q_512h.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\06_jellyfish_girl\\jellyfish_bride_pixel_ed45p7kmN3.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\jellyfish_bride_pixel_ed45p7kmN3.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\06_jellyfish_girl\\jellyfish_bride_pixel_ed45p7kmN3.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\jellyfish_bride_pixel_ed45p7kmN3.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\06_jellyfish_girl\\jellyfish_bride_pixel_ed45p7kmN3_256h.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\jellyfish_bride_pixel_ed45p7kmN3_256h.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\06_jellyfish_girl\\jellyfish_bride_pixel_ed45p7kmN3_384h.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\02_characters\\jellyfish_bride_pixel_ed45p7kmN3_384h.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemy_pixel_characters\\flower_fairy_enemy_pixel_ed45p7kmN3.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\flower_fairy_enemy_pixel_ed45p7kmN3.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemy_pixel_characters\\flower_fairy_enemy_pixel_ed45p7kmN3.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\flower_fairy_enemy_pixel_ed45p7kmN3.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemy_pixel_characters\\flower_fairy_enemy_pixel_ed45p7kmN3_256h.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\flower_fairy_enemy_pixel_ed45p7kmN3_256h.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemy_pixel_characters\\flower_fairy_enemy_pixel_ed45p7kmN3_384h.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\flower_fairy_enemy_pixel_ed45p7kmN3_384h.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemy_pixel_characters\\octopus_monstergirl_pixel_turnaround_ed45p7kmN3.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\octopus_monstergirl_pixel_turnaround_ed45p7kmN3.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemy_pixel_characters\\octopus_monstergirl_pixel_turnaround_ed45p7kmN3.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\octopus_monstergirl_pixel_turnaround_ed45p7kmN3.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemy_pixel_characters\\octopus_monstergirl_pixel_turnaround_ed45p7kmN3_768w.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\octopus_monstergirl_pixel_turnaround_ed45p7kmN3_768w.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemy_pixel_characters\\snake_deity_enemy_pixel_ed45p7kmN3.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\snake_deity_enemy_pixel_ed45p7kmN3.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemy_pixel_characters\\snake_deity_enemy_pixel_ed45p7kmN3.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\snake_deity_enemy_pixel_ed45p7kmN3.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemy_pixel_characters\\snake_deity_enemy_pixel_ed45p7kmN3_256h.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\snake_deity_enemy_pixel_ed45p7kmN3_256h.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemy_pixel_characters\\snake_deity_enemy_pixel_ed45p7kmN3_384h.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\snake_deity_enemy_pixel_ed45p7kmN3_384h.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemy_pixel_characters\\werewolf_enemy_pixel_ed45p7kmN3.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\werewolf_enemy_pixel_ed45p7kmN3.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemy_pixel_characters\\werewolf_enemy_pixel_ed45p7kmN3.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\werewolf_enemy_pixel_ed45p7kmN3.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemy_pixel_characters\\werewolf_enemy_pixel_ed45p7kmN3_256h.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\werewolf_enemy_pixel_ed45p7kmN3_256h.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemy_pixel_characters\\werewolf_enemy_pixel_ed45p7kmN3_384h.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\werewolf_enemy_pixel_ed45p7kmN3_384h.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\11_batch_character_designs\\abyss_dragon_boss",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_boss"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\11_batch_character_designs\\batch_generation_manifest.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\batch_generation_manifest.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\11_batch_character_designs\\batch_generation_manifest_pixel_retry.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\batch_generation_manifest_pixel_retry.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\11_batch_character_designs\\batch_overview_contact_sheet.jpg",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\batch_overview_contact_sheet.jpg"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\11_batch_character_designs\\crystal_skull_boss",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_boss"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\11_batch_character_designs\\king_slime_boss",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\11_batch_character_designs\\lyria_elf_archer",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\lyria_elf_archer"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\11_batch_character_designs\\seraphina_paladin_judicator",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\seraphina_paladin_judicator"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_monster_design.payload.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_boss_monster_design.payload.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_monster_design.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_boss_monster_design.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_monster_design.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_boss_monster_design.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_monster_turnaround.payload.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_boss_monster_turnaround.payload.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_monster_turnaround.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_boss_monster_turnaround.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_monster_turnaround.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_boss_monster_turnaround.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_pixel_boss_sheet_16bit.payload.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_boss_pixel_boss_sheet_16bit.payload.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_pixel_boss_sheet_16bit.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_boss_pixel_boss_sheet_16bit.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_pixel_boss_sheet_16bit.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_boss_pixel_boss_sheet_16bit.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_v2_monster_design.payload.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_boss_v2_monster_design.payload.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_v2_monster_design.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_boss_v2_monster_design.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_v2_monster_design.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_boss_v2_monster_design.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_v2_monster_turnaround.payload.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_boss_v2_monster_turnaround.payload.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_v2_monster_turnaround.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_boss_v2_monster_turnaround.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_v2_monster_turnaround.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_boss_v2_monster_turnaround.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_v2_pixel_boss_sheet_16bit.payload.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_boss_v2_pixel_boss_sheet_16bit.payload.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_v2_pixel_boss_sheet_16bit.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_boss_v2_pixel_boss_sheet_16bit.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_v2_pixel_boss_sheet_16bit.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_boss_v2_pixel_boss_sheet_16bit.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\boss_rerun_manifest.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\boss_rerun_manifest.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\boss_rerun_overview_contact_sheet.jpg",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\boss_rerun_overview_contact_sheet.jpg"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\boss_rerun_summary.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\boss_rerun_summary.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\boss_rerun_v2_manifest.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\boss_rerun_v2_manifest.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\boss_rerun_v2_overview_contact_sheet.jpg",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\boss_rerun_v2_overview_contact_sheet.jpg"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\boss_rerun_v2_summary.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\boss_rerun_v2_summary.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_monster_design.payload.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_boss_monster_design.payload.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_monster_design.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_boss_monster_design.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_monster_design.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_boss_monster_design.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_monster_turnaround.payload.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_boss_monster_turnaround.payload.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_monster_turnaround.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_boss_monster_turnaround.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_monster_turnaround.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_boss_monster_turnaround.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_pixel_boss_sheet_16bit.payload.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_boss_pixel_boss_sheet_16bit.payload.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_pixel_boss_sheet_16bit.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_boss_pixel_boss_sheet_16bit.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_pixel_boss_sheet_16bit.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_boss_pixel_boss_sheet_16bit.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_v2_monster_design.payload.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_boss_v2_monster_design.payload.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_v2_monster_design.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_boss_v2_monster_design.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_v2_monster_design.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_boss_v2_monster_design.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_v2_monster_turnaround.payload.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_boss_v2_monster_turnaround.payload.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_v2_monster_turnaround.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_boss_v2_monster_turnaround.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_v2_monster_turnaround.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_boss_v2_monster_turnaround.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_v2_pixel_boss_sheet_16bit.payload.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_boss_v2_pixel_boss_sheet_16bit.payload.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_v2_pixel_boss_sheet_16bit.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_boss_v2_pixel_boss_sheet_16bit.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_v2_pixel_boss_sheet_16bit.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_boss_v2_pixel_boss_sheet_16bit.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_monster_design.payload.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_monster_design.payload.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_monster_design.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_monster_design.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_monster_design.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_monster_design.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_monster_turnaround.payload.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_monster_turnaround.payload.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_monster_turnaround.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_monster_turnaround.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_monster_turnaround.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_monster_turnaround.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_pixel_boss_sheet_16bit.payload.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_pixel_boss_sheet_16bit.payload.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_pixel_boss_sheet_16bit.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_pixel_boss_sheet_16bit.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_pixel_boss_sheet_16bit.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_pixel_boss_sheet_16bit.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_v2_monster_design.payload.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_v2_monster_design.payload.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_v2_monster_design.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_v2_monster_design.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_v2_monster_design.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_v2_monster_design.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_v2_monster_turnaround.payload.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_v2_monster_turnaround.payload.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_v2_monster_turnaround.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_v2_monster_turnaround.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_v2_monster_turnaround.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_v2_monster_turnaround.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_v2_pixel_boss_sheet_16bit.payload.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_v2_pixel_boss_sheet_16bit.payload.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_v2_pixel_boss_sheet_16bit.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_v2_pixel_boss_sheet_16bit.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_v2_pixel_boss_sheet_16bit.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_v2_pixel_boss_sheet_16bit.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\07_ui_vfx\\dragonfall_pixel_ui_kit_ed45p7kmN3.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_ui_vfx\\dragonfall_pixel_ui_kit_ed45p7kmN3.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\07_ui_vfx\\dragonfall_pixel_ui_kit_ed45p7kmN3.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_ui_vfx\\dragonfall_pixel_ui_kit_ed45p7kmN3.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\07_ui_vfx\\dragonfall_pixel_ui_kit_ed45p7kmN3_1280w.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_ui_vfx\\dragonfall_pixel_ui_kit_ed45p7kmN3_1280w.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\07_ui_vfx\\dragonfall_pixel_vfx_sheet_01_ed45p7kmN3.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_ui_vfx\\dragonfall_pixel_vfx_sheet_01_ed45p7kmN3.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\07_ui_vfx\\dragonfall_pixel_vfx_sheet_01_ed45p7kmN3.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_ui_vfx\\dragonfall_pixel_vfx_sheet_01_ed45p7kmN3.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\07_ui_vfx\\dragonfall_pixel_vfx_sheet_02_multimodel.png",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_ui_vfx\\dragonfall_pixel_vfx_sheet_02_multimodel.png"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\07_ui_vfx\\dragonfall_pixel_vfx_sheet_02_multimodel.png.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\04_ui_vfx\\dragonfall_pixel_vfx_sheet_02_multimodel.png.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\08_holopix_metadata\\holopixai-model-detail-23DNP78TUC.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_api_metadata_tools\\holopixai-model-detail-23DNP78TUC.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\08_holopix_metadata\\holopixai-model-detail-2KHH678LAU.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_api_metadata_tools\\holopixai-model-detail-2KHH678LAU.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\08_holopix_metadata\\holopixai-model-detail-ed45p7kmN3.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_api_metadata_tools\\holopixai-model-detail-ed45p7kmN3.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\08_holopix_metadata\\holopixai-model-detail-U3YNR7VZ23.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_api_metadata_tools\\holopixai-model-detail-U3YNR7VZ23.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\08_holopix_metadata\\holopixai-models.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_api_metadata_tools\\holopixai-models.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\08_holopix_metadata\\holopixai-rights-latest.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_api_metadata_tools\\holopixai-rights-latest.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\08_holopix_metadata\\holopixai-rights.response.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_api_metadata_tools\\holopixai-rights.response.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\08_holopix_metadata\\holopix_models_latest.json",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_api_metadata_tools\\holopix_models_latest.json"
+  },
+  {
+    "from": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\09_scripts\\split_exp_crystals.py",
+    "to": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\05_api_metadata_tools\\split_exp_crystals.py"
+  }
+]

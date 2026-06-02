@@ -1,0 +1,152 @@
+[
+  {
+    "slug": "king_slime_boss",
+    "asset": "monster_design",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_monster_design.png",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_monster_design.response.json",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_monster_design.payload.json",
+    "client_id": "10089-178038948097123974-",
+    "models": [
+      {
+        "modelId": "2F4G6YWUH3",
+        "strength": 0.85
+      },
+      {
+        "modelId": "U3NA67CT2K",
+        "strength": 0.25
+      }
+    ]
+  },
+  {
+    "slug": "king_slime_boss",
+    "asset": "monster_turnaround",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_monster_turnaround.png",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_monster_turnaround.response.json",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_monster_turnaround.payload.json",
+    "client_id": "10089-178038950080392858-",
+    "models": [
+      {
+        "modelId": "2F4G6YWUH3",
+        "strength": 0.85
+      },
+      {
+        "modelId": "U3NA67CT2K",
+        "strength": 0.25
+      }
+    ]
+  },
+  {
+    "slug": "king_slime_boss",
+    "asset": "pixel_boss_sheet_16bit",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_pixel_boss_sheet_16bit.png",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_pixel_boss_sheet_16bit.response.json",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\king_slime_boss_pixel_boss_sheet_16bit.payload.json",
+    "client_id": "10089-178038961270295467-",
+    "models": [
+      {
+        "modelId": "ed45p7kmN3",
+        "strength": 0.95
+      }
+    ]
+  },
+  {
+    "slug": "crystal_skull_boss",
+    "asset": "monster_design",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_monster_design.png",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_monster_design.response.json",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_monster_design.payload.json",
+    "client_id": "10089-178038967831435238-",
+    "models": [
+      {
+        "modelId": "2F4G6YWUH3",
+        "strength": 0.85
+      },
+      {
+        "modelId": "U3NA67CT2K",
+        "strength": 0.25
+      }
+    ]
+  },
+  {
+    "slug": "crystal_skull_boss",
+    "asset": "monster_turnaround",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_monster_turnaround.png",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_monster_turnaround.response.json",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_monster_turnaround.payload.json",
+    "client_id": "10089-178038970202170314-",
+    "models": [
+      {
+        "modelId": "2F4G6YWUH3",
+        "strength": 0.85
+      },
+      {
+        "modelId": "U3NA67CT2K",
+        "strength": 0.25
+      }
+    ]
+  },
+  {
+    "slug": "crystal_skull_boss",
+    "asset": "pixel_boss_sheet_16bit",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_pixel_boss_sheet_16bit.png",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_pixel_boss_sheet_16bit.response.json",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\crystal_skull_boss_pixel_boss_sheet_16bit.payload.json",
+    "client_id": "10089-178038971324772180-",
+    "models": [
+      {
+        "modelId": "ed45p7kmN3",
+        "strength": 0.95
+      }
+    ]
+  },
+  {
+    "slug": "abyss_dragon_boss",
+    "asset": "monster_design",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_monster_design.png",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_monster_design.response.json",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_monster_design.payload.json",
+    "client_id": "10089-178038974124045217-",
+    "models": [
+      {
+        "modelId": "2F4G6YWUH3",
+        "strength": 0.85
+      },
+      {
+        "modelId": "U3NA67CT2K",
+        "strength": 0.25
+      }
+    ]
+  },
+  {
+    "slug": "abyss_dragon_boss",
+    "asset": "monster_turnaround",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_monster_turnaround.png",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_monster_turnaround.response.json",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_monster_turnaround.payload.json",
+    "client_id": "10089-178038980664046204-",
+    "models": [
+      {
+        "modelId": "2F4G6YWUH3",
+        "strength": 0.85
+      },
+      {
+        "modelId": "U3NA67CT2K",
+        "strength": 0.25
+      }
+    ]
+  },
+  {
+    "slug": "abyss_dragon_boss",
+    "asset": "pixel_boss_sheet_16bit",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_pixel_boss_sheet_16bit.png",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_pixel_boss_sheet_16bit.response.json",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\12_boss_rerun_monster_only\\abyss_dragon_boss_pixel_boss_sheet_16bit.payload.json",
+    "client_id": "10089-178038983047486971-",
+    "models": [
+      {
+        "modelId": "ed45p7kmN3",
+        "strength": 0.95
+      }
+    ]
+  }
+]

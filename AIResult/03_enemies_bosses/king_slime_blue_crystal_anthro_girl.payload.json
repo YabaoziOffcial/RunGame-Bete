@@ -1,0 +1,20 @@
+{
+  "modelDetailList": [
+    {
+      "modelId": "NT4HQ78U2Q",
+      "strength": 0.78
+    },
+    {
+      "modelId": "y345YW8pyT",
+      "strength": 0.35
+    }
+  ],
+  "prompt": "Dragonfall敌方Boss拟人魔物娘立绘，参考图生图重绘。日式二次元魔物娘风格，唯美日系插画立绘，干净线稿，柔和赛璐璐与轻伪厚涂结合，软萌、清透、幻想、可爱但有Boss气场。完整单人全身立绘，白色或极浅色背景，游戏角色设定图。角色为年轻女性魔物娘比例，约5-6头身，表情可爱但带一点危险感。服装不过度暴露，偏幻想学院/轻礼服/怪物材质融合设计。把参考图中的蓝色透明果冻晶体糖果形态拟人化为蓝色史莱姆系魔物娘。保留参考图的两个圆润透明蓝色核心、尖角水晶翼片、玻璃果冻高光和深蓝描边。设计为蓝发/青蓝透明发梢，头饰像两颗透明史莱姆晶核，肩部或裙摆有尖角水晶翅片。服装为白蓝色轻幻想连衣裙，裙摆和袖口像透明凝胶与水晶糖纸融合。",
+  "negativePrompt": "写实照片, 3D, 厚重暗黑写实, 恐怖猎奇, 老年, 男性, 低质量, 模糊, 裁切身体, 多人, 复杂背景, 文字, logo, 水印, 过度性感, 暴露, 裸体, 巨乳, 夸张胸部, 低俗姿势, 完全丢失参考图配色, 完全丢失参考图轮廓元素",
+  "seed": -1,
+  "aspectRatios": "3:4",
+  "simpleBackground": true,
+  "batchSize": 1,
+  "reference_source": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_v2_monster_design.png",
+  "mode": "t2i_from_reference_description"
+}

@@ -1,0 +1,37 @@
+{
+  "records": [
+    {
+      "slug": "king_slime_blue_crystal_anthro_girl",
+      "source": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_v2_monster_design.png",
+      "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_blue_crystal_anthro_girl.png",
+      "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_blue_crystal_anthro_girl.payload.json",
+      "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_blue_crystal_anthro_girl.response.json",
+      "client_id": "10089-178039512054137685-"
+    },
+    {
+      "slug": "crystal_skull_soft_anthro_girl",
+      "source": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_boss_v2_monster_turnaround.png",
+      "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_soft_anthro_girl.png",
+      "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_soft_anthro_girl.payload.json",
+      "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_soft_anthro_girl.response.json",
+      "client_id": "10089-178039513634342653-"
+    },
+    {
+      "slug": "abyss_dragon_seedling_anthro_girl",
+      "source": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_boss_v2_monster_design.png",
+      "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_anthro_girl.png",
+      "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_anthro_girl.payload.json",
+      "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_anthro_girl.response.json",
+      "client_id": "10089-178039515167190117-"
+    },
+    {
+      "slug": "king_slime_blue_white_anthro_girl",
+      "source": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_boss_v2_monster_turnaround.png",
+      "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_blue_white_anthro_girl.png",
+      "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_blue_white_anthro_girl.payload.json",
+      "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_blue_white_anthro_girl.response.json",
+      "client_id": "10089-178039523024484383-"
+    }
+  ],
+  "contact_sheet": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\boss_anthro_girls_contact_sheet.jpg"
+}

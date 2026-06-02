@@ -22,11 +22,16 @@ public class PathConst
 
     public static string GetWeaponConfigPath(string name)
     {
-        return $"Config/{name}";
+        return $"Config/WeaponConfig/{name}";
     }
 
     public static string GetEnemySpawnConfigPath(string name)
     {
         return $"Config/EnemySpawnConfig/{name}";
+    }
+
+    public static string GetEquipConfigPath(string name)
+    {
+        return $"Config/{name}";
     }
 }

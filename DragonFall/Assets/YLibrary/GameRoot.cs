@@ -19,6 +19,7 @@ namespace YBZ.Core
             GameHelper.Instance.Init();                    // 游戏辅助类
             GameDataManager.Instance.Init();              // 数据控制器
             GameConfig.Init();                            // 配置 ————
+            EquipManager.Instance.Init();
             GameController.Instance.Init();
             Debug.Log("GameRoot Initialized!");
 
@@ -90,6 +91,42 @@ namespace YBZ.Core
         }
 
         [SerializeField] bool IsDrawCameraLine;
+        [SerializeField] int m_TestLevelUpCount = 1; // Inspector 测试 PlayerLevel 时连续升几级
+
+        // Play 模式下测试升级选装：补足当前级所需经验并走完整事件链
+        [InspectorButton]
+        public void PlayerLevel()
+        {
+            if (!Application.isPlaying)
+            {
+                Debug.LogWarning("[Test] PlayerLevel 请在 Play 模式下使用。");
+                return;
+            }
+
+            GameController controller = GameController.Instance;
+            if (controller.Model == null)
+            {
+                Debug.LogWarning("[Test] GameController 尚未 Init / GameStart。");
+                return;
+            }
+
+            if (controller.IsGameOver)
+            {
+                Debug.LogWarning("[Test] 本局已结束，无法测试升级。");
+                return;
+            }
+
+            int grantTimes = Mathf.Max(1, m_TestLevelUpCount);
+            for (int i = 0; i < grantTimes; i++)
+            {
+                GameModel model = controller.Model;
+                int expToLevel = Mathf.Max(1, model.LevelUpExp - model.Exp);
+                controller.GrantExpForTest(expToLevel);
+            }
+
+            Debug.Log($"[Test] PlayerLevel x{grantTimes} -> Lv.{controller.Model.Level}, 待选装: {controller.HasPendingLevelUp}");
+        }
+
         private void OnDrawGizmos()
         {
             if (IsDrawCameraLine)

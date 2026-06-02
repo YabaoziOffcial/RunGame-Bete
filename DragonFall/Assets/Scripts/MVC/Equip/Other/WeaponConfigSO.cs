@@ -43,6 +43,10 @@ public class WeaponConfigSO : ScriptableObject
         };
     }
 
+    public int MaxLevel => levels != null && levels.Count > 0 ? levels.Count : 1;
+
+    public bool IsMaxLevel(int level) => level >= MaxLevel;
+
     // 获取指定等级参数，超过配置等级时使用最后一级
     public WeaponLevelData GetLevelData(int level)
     {

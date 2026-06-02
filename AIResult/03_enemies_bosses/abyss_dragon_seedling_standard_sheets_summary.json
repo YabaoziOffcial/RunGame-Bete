@@ -1,0 +1,27 @@
+{
+  "records": [
+    {
+      "asset": "abyss_dragon_seedling_standard_character_sheet",
+      "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_standard_character_sheet.png",
+      "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_standard_character_sheet.payload.json",
+      "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_standard_character_sheet.response.json",
+      "client_id": "10089-178039584569988227-"
+    },
+    {
+      "asset": "abyss_dragon_seedling_standard_turnaround",
+      "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_standard_turnaround.png",
+      "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_standard_turnaround.payload.json",
+      "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_standard_turnaround.response.json",
+      "client_id": "10089-178039587018271995-"
+    },
+    {
+      "asset": "abyss_dragon_seedling_standard_expression_sheet",
+      "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_standard_expression_sheet.png",
+      "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_standard_expression_sheet.payload.json",
+      "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_standard_expression_sheet.response.json",
+      "client_id": "10089-178039589894732506-"
+    }
+  ],
+  "contact_sheet": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_standard_sheets_contact.jpg",
+  "reference": "https://genai.holopix.cn/2026-06-02/17803951517201780395221331-1c34cff5cb06f2ad8e7e69f7b4368eed_00001_.png"
+}

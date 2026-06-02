@@ -1,0 +1,54 @@
+---
+description: 生成 C# 代码时，为函数和字段补充一行简要中文注释
+globs: **/Assets/**/*.cs
+alwaysApply: true
+---
+
+# 生成代码注释规范
+
+在本项目中**新增或修改** C# 代码时，必须为**新增的**函数和字段补充一行简要中文注释，说明用途。
+
+## 函数
+
+在函数声明**上方**写一行注释：
+
+```csharp
+// 返回已装备且未满级的武器列表
+public List<EquipBase> GetAvailableEquips()
+{
+    ...
+}
+
+// 判断该装备是否已达配置最高等级
+private bool IsMaxLevel(EquipBase equip)
+{
+    ...
+}
+```
+
+- `public` / `protected` 方法：可用 `/// <summary>...</summary>` 或 `//`，保持与文件内现有风格一致
+- 注释只写「做什么」，不写实现细节
+- 不写「构造函数」「getter」等废话
+
+## 字段
+
+在字段声明**同一行末尾**写 `//` 注释：
+
+```csharp
+private Player m_Owner;                          // 当前装备绑定的玩家
+private readonly List<EquipBase> m_EquipOrder = new(); // 装备添加顺序，驱动 Update
+private EquipConfig m_Config;                    // 从 Resources 加载的装备总表
+```
+
+- `[SerializeField]` 字段同样在行尾注释
+- 属性（property）若语义不直观，也在声明上方或行尾补一行说明
+
+## 例外（可省略）
+
+- 极短的 lambda、单行 expression-bodied 成员
+- 自动生成的 `.meta`、第三方库代码
+- 仅改一行且语义已完全 obvious 的微调（如改常量数值）
+
+## 自检
+
+生成代码后确认：新增的每个 method 上方、每个 field 行尾，都有一句能读懂用途的中文说明。

@@ -1,0 +1,14 @@
+{
+  "modelDetailList": [
+    {
+      "modelId": "NT4HQ78U2Q",
+      "strength": 0.92
+    }
+  ],
+  "prompt": "polished 2D Japanese anime game portrait, plain white background. solo young female abyss dragon seedling monster girl for Dragonfall, Japanese anime game art, white short hair, two small mint sprout-shaped dragon horns, large translucent aqua dragon wings, white and pale mint fantasy dress, white-gold shoulder armor, small gold gemstone at chest, cyan crystal accents, cute elegant monster-girl boss, soft clean face, blue-green eyes. One single head-and-shoulders portrait only, shy blush, fragile and cute. Same hairstyle, horns, eyes, costume collar, and color palette. No body sheet, no extra faces, no grid, no text.",
+  "negativePrompt": "multiple people, second character, third character, clone, duplicate, extra body, extra head, companion, servant, pet, mascot, small inset image, panel, collage, contact sheet, turnaround sheet, character sheet, expression sheet, grid, comparison layout, text, label, logo, watermark, cropped body, cut off feet, half body, sitting, kneeling, lying, battle action, dramatic pose, side-by-side views, front and back together, chibi, photorealistic, 3D, dark horror, black hair, red costume, nude, sexualized",
+  "seed": -1,
+  "aspectRatios": "1:1",
+  "simpleBackground": true,
+  "batchSize": 1
+}

@@ -11,9 +11,29 @@ public class EquipManager : Singleton<EquipManager>
 
     public Dictionary<EquipBase, EquipGameData> CurrentEquips { get; private set; } = new Dictionary<EquipBase, EquipGameData>();
     private readonly List<EquipBase> m_EquipOrder = new List<EquipBase>();
+    private readonly List<EquipBase> m_AvailableEquipsBuffer = new List<EquipBase>();
+    private readonly Dictionary<string, WeaponConfigSO> m_WeaponCatalog = new Dictionary<string, WeaponConfigSO>();
+
+    private EquipConfig m_Config;
 
     public IReadOnlyList<EquipBase> Equips => m_EquipOrder;
     public bool IsSessionActive => m_IsSessionActive;
+
+    /// <summary>读取 EquipConfig，建立 className → WeaponConfigSO 索引。</summary>
+    public void Init()
+    {
+        m_Config = ResourceManager.Instance.LoadRes<EquipConfig>(PathConst.GetEquipConfigPath("EquipConfig"));
+        m_WeaponCatalog.Clear();
+
+        if (m_Config?.equips == null) return;
+
+        for (int i = 0; i < m_Config.equips.Count; i++)
+        {
+            WeaponConfigSO weaponConfig = m_Config.equips[i];
+            if (weaponConfig == null || string.IsNullOrEmpty(weaponConfig.className)) continue;
+            m_WeaponCatalog[weaponConfig.className] = weaponConfig;
+        }
+    }
 
     /// <summary>开局：绑定玩家并装备初始武器。</summary>
     public void StartSession(Player owner)
@@ -58,10 +78,11 @@ public class EquipManager : Singleton<EquipManager>
         }
     }
 
-    /// <summary>按类名添加装备（无 SO 时用默认 EquipData）。</summary>
+    /// <summary>按类名添加装备（优先从 EquipConfig 取 WeaponConfigSO）。</summary>
     public EquipBase AddEquip(string className)
     {
-        return AddEquip(className, null);
+        m_WeaponCatalog.TryGetValue(className, out WeaponConfigSO config);
+        return AddEquip(className, config);
     }
 
     /// <summary>通过 WeaponConfigSO 添加装备。</summary>
@@ -109,7 +130,9 @@ public class EquipManager : Singleton<EquipManager>
     public bool UpgradeEquip(string className)
     {
         EquipBase equip = GetEquip(className);
-        if (equip == null) return false;
+        if (equip == null || IsMaxLevel(equip)) return false;
+
+        equip.EquipData.level++;
         equip.LevelUp(m_Owner as Player);
         NotifyCurrentEquipsChanged();
         return true;
@@ -153,6 +176,46 @@ public class EquipManager : Singleton<EquipManager>
         return null;
     }
 
+    // 按 className 判断玩家是否已拥有该装备
+    public bool HasEquip(string className) => GetEquip(className) != null;
+
+    // 按配置判断玩家是否已拥有该装备
+    public bool HasEquip(WeaponConfigSO config) =>
+        config != null && HasEquip(config.className);
+
+    // 获取已装备武器的当前等级，未拥有时返回 0
+    public int GetEquipLevel(string className) => GetEquip(className)?.Level ?? 0;
+
+    // 生成已拥有装备的升级预览：Lv.当前 -> Lv.下一级，下一级即满级时 -> Max
+    public string GetEquipLevelPreview(string className)
+    {
+        EquipBase equip = GetEquip(className);
+        if (equip == null) return string.Empty;
+
+        WeaponConfigSO config = ResolveWeaponConfig(equip);
+        int currentLevel = equip.Level;
+        int maxLevel = config != null ? config.MaxLevel : 1;
+        int nextLevel = currentLevel + 1;
+
+        if (nextLevel >= maxLevel)
+            return $"Lv.{currentLevel} -> Max";
+
+        return $"Lv.{currentLevel} -> Lv.{nextLevel}";
+    }
+
+    // 按配置生成升级预览文案
+    public string GetEquipLevelPreview(WeaponConfigSO config) =>
+        config != null ? GetEquipLevelPreview(config.className) : string.Empty;
+
+    // 获取选中该装备后将展示的等级效果描述
+    public string GetEquipChoiceDescription(WeaponConfigSO config)
+    {
+        if (config == null) return string.Empty;
+
+        int previewLevel = HasEquip(config) ? GetEquipLevel(config.className) + 1 : 1;
+        return config.GetLevelData(previewLevel).description;
+    }
+
     /// <summary>子弹/武器命中时累计该装备本局伤害统计。</summary>
     public void AddDamage(EquipBase equip, float damage)
     {
@@ -166,6 +229,59 @@ public class EquipManager : Singleton<EquipManager>
     private void NotifyCurrentEquipsChanged()
     {
         GameEvents.RaiseEquipListChanged();
+    }
+
+    /// <summary>已装备且未满级的武器（升级三选一候选）。</summary>
+    public List<EquipBase> GetAvailableEquips()
+    {
+        m_AvailableEquipsBuffer.Clear();
+
+        for (int i = 0; i < m_EquipOrder.Count; i++)
+        {
+            EquipBase equip = m_EquipOrder[i];
+            if (!IsMaxLevel(equip))
+            {
+                m_AvailableEquipsBuffer.Add(equip);
+            }
+        }
+
+        return m_AvailableEquipsBuffer;
+    }
+
+    /// <summary>EquipConfig 中尚未获得、可新选的武器。</summary>
+    public List<WeaponConfigSO> GetUndiscoveredWeaponConfigs()
+    {
+        List<WeaponConfigSO> result = new List<WeaponConfigSO>();
+        if (m_Config?.equips == null) return result;
+
+        for (int i = 0; i < m_Config.equips.Count; i++)
+        {
+            WeaponConfigSO weaponConfig = m_Config.equips[i];
+            if (weaponConfig == null || string.IsNullOrEmpty(weaponConfig.className)) continue;
+            if (GetEquip(weaponConfig.className) != null) continue;
+
+            result.Add(weaponConfig);
+        }
+
+        return result;
+    }
+
+    private bool IsMaxLevel(EquipBase equip)
+    {
+        WeaponConfigSO config = ResolveWeaponConfig(equip);
+        if (config == null) return equip.Level >= 1;
+
+        return config.IsMaxLevel(equip.Level);
+    }
+
+    private WeaponConfigSO ResolveWeaponConfig(EquipBase equip)
+    {
+        if (equip?.EquipData == null) return null;
+        if (equip.EquipData.weaponConfig != null) return equip.EquipData.weaponConfig;
+
+        if (string.IsNullOrEmpty(equip.EquipData.className)) return null;
+        m_WeaponCatalog.TryGetValue(equip.EquipData.className, out WeaponConfigSO config);
+        return config;
     }
 
     private EquipGameData CreateEquipGameData()
