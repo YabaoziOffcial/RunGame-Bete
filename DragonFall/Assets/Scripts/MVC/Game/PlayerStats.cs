@@ -90,4 +90,33 @@ public class PlayerStats
     public void SetReselect(float value) => Reselect = value;
     public void SetSkip(float value) => Skip = value;
     public void SetExclude(float value) => Exclude = value;
+
+    public void AddMaxHp(float delta) => MaxHp += delta;
+    public void AddCurrentHp(float delta) => CurrentHp = Mathf.Max(0f, CurrentHp + delta);
+    public void AddHeal(float delta) => Heal += delta;
+    public void AddVampire(float delta) => Vampire += delta;
+    public void AddDefense(float delta) => Defense += delta;
+    public void AddMoveSpeed(float delta) => MoveSpeed += delta;
+    public void AddStrength(float delta) => Strength += delta;
+    public void AddAttackRate(float delta) => AttackRate += delta;
+    public void AddBarrageSpeed(float delta) => BarrageSpeed += delta;
+    public void AddBarrageDuration(float delta) => BarrageDuration += delta;
+    public void AddAttackRange(float delta) => AttackRange += delta;
+    public void AddBarrageCD(float delta) => BarrageCD += delta;
+    public void AddBarrageCount(float delta) => BarrageCount += delta;
+    public void AddReliveNumber(float delta) => ReliveNumber += delta;
+    public void AddPickupRange(float delta) => PickupRange += delta;
+    public void AddLuck(float delta) => Luck += delta;
+    public void AddGrowth(float delta) => Growth += delta;
+    public void AddGreed(float delta) => Greed += delta;
+    public void AddCurse(float delta) => Curse += delta;
+    public void AddReselect(float delta) => Reselect += delta;
+    public void AddSkip(float delta) => Skip += delta;
+    public void AddExclude(float delta) => Exclude += delta;
+
+    // 应用装备/道具对玩家的成长类属性修正
+    public void AddModifiers(PlayerStatModifiers modifiers) => modifiers?.ApplyPlayerBonusesTo(this, 1);
+
+    // 移除已应用的成长类属性修正
+    public void RemoveModifiers(PlayerStatModifiers modifiers) => modifiers?.ApplyPlayerBonusesTo(this, -1);
 }

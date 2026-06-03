@@ -1,0 +1,17 @@
+{
+  "modelDetailList": [
+    {
+      "modelId": "NT4HQ78U2Q",
+      "strength": 0.9
+    }
+  ],
+  "prompt": "same Dragonfall abyss dragon seedling monster-girl character, white short bob hair, small mint-green sprout dragon horns, aqua dragon ears, translucent aqua dragon wings, white and pale mint fantasy dress with teal skirt, white-gold shoulder armor, small gold chest gemstone, cyan crystal highlights, elegant cute monster-girl boss. stylized indie game character illustration, 4 to 5 heads tall semi-chibi proportion, large head, compact torso, shorter simplified legs, readable sprite-like silhouette, bold clean outer contour, simplified inner linework, flat cel-shaded color blocks, limited teal aqua white gold palette, high contrast dark teal accents, soft paper-like texture, less rendered than anime key art, more like a polished 2D game enemy sprite concept, plain light background. use the reference image pose: cute small magic casting pose, front-facing body, one hand raised forward, other arm relaxed near the wing, wings opened left and right, legs close together, confident playful expression. Variant direction: slightly darker teal accents, stronger fantasy enemy presence, still cute and readable, cleaner wing shape. Draw one single full-body character only, centered, feet visible, no extra views. Keep the original pose, character identity, wings, horns, white hair, teal-white-gold colors, and casting gesture.",
+  "negativePrompt": "two-head chibi, tiny mascot, very tall adult body, realistic anatomy, multiple characters, clone, duplicate, extra face, contact sheet, collage, grid, text, label, logo, watermark, cropped body, cut off feet, half body, sitting, kneeling, photorealistic, 3D render, over-detailed anime illustration, thin delicate rendering, dark horror, black hair, red outfit, nude, sexualized, giant breasts, busy background, scenery",
+  "seed": -1,
+  "aspectRatios": "1:1",
+  "simpleBackground": true,
+  "batchSize": 1,
+  "imageReference": "https://genai.holopix.cn/2026-06-02/17804108073521780410947129-2d1755aea4799d22d317f5f242bf7149_00001_.png",
+  "referenceMode": "standard",
+  "referenceWeight": 1
+}

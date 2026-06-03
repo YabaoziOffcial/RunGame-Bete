@@ -1,0 +1,17 @@
+{
+  "modelDetailList": [
+    {
+      "modelId": "NT4HQ78U2Q",
+      "strength": 0.88
+    }
+  ],
+  "prompt": "Dragonfall semi-chibi enemy character concept, Japanese anime monster-girl, 4 to 5 heads tall, large readable head, compact torso, shorter simplified legs, full body visible, centered, plain light background, bold clean outer contour, simplified costume shapes, limited palette, flat cel shading, readable sprite-like silhouette, cute but enemy-like, suitable for 2D indie action RPG enemy sprite production. Character identity: blue crystal king slime anthro monster-girl boss, translucent aqua slime body and hair, round jelly-like forms, small crystal crown, blue-white slime dress, watery glossy highlights, soft innocent face, pure cute boss aura. Action: cute slime magic casting pose, one hand forward, small aqua splash magic, confident soft smile. Keep the same character identity and color palette from the reference image. Draw one single full-body character only, no extra views, no second character.",
+  "negativePrompt": "multiple characters, duplicate, clone, extra head, extra body, inset portrait, contact sheet, grid, collage, text, label, logo, watermark, two-head chibi, tiny mascot, very tall adult body, realistic anatomy, over-detailed key visual, photorealistic, 3D render, busy background, scenery, cropped body, cut off feet, nude, sexualized, giant breasts, horror gore",
+  "seed": -1,
+  "aspectRatios": "1:1",
+  "simpleBackground": true,
+  "batchSize": 1,
+  "imageReference": "https://genai.holopix.cn/2026-06-02/17803951206221780395127864-c415b48a9322acaa3e6352f1187cdb99_00001_.png",
+  "referenceMode": "standard",
+  "referenceWeight": 1
+}

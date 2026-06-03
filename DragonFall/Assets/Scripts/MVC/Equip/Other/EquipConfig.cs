@@ -6,5 +6,5 @@ using UnityEngine;
 public class EquipConfig : ScriptableObject
 {
     [SerializeField]
-    public List<WeaponConfigSO> equips;
+    public List<WeaponConfig> equips;
 }

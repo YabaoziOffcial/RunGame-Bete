@@ -1,0 +1,50 @@
+[
+  {
+    "asset": "slime_mermaid_semichibi_v2_idle_float",
+    "character": "slime_mermaid",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\slime_mermaid_semichibi_v2_idle_float.png",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\slime_mermaid_semichibi_v2_idle_float.payload.json",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\slime_mermaid_semichibi_v2_idle_float.response.json",
+    "client_id": "existing"
+  },
+  {
+    "asset": "slime_mermaid_semichibi_v2_cast_wave",
+    "character": "slime_mermaid",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\slime_mermaid_semichibi_v2_cast_wave.png",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\slime_mermaid_semichibi_v2_cast_wave.payload.json",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\slime_mermaid_semichibi_v2_cast_wave.response.json",
+    "client_id": "existing"
+  },
+  {
+    "asset": "slime_mermaid_semichibi_v2_hurt_splash",
+    "character": "slime_mermaid",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\slime_mermaid_semichibi_v2_hurt_splash.png",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\slime_mermaid_semichibi_v2_hurt_splash.payload.json",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\slime_mermaid_semichibi_v2_hurt_splash.response.json",
+    "client_id": "existing"
+  },
+  {
+    "asset": "skeleton_knight_semichibi_v2_idle_guard",
+    "character": "skeleton_knight",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\skeleton_knight_semichibi_v2_idle_guard.png",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\skeleton_knight_semichibi_v2_idle_guard.payload.json",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\skeleton_knight_semichibi_v2_idle_guard.response.json",
+    "client_id": "existing"
+  },
+  {
+    "asset": "skeleton_knight_semichibi_v2_ready_sword",
+    "character": "skeleton_knight",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\skeleton_knight_semichibi_v2_ready_sword.png",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\skeleton_knight_semichibi_v2_ready_sword.payload.json",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\skeleton_knight_semichibi_v2_ready_sword.response.json",
+    "client_id": "existing"
+  },
+  {
+    "asset": "skeleton_knight_semichibi_v2_hurt_stagger",
+    "character": "skeleton_knight",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\skeleton_knight_semichibi_v2_hurt_stagger.png",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\skeleton_knight_semichibi_v2_hurt_stagger.payload.json",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\skeleton_knight_semichibi_v2_hurt_stagger.response.json",
+    "client_id": "10089-178041864360248424-"
+  }
+]

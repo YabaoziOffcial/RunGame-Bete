@@ -8,6 +8,8 @@ public class EquipGameData
     public long AddTimestamp { get; private set; }
     // 该装备本局累计造成的伤害
     public float totalDamage;
+    // 当前等级已应用到 PlayerStats 的成长类修正（用于升级/卸下时回滚）
+    public PlayerStatModifiers AppliedPlayerBonuses = new PlayerStatModifiers();
 
     public EquipGameData(long addTimestamp)
     {

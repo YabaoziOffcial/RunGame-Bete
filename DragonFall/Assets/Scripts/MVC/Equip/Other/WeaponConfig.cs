@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "DragonFall/Equip/Weapon Config")]
-public class WeaponConfigSO : ScriptableObject
+public class WeaponConfig : ScriptableObject
 {
     [Header("Equip")]
     // 装备唯一 id，后续可用于存档或表格索引
@@ -60,28 +60,22 @@ public class WeaponConfigSO : ScriptableObject
     }
 }
 
+// 武器等级数据：字段名与 PlayerStats 一致；武器脚本读取战斗字段，成长字段通过 EquipManager 写入 PlayerStats
 [System.Serializable]
-public class WeaponLevelData
+public class WeaponLevelData : PlayerStatModifiers
 {
-    // 开火间隔，数值越小射速越快
-    public float fireInterval = 1f;
-
-    // 单次开火生成的子弹数量
-    public int bulletCount = 1;
-
-    // 子弹飞行速度
-    public float bulletSpeed = 4f;
-
-    // 子弹存在时长
-    public float bulletLifeTime = 5f;
-
-    // 多发子弹之间的角度间隔
-    public float spreadAngle = 8f;
-    // 单颗子弹造成的伤害
-    public float damage = 10f;
-
+    [Header("升级描述")]
+    [Tooltip("选卡界面展示的效果文案")]
     public string description = "这里是升级效果";
 
-    // 没有配置资产时的默认等级参数
-    public static WeaponLevelData Default => new WeaponLevelData();
+    // AttackRate：开火间隔（秒）；BarrageCount：子弹数；AttackRange：多发扩散角（度）
+    public static WeaponLevelData Default => new WeaponLevelData
+    {
+        AttackRate = 1f,
+        BarrageCount = 1f,
+        BarrageSpeed = 4f,
+        BarrageDuration = 5f,
+        AttackRange = 8f,
+        Strength = 10f,
+    };
 }

@@ -1,0 +1,17 @@
+{
+  "modelDetailList": [
+    {
+      "modelId": "NT4HQ78U2Q",
+      "strength": 0.88
+    }
+  ],
+  "prompt": "Refine the referenced character into a cleaner Dragonfall semi-chibi enemy character. Keep the same single character, same pose, same front-facing magic casting gesture, same white short hair, mint-green dragon horns, aqua dragon wings, teal-white dress, gold armor accents, aqua tail, and cute boss expression. Use 4 to 5 heads tall proportions, large readable head, compact torso, shorter legs, full body visible, centered. Make it suitable as a 2D indie game enemy character concept: bold outer contour, simplified costume shapes, limited teal aqua white gold palette, flat cel shading, clean readable silhouette, plain light background. Variant: more sprite-ready base design, simpler wing membranes, simpler skirt layers, chunkier shapes, lower detail density. Draw one single full-body character only.",
+  "negativePrompt": "multiple characters, second character, duplicate, clone, extra head, extra body, inset portrait, small mascot, contact sheet, grid, two-head chibi, tiny mascot, very tall adult body, realistic anatomy, over-detailed key visual, delicate painterly rendering, busy background, text, label, logo, watermark, cropped body, cut off feet, sitting, kneeling, photorealistic, 3D, black hair, red outfit, nude, sexualized, giant breasts, horror",
+  "seed": -1,
+  "aspectRatios": "1:1",
+  "simpleBackground": true,
+  "batchSize": 1,
+  "imageReference": "https://genai.holopix.cn/2026-06-02/17804115615681780411641897-246b28d86145b9c7bf7c86858b97c4c4_00001_.png",
+  "referenceMode": "standard",
+  "referenceWeight": 1
+}

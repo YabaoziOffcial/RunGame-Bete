@@ -10,7 +10,7 @@ public class Weapon_Magic : EquipBase
     // 当前开火冷却计时
     private float m_FireTimer;
     // 武器配置
-    private WeaponConfigSO m_Config;
+    private WeaponConfig m_Config;
     // 当前等级参数
     private WeaponLevelData m_WeaponData = WeaponLevelData.Default;
     // 子弹预制体缓存
@@ -35,12 +35,12 @@ public class Weapon_Magic : EquipBase
         Transform enemy = FindNearestEnemy(player.transform.position);
         if (enemy == null)
         {
-            m_FireTimer = m_WeaponData.fireInterval;
+            m_FireTimer = m_WeaponData.AttackRate;
             return;
         }
 
         Fire(player.transform.position, enemy.position);
-        m_FireTimer = m_WeaponData.fireInterval;
+        m_FireTimer = m_WeaponData.AttackRate;
     }
     
     // 固定帧更新入口，当前武器暂不使用
@@ -66,7 +66,7 @@ public class Weapon_Magic : EquipBase
     // 应用配置中的当前等级参数
     private void ApplyLevelData()
     {
-        m_Config = ResourceManager.Instance.LoadRes<WeaponConfigSO>(PathConst.GetWeaponConfigPath("WeaponMagicConfig"));
+        m_Config = ResourceManager.Instance.LoadRes<WeaponConfig>(PathConst.GetWeaponConfigPath("WeaponMagicConfig"));
         if (m_Config == null && EquipData != null)
         {
             m_Config = EquipData.weaponConfig;
@@ -140,11 +140,11 @@ public class Weapon_Magic : EquipBase
         if (direction.sqrMagnitude <= 0f) direction = Vector2.right;
         direction.Normalize();
 
-        int count = Mathf.Max(1, m_WeaponData.bulletCount);
-        float startAngle = count == 1 ? 0f : -m_WeaponData.spreadAngle * (count - 1) * 0.5f;
+        int count = Mathf.Max(1, Mathf.RoundToInt(m_WeaponData.BarrageCount));
+        float startAngle = count == 1 ? 0f : -m_WeaponData.AttackRange * (count - 1) * 0.5f;
         for (int i = 0; i < count; i++)
         {
-            Vector2 bulletDirection = Quaternion.Euler(0f, 0f, startAngle + m_WeaponData.spreadAngle * i) * direction;
+            Vector2 bulletDirection = Quaternion.Euler(0f, 0f, startAngle + m_WeaponData.AttackRange * i) * direction;
             GameObject bullet = ObjectPool.GetObj(m_BulletPrefab, m_Config != null && m_Config.isPlayerChild ? Owner.BulletPool : null);
             bullet.transform.position = firePosition;
             bullet.transform.rotation = Quaternion.identity;
@@ -161,7 +161,7 @@ public class Weapon_Magic : EquipBase
         {
             bulletMove = bullet.AddComponent<WeaponCommonBullet>();
         }
-        bulletMove.Init(direction, m_WeaponData.bulletSpeed, m_WeaponData.bulletLifeTime, m_WeaponData.damage, this);
+        bulletMove.Init(direction, m_WeaponData.BarrageSpeed, m_WeaponData.BarrageDuration, m_WeaponData.Strength, this);
     }
 }
 

@@ -53,5 +53,5 @@ public class EquipData
     // 装备描述
     public string description;
     // 武器配置数据
-    public WeaponConfigSO weaponConfig;
+    public WeaponConfig weaponConfig;
 }

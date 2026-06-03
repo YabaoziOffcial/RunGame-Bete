@@ -59,7 +59,7 @@ public class SelectView : Y_PopupBase
             if (equipUnit == null) continue;
 
             EquipBase equip = availableEquips[i];
-            WeaponConfigSO config = equip.EquipData?.weaponConfig;
+            WeaponConfig config = equip.EquipData?.weaponConfig;
             if (config != null)
             {
                 equipUnit.Refresh(config);

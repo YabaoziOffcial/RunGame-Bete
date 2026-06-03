@@ -19,10 +19,10 @@ MonoBehaviour:
   isPlayerChild: 0
   bulletPrefab: {fileID: 4263278048633971554, guid: c03c9843f937d664c8b3c2c40d462f45, type: 3}
   levels:
-  - fireInterval: 2.5
-    bulletCount: 1
-    bulletSpeed: 4
-    bulletLifeTime: 1
-    spreadAngle: 8
-    damage: 10
+  - AttackRate: 2.5
+    BarrageCount: 1
+    BarrageSpeed: 4
+    BarrageDuration: 1
+    AttackRange: 8
+    Strength: 10
     description: "\u8FD9\u91CC\u662F\u5347\u7EA7\u6548\u679C"

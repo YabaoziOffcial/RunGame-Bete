@@ -12,7 +12,7 @@ public class EquipUnit : MonoBehaviour
     public EquipData equipData;
 
     // 按 WeaponConfigSO 刷新卡片（升级三选一主入口）
-    public void Refresh(WeaponConfigSO config)
+    public void Refresh(WeaponConfig config)
     {
         if (config == null) return;
 

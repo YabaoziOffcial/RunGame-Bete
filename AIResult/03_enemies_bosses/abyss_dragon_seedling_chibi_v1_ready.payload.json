@@ -1,0 +1,17 @@
+{
+  "modelDetailList": [
+    {
+      "modelId": "NT4HQ78U2Q",
+      "strength": 0.9
+    }
+  ],
+  "prompt": "4 to 5 heads tall semi-chibi Japanese anime game character, not super-deformed 2-head chibi, compact indie game character proportions, simplified readable costume blocks, clean silhouette, polished 2D anime game art, clean linework, soft cel shading, plain white background, full body visible, feet visible. same character as reference, abyss dragon seedling monster-girl boss for Dragonfall, white short hair, small mint sprout-like dragon horns, translucent aqua dragon wings, white and pale mint fantasy dress, white-gold shoulder armor, gold chest gemstone, cyan crystal accents, cute elegant Japanese anime monster-girl identity. One single full-body character only, cute alert ready pose, one foot slightly forward, one hand near chest gemstone, wings raised slightly, cautious expression. Keep the head-to-body ratio around 4 to 5 heads tall. Preserve the original design: white short hair, mint horns, aqua wings, mint-white dress, gold shoulder armor, chest gemstone. Suitable as a 16-bit-inspired indie action RPG enemy character concept, but drawn as clean 2D anime art.",
+  "negativePrompt": "2-head chibi, tiny mascot, baby body, realistic adult body, normal tall 6-head body, multiple characters, duplicate body, clone, contact sheet, collage, grid, panel layout, text, label, logo, watermark, cropped body, cut off feet, half body, busy background, scene background, photorealistic, 3D, dark horror, black hair, red main color, nude, sexualized, giant breasts",
+  "seed": -1,
+  "aspectRatios": "1:1",
+  "simpleBackground": true,
+  "batchSize": 1,
+  "imageReference": "https://genai.holopix.cn/2026-06-02/17803967342511780396824165-1c34cff5cb06f2ad8e7e69f7b4368eed_00001_.png",
+  "referenceMode": "standard",
+  "referenceWeight": 1
+}

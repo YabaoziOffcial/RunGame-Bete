@@ -1,0 +1,23 @@
+[
+  {
+    "asset": "abyss_dragon_seedling_chibi_v2_flat_a",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v2_flat_a.png",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v2_flat_a.payload.json",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v2_flat_a.response.json",
+    "client_id": "10089-178041134580563038-"
+  },
+  {
+    "asset": "abyss_dragon_seedling_chibi_v2_flat_b",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v2_flat_b.png",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v2_flat_b.payload.json",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v2_flat_b.response.json",
+    "client_id": "10089-178041147840929454-"
+  },
+  {
+    "asset": "abyss_dragon_seedling_chibi_v2_flat_c",
+    "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v2_flat_c.png",
+    "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v2_flat_c.payload.json",
+    "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v2_flat_c.response.json",
+    "client_id": "10089-178041156148596626-"
+  }
+]

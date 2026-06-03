@@ -1,0 +1,19 @@
+{
+  "msg": "成功",
+  "code": 0,
+  "data": {
+    "clientList": [
+      {
+        "clientId": "10089-178041057493529319-",
+        "status": "succeed",
+        "imgUrls": [
+          "https://genai.holopix.cn/2026-06-02/17804105750081780410655309-246b28d86145b9c7bf7c86858b97c4c4_00001_.png"
+        ],
+        "content": null,
+        "statusMsg": null,
+        "createdTime": 1780410575000
+      }
+    ]
+  },
+  "success": true
+}

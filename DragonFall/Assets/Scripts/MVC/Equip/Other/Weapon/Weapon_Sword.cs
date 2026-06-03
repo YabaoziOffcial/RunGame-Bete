@@ -4,7 +4,7 @@ using UnityEngine;
 public class Weapon_Sword : EquipBase
 {
     private float m_FireTimer;
-    private WeaponConfigSO m_Config;
+    private WeaponConfig m_Config;
     private WeaponLevelData m_WeaponData = WeaponLevelData.Default;
     private GameObject m_SlashPrefab;
     private Vector2 m_FireDirection = Vector2.right;
@@ -26,7 +26,7 @@ public class Weapon_Sword : EquipBase
         if (m_FireTimer > 0f) return;
 
         Fire(player.transform.position, m_FireDirection);
-        m_FireTimer = m_WeaponData.fireInterval;
+        m_FireTimer = m_WeaponData.AttackRate;
     }
 
     public override void FixedUpdate(Player player)
@@ -49,7 +49,7 @@ public class Weapon_Sword : EquipBase
 
     private void ApplyLevelData()
     {
-        m_Config = ResourceManager.Instance.LoadRes<WeaponConfigSO>(PathConst.GetWeaponConfigPath("WeaponSwordConfig"));
+        m_Config = ResourceManager.Instance.LoadRes<WeaponConfig>(PathConst.GetWeaponConfigPath("WeaponSwordConfig"));
         m_WeaponData = m_Config.GetLevelData(Level);
     }
 
@@ -88,11 +88,11 @@ public class Weapon_Sword : EquipBase
         }
         if (m_SlashPrefab == null) return;
 
-        int count = Mathf.Max(1, m_WeaponData.bulletCount);
-        float startAngle = count == 1 ? 0f : -m_WeaponData.spreadAngle * (count - 1) * 0.5f;
+        int count = Mathf.Max(1, Mathf.RoundToInt(m_WeaponData.BarrageCount));
+        float startAngle = count == 1 ? 0f : -m_WeaponData.AttackRange * (count - 1) * 0.5f;
         for (int i = 0; i < count; i++)
         {
-            Vector2 slashDirection = Quaternion.Euler(0f, 0f, startAngle + m_WeaponData.spreadAngle * i) * direction;
+            Vector2 slashDirection = Quaternion.Euler(0f, 0f, startAngle + m_WeaponData.AttackRange * i) * direction;
             GameObject slash = ObjectPool.GetObj(m_SlashPrefab, m_Config.isPlayerChild ? Owner.BulletPool : null);
             slash.transform.position = firePosition;
             slash.transform.rotation = Quaternion.identity;
@@ -103,7 +103,7 @@ public class Weapon_Sword : EquipBase
             {
                 swordSlash = slash.AddComponent<Weapon_Sword_Slash>();
             }
-            swordSlash.Init(m_WeaponData.bulletLifeTime, m_WeaponData.damage, this);
+            swordSlash.Init(m_WeaponData.BarrageDuration, m_WeaponData.Strength, this);
         }
     }
 }

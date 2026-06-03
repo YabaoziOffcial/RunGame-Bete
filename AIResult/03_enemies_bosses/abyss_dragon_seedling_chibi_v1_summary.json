@@ -1,0 +1,33 @@
+{
+  "records": [
+    {
+      "asset": "abyss_dragon_seedling_chibi_v1_idle",
+      "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v1_idle.png",
+      "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v1_idle.payload.json",
+      "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v1_idle.response.json",
+      "client_id": "existing"
+    },
+    {
+      "asset": "abyss_dragon_seedling_chibi_v1_ready",
+      "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v1_ready.png",
+      "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v1_ready.payload.json",
+      "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v1_ready.response.json",
+      "client_id": "existing"
+    },
+    {
+      "asset": "abyss_dragon_seedling_chibi_v1_cast",
+      "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v1_cast.png",
+      "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v1_cast.payload.json",
+      "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v1_cast.response.json",
+      "client_id": "existing"
+    },
+    {
+      "asset": "abyss_dragon_seedling_chibi_v1_hurt",
+      "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v1_hurt.png",
+      "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v1_hurt.payload.json",
+      "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v1_hurt.response.json",
+      "client_id": "existing"
+    }
+  ],
+  "contact": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\abyss_dragon_seedling_chibi_v1_action_contact.png"
+}

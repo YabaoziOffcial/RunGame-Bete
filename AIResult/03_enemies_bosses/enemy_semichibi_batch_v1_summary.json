@@ -1,0 +1,57 @@
+{
+  "records": [
+    {
+      "asset": "king_slime_semichibi_v1_idle_clean",
+      "character": "king_slime",
+      "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_semichibi_v1_idle_clean.png",
+      "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_semichibi_v1_idle_clean.payload.json",
+      "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_semichibi_v1_idle_clean.response.json",
+      "client_id": "existing"
+    },
+    {
+      "asset": "king_slime_semichibi_v1_cast_splash",
+      "character": "king_slime",
+      "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_semichibi_v1_cast_splash.png",
+      "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_semichibi_v1_cast_splash.payload.json",
+      "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_semichibi_v1_cast_splash.response.json",
+      "client_id": "existing"
+    },
+    {
+      "asset": "king_slime_semichibi_v1_hurt_wobble",
+      "character": "king_slime",
+      "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_semichibi_v1_hurt_wobble.png",
+      "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_semichibi_v1_hurt_wobble.payload.json",
+      "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_semichibi_v1_hurt_wobble.response.json",
+      "client_id": "existing"
+    },
+    {
+      "asset": "crystal_skull_semichibi_v1_idle_clean",
+      "character": "crystal_skull",
+      "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_semichibi_v1_idle_clean.png",
+      "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_semichibi_v1_idle_clean.payload.json",
+      "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_semichibi_v1_idle_clean.response.json",
+      "client_id": "existing"
+    },
+    {
+      "asset": "crystal_skull_semichibi_v1_cast_crystal",
+      "character": "crystal_skull",
+      "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_semichibi_v1_cast_crystal.png",
+      "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_semichibi_v1_cast_crystal.payload.json",
+      "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_semichibi_v1_cast_crystal.response.json",
+      "client_id": "existing"
+    },
+    {
+      "asset": "crystal_skull_semichibi_v1_hurt_shatter",
+      "character": "crystal_skull",
+      "out": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_semichibi_v1_hurt_shatter.png",
+      "payload_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_semichibi_v1_hurt_shatter.payload.json",
+      "response_json": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_semichibi_v1_hurt_shatter.response.json",
+      "client_id": "existing"
+    }
+  ],
+  "contacts": [
+    "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\king_slime_semichibi_v1_contact.png",
+    "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\crystal_skull_semichibi_v1_contact.png"
+  ],
+  "overview": "C:\\Users\\Administrator\\Desktop\\Dragonfall\\AIResult\\03_enemies_bosses\\enemy_semichibi_batch_v1_overview.png"
+}

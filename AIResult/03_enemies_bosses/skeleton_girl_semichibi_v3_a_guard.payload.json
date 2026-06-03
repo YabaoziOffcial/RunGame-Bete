@@ -1,0 +1,17 @@
+{
+  "modelDetailList": [
+    {
+      "modelId": "NT4HQ78U2Q",
+      "strength": 0.88
+    }
+  ],
+  "prompt": "Dragonfall semi-chibi enemy character concept, Japanese anime monster-girl, 4 to 5 heads tall, one single full-body character, centered, plain light background, bold clean outer contour, flat cel shading, readable 2D indie game enemy silhouette. Character: cute skeleton girl enemy. Her head is a normal gentle anime girl head, not a skull, not a mask; soft young female face, pale skin, calm non-scary expression, short light hair or white hair. Her neck, torso, arms, hands, legs, and feet have no flesh: exposed ivory skeleton bones are clearly visible, visible rib cage, spine, shoulder bones, arm bones, finger bones, pelvis, leg bones. Use cloth only as draped black or dark purple fabric pieces around shoulders, waist, and hips, leaving the bone body readable. Optional small red flower ornaments and muted bronze armor accents. She carries a small round shield and a short sword like a cute skeleton guard. Overall mood: cute, elegant, monster-girl, not frightening, not gore. Variant: guard idle pose, small round shield at one side, short sword lowered, exposed rib cage and skeletal limbs clearly visible.",
+  "negativePrompt": "skull head, skull face, skull mask, full flesh body, normal human arms, normal human legs, skin-covered torso, zombie flesh, blood, gore, horror, scary monster, realistic skeleton, multiple characters, duplicate, extra head, extra body, inset portrait, contact sheet, grid, collage, text, label, logo, watermark, two-head chibi, tiny mascot, very tall adult body, photorealistic, 3D render, busy background, nude, sexualized, giant breasts, cropped body, cut off feet",
+  "seed": -1,
+  "aspectRatios": "1:1",
+  "simpleBackground": true,
+  "batchSize": 1,
+  "imageReference": "https://genai.holopix.cn/2026-06-03/17804183395901780418347259-c9b5310be573e08bf8c1f35372088a5f_00001_.png",
+  "referenceMode": "standard",
+  "referenceWeight": 1
+}
