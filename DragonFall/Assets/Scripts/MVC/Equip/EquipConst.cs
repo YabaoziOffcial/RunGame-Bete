@@ -16,4 +16,17 @@ public class EquipConst
     {
         return ResourceManager.Instance.LoadRes<Sprite>($"Sprite/Icon/{name}_Icon");
     }
+
+    public static Sprite DefaultIcon
+    {
+        get
+        {
+            if (m_DefaultIcon == null)
+            {
+                m_DefaultIcon = ResourceManager.Instance.LoadRes<Sprite>("Sprite/Icon/default_icon");
+            }
+            return m_DefaultIcon;
+        }
+    }
+    private static Sprite m_DefaultIcon;
 }

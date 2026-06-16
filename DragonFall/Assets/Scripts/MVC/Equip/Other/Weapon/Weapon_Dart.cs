@@ -113,7 +113,7 @@ public class Weapon_Dart : EquipBase
         for (int i = 0; i < count; i++)
         {
             Vector2 bulletDirection = Quaternion.Euler(0f, 0f, startAngle + m_WeaponData.AttackRange * i) * direction;
-            GameObject bullet = ObjectPool.GetObj(m_BulletPrefab, m_Config != null && m_Config.isPlayerChild ? Owner.BulletPool : null);
+            GameObject bullet = ObjectPool.GetObj(m_BulletPrefab, Owner.BulletPool);
             bullet.transform.position = firePosition;
             bullet.transform.rotation = Quaternion.identity;
             bullet.transform.right = bulletDirection;

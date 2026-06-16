@@ -7,7 +7,9 @@ public class SelectView : Y_PopupBase
 {
     [SerializeField] List<GameObject> m_EquipUnitTemplates = new List<GameObject>(); // 已放置 + 对象池取出的 EquipUnit 缓存
     [SerializeField] Transform m_EquipUnitRoot;                                        // EquipUnit 挂载父节点
-    [SerializeField] GameObject m_EquipUnitPrefab;  
+    [SerializeField] GameObject m_EquipUnitPrefab;
+
+    private const int MAX_CHOICES = 3;
 
     #region Player Values
     [SerializeField] Text m_MaxHpText, m_HealText, m_VampireText, m_DefenseText, m_MoveSpeedText;
@@ -16,6 +18,8 @@ public class SelectView : Y_PopupBase
     [SerializeField] Text m_LuckText, m_GrowthText, m_GreedText, m_CurseText;
     [SerializeField] Text m_ReselectText, m_SkipText, m_ExcludeText;
     #endregion
+
+    private List<EquipData> m_CurrentChoices = new List<EquipData>();
 
     /// <summary>展示当前玩家属性（由 GameController.OpenSelectView 注入，不直接读 Model）。</summary>
     public void Refresh(PlayerStats stats)
@@ -42,11 +46,12 @@ public class SelectView : Y_PopupBase
         m_ExcludeText.text = stats.Exclude.ToString();
     }
 
-    /// <summary>展示可选装备列表，复用 m_EquipUnitTemplates 缓存并隐藏多余项。</summary>
+    /// <summary>从混合选卡池中随机抽取 MAX_CHOICES 项，展示在 EquipUnit 卡片上。</summary>
     public void ShowAvailableEquips()
     {
-        List<EquipBase> availableEquips = EquipManager.Instance.GetAvailableEquips();
-        int showCount = availableEquips.Count;
+        List<EquipData> pool = EquipManager.Instance.GetLevelUpChoicePool();
+        m_CurrentChoices = PickRandomChoices(pool, MAX_CHOICES);
+        int showCount = m_CurrentChoices.Count;
 
         if (!BindEquipUnits(showCount)) return;
 
@@ -58,22 +63,38 @@ public class SelectView : Y_PopupBase
             EquipUnit equipUnit = unitGo.GetComponent<EquipUnit>();
             if (equipUnit == null) continue;
 
-            EquipBase equip = availableEquips[i];
-            WeaponConfig config = equip.EquipData?.weaponConfig;
-            if (config != null)
-            {
-                equipUnit.Refresh(config);
-            }
-            else
-            {
-                equipUnit.Refresh(equip.EquipData);
-            }
+            equipUnit.Refresh(m_CurrentChoices[i]);
         }
+    }
+
+    // 从池中随机不重复抽取 count 项；池不足时返回全部
+    private List<EquipData> PickRandomChoices(List<EquipData> pool, int count)
+    {
+        List<EquipData> result = new List<EquipData>();
+        if (pool == null || pool.Count == 0) return result;
+
+        List<EquipData> shuffled = new List<EquipData>(pool);
+        for (int i = shuffled.Count - 1; i > 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+            EquipData temp = shuffled[i];
+            shuffled[i] = shuffled[j];
+            shuffled[j] = temp;
+        }
+
+        int take = Mathf.Min(count, shuffled.Count);
+        for (int i = 0; i < take; i++)
+        {
+            result.Add(shuffled[i]);
+        }
+
+        return result;
     }
 
     // 关闭面板时隐藏全部 EquipUnit，保留在缓存列表中
     public override void UnLoad()
     {
+        m_CurrentChoices.Clear();
         HideExtraEquipUnits(0);
         base.UnLoad();
     }
@@ -137,7 +158,6 @@ public class SelectView : Y_PopupBase
             }
         }
     }
-
 
     // 装备点击事件（若按钮走 SelectView 转发）
     public void OnEquipUnitClick(EquipBase equip)

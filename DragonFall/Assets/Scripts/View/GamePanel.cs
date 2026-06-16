@@ -8,7 +8,7 @@ public class GamePanel : Y_PanelBase
     [SerializeField] Transform m_KillEnemyCountText, m_GameTimeText, m_LvText;
 
     [SerializeField] Slider m_HpSlider;
-    [SerializeField] List<Transform> m_EquipTemplates;
+    [SerializeField] List<EquipUnit> m_EquipUnits;
 
     /// <summary>全量刷新经验条、等级文本与击杀数（开局由 Controller 调用）。</summary>
     public void RefreshHud(GameExpSnapshot expSnapshot, int killCount)
@@ -33,21 +33,28 @@ public class GamePanel : Y_PanelBase
     /// <summary>按当前装备列表刷新 HUD 装备图标槽。</summary>
     public void RefreshEquipIcons(IReadOnlyList<EquipBase> equipList)
     {
-        int equipCount = Mathf.Min(equipList.Count, m_EquipTemplates.Count);
+        int equipCount = Mathf.Min(equipList.Count, m_EquipUnits.Count);
         for (int i = 0; i < equipCount; i++)
         {
             EquipData equipData = equipList[i].EquipData;
             Sprite icon = equipData.iconSprite;
+
+            if (icon == null && equipData.weaponConfig != null)
+            {
+                icon = equipData.weaponConfig.iconSprite;
+            }
+
             if (icon == null && !string.IsNullOrEmpty(equipData.iconPath))
             {
                 icon = ResourceManager.Instance.LoadRes<Sprite>(equipData.iconPath);
             }
+
             if (icon == null && !string.IsNullOrEmpty(equipData.name))
             {
                 icon = EquipConst.GetWeaponIconPath(equipData.name);
             }
 
-            m_EquipTemplates[i].Find("Icon").SetSprite(icon);
+            m_EquipUnits[i].equipIcon.sprite = icon != null ? icon : EquipConst.DefaultIcon;
         }
     }
 

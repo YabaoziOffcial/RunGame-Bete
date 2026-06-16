@@ -16,9 +16,6 @@ public class WeaponConfig : ScriptableObject
     [Header("武器名称")]
     public string weaponName = "Weapon_1";
 
-    [Header("是否是玩家子物体")]
-    public bool isPlayerChild = false;
-    // 优先使用直接引用的子弹预制体
     [Header("子弹预制体")]
     public GameObject bulletPrefab;
 

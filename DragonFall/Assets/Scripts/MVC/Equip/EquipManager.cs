@@ -42,7 +42,7 @@ public class EquipManager : Singleton<EquipManager>
         EndSession();
         m_Owner = owner;
         m_IsSessionActive = true;
-        AddEquip("Weapon_Sword");
+        AddEquip("Weapon_Magic");
     }
 
     /// <summary>结束本局装备会话（GameOver 等时机调用）。</summary>
@@ -267,6 +267,30 @@ public class EquipManager : Singleton<EquipManager>
         }
 
         return result;
+    }
+
+    /// <summary>升级选卡池：返回已拥有可升级的 + 未发现可新选的，以 EquipData 统一表示。</summary>
+    public List<EquipData> GetLevelUpChoicePool()
+    {
+        List<EquipData> pool = new List<EquipData>();
+
+        // 已拥有且未满级：升级选项（EquipUnit 会自行计算下一级预览文案）
+        for (int i = 0; i < m_EquipOrder.Count; i++)
+        {
+            EquipBase equip = m_EquipOrder[i];
+            if (IsMaxLevel(equip) || equip.EquipData == null) continue;
+
+            pool.Add(equip.EquipData);
+        }
+
+        // 未发现的武器/道具：新获得选项
+        List<WeaponConfig> undiscovered = GetUndiscoveredWeaponConfigs();
+        for (int i = 0; i < undiscovered.Count; i++)
+        {
+            pool.Add(undiscovered[i].CreateEquipData());
+        }
+
+        return pool;
     }
 
     private bool IsMaxLevel(EquipBase equip)

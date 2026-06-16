@@ -48,7 +48,7 @@ public class GameController : YBZ.Design.Singleton<GameController>
         return UIManager.Instance.OpenUI<GamePanel>();
     }
 
-    /// <summary>升级时打开选技能/属性弹窗，并注入当前 PlayerStats。</summary>
+    /// <summary>升级时打开选技能/属性弹窗，并暂停游戏。</summary>
     public SelectView OpenSelectView()
     {
         SelectView view = UIManager.Instance.OpenUI<SelectView>();
@@ -58,10 +58,11 @@ public class GameController : YBZ.Design.Singleton<GameController>
             view.ShowAvailableEquips();
             view.CloseCall = OnSelectViewClosed;
         }
+        Time.timeScale = 0f;
         return view;
     }
 
-    /// <summary>关闭选技能弹窗（GameOver 等时机调用）。</summary>
+    /// <summary>关闭选技能弹窗，若无待处理升级且未结束则恢复游戏。</summary>
     public void CloseSelectView()
     {
         if (UIManager.Instance.UICachas.TryGetValue(typeof(SelectView), out ViewBase view))
@@ -70,6 +71,11 @@ public class GameController : YBZ.Design.Singleton<GameController>
         }
         UIManager.Instance.CloseUI<SelectView>();
         m_IsLevelUpSelectOpen = false;
+
+        if (!IsGameOver && m_PendingLevelUpCount <= 0)
+        {
+            Time.timeScale = 1f;
+        }
     }
 
     /// <summary>完成一次升级选装：消耗队列一项，关窗后若仍有待处理则再开。</summary>
@@ -115,10 +121,12 @@ public class GameController : YBZ.Design.Singleton<GameController>
         m_IsLevelUpSelectOpen = false;
     }
 
-    /// <summary>打开结算界面。</summary>
+    /// <summary>打开结算界面并暂停游戏。</summary>
     public GameOverView OpenGameOverView()
     {
-        return UIManager.Instance.OpenUI<GameOverView>();
+        var view = UIManager.Instance.OpenUI<GameOverView>();
+        Time.timeScale = 0f;
+        return view;
     }
 
     // 从 UIManager 缓存取已打开的 GamePanel，未打开则返回 null
@@ -277,11 +285,12 @@ public class GameController : YBZ.Design.Singleton<GameController>
         runtime.RemainingCount--;
     }
 
-    /// <summary>开局：刷怪、绑定玩家、开 HUD、注册 UI 事件。</summary>
+    /// <summary>开局：刷怪、绑定玩家、开 HUD、注册 UI 事件、恢复时间流速。</summary>
     public void GameStart()
     {
         IsGameOver = false;
         ClearLevelUpQueue();
+        Time.timeScale = 1f;
         InitEnemySpawnRuntimes();
         BindPlayer();
 

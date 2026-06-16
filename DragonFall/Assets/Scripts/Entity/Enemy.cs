@@ -5,6 +5,9 @@ using UnityEngine;
 /// <summary>敌人实体：移动、受击、攻击玩家；死亡/掉落经 GameController 处理，不写 Model。</summary>
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] SpriteRenderer m_SpriteRenderer;
+
+
     // 自动补碰撞体时使用的默认半径
     private const float ColliderRadius = 0.5f;
 
@@ -90,6 +93,7 @@ public class Enemy : MonoBehaviour
 
         m_EnemyData.hp -= actualDamage;
         ShowDamageNumber(actualDamage, hitPosition);
+        PlayDamageFlash();
         if (m_EnemyData.hp <= 0f)
         {
             m_IsDead = true;
@@ -191,6 +195,29 @@ public class Enemy : MonoBehaviour
         m_MoveAnimation.Sample();
         m_MoveAnimation.Stop(clipName);
         m_WasMoving = false;
+    }
+
+    private void PlayDamageFlash()
+    {
+        if (m_SpriteRenderer != null)
+        {
+            StartCoroutine(DamageFlashRoutine());
+        }
+    }
+
+    private System.Collections.IEnumerator DamageFlashRoutine()
+    {
+        const float duration = 0.1f;
+        float elapsed = 0f;
+        m_SpriteRenderer.color = Color.red;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+            m_SpriteRenderer.color = new Color(1f, t, t, 1f);
+            yield return null;
+        }
+        m_SpriteRenderer.color = Color.white;
     }
 
     // 触发器持续攻击玩家

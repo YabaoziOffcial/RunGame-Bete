@@ -32,10 +32,12 @@ public class Y_PanelBase : ViewBase
         UnLoad();
         base.Close();
         HideAnima();
+
     }
     protected virtual void HideAnima()
     {
         gameObject.SetActive(false);
+        DG.Tweening.DOTween.Kill(this.transform);
     }
 
 #pragma warning disable 0114    // 忽略警告

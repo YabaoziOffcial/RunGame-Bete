@@ -55,6 +55,7 @@ public class Y_PopupBase : ViewBase
             Sequence sequence = DOTween.Sequence();
             sequence.Append(allUI.DOScale(Vector3.one * 1.15f, 0.15f));
             sequence.Append(allUI.DOScale(Vector3.one, 0.2f));
+            sequence.SetUpdate(true);
             sequence.Play();
         }
     }
@@ -69,13 +70,14 @@ public class Y_PopupBase : ViewBase
             Sequence sequence = DOTween.Sequence();
             sequence.Append(allUI.DOScale(Vector3.one * 1.1f, 0.15f).SetEase(Ease.OutSine));
             sequence.Append(allUI.DOScale(Vector3.zero, 0.15f).SetEase(Ease.OutSine));
+            sequence.SetUpdate(true);
             sequence.Play();
         }
 
         if (cgBG != null)
         {
             cgBG.alpha = 1;
-            cgBG.DOFade(0, 0.3f).OnComplete(() =>
+            cgBG.DOFade(0, 0.3f).SetUpdate(true).OnComplete(() =>
             {
                 gameObject.SetActive(false);
             });
@@ -83,6 +85,7 @@ public class Y_PopupBase : ViewBase
         else
         {
             gameObject.SetActive(false);
+            DG.Tweening.DOTween.Kill(this.transform);
         }
     }
 

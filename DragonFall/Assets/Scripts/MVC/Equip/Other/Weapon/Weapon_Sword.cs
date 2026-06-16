@@ -93,7 +93,7 @@ public class Weapon_Sword : EquipBase
         for (int i = 0; i < count; i++)
         {
             Vector2 slashDirection = Quaternion.Euler(0f, 0f, startAngle + m_WeaponData.AttackRange * i) * direction;
-            GameObject slash = ObjectPool.GetObj(m_SlashPrefab, m_Config.isPlayerChild ? Owner.BulletPool : null);
+            GameObject slash = ObjectPool.GetObj(m_SlashPrefab, Owner.BulletPool);
             slash.transform.position = firePosition;
             slash.transform.rotation = Quaternion.identity;
             slash.transform.right = slashDirection;

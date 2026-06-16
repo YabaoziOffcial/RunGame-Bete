@@ -1,0 +1,3 @@
+display_name: HolopixAI
+short_description: Generate game art images through a configured HolopixAI API key.
+default_prompt: Use HolopixAI to generate the requested image asset, saving outputs to the project and reporting the saved paths.

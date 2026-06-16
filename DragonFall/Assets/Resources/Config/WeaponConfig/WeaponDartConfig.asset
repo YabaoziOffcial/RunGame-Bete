@@ -16,62 +16,182 @@ MonoBehaviour:
   className: Weapon_Dart
   iconSprite: {fileID: 21300000, guid: 081981b8be49e5b4bb04a23dd83a1ae9, type: 3}
   weaponName: Weapon_Dart
-  isPlayerChild: 1
+  isPlayerChild: 0
   bulletPrefab: {fileID: 936124638413255026, guid: 086d33b87b01063408190cce101200e6, type: 3}
   levels:
-  - AttackRate: 1.5
-    BarrageCount: 1
-    BarrageSpeed: 8
-    BarrageDuration: 2.5
-    AttackRange: 8
+  - MaxHp: 0
+    Heal: 0
+    Vampire: 0
+    Defense: 0
+    MoveSpeed: 0
     Strength: 12
-    description: "\u98DE\u9553\uFF1A\u671D\u79FB\u52A8\u65B9\u5411\u53D1\u5C04"
-  - AttackRate: 1.4
-    BarrageCount: 1
+    AttackRate: 1.5
     BarrageSpeed: 8
     BarrageDuration: 2.5
     AttackRange: 8
+    BarrageCD: 0
+    BarrageCount: 1
+    ReliveNumber: 0
+    PickupRange: 0
+    Luck: 0
+    Growth: 0
+    Greed: 0
+    Curse: 0
+    Reselect: 0
+    Skip: 0
+    Exclude: 0
+    description: "\u98DE\u9556\uFF1A\u671D\u79FB\u52A8\u65B9\u5411\u53D1\u5C04"
+  - MaxHp: 0
+    Heal: 0
+    Vampire: 0
+    Defense: 0
+    MoveSpeed: 0
     Strength: 16
+    AttackRate: 1.4
+    BarrageSpeed: 8
+    BarrageDuration: 2.5
+    AttackRange: 8
+    BarrageCD: 0
+    BarrageCount: 1
+    ReliveNumber: 0
+    PickupRange: 0
+    Luck: 0
+    Growth: 0
+    Greed: 0
+    Curse: 0
+    Reselect: 0
+    Skip: 0
+    Exclude: 0
     description: "\u4F24\u5BB3\u63D0\u5347"
-  - AttackRate: 1.3
-    BarrageCount: 2
+  - MaxHp: 0
+    Heal: 0
+    Vampire: 0
+    Defense: 0
+    MoveSpeed: 0
+    Strength: 16
+    AttackRate: 1.3
     BarrageSpeed: 8
     BarrageDuration: 2.5
     AttackRange: 12
-    Strength: 16
-    description: "\u53CC\u53D1\u98DE\u9553"
-  - AttackRate: 1.2
+    BarrageCD: 0
     BarrageCount: 2
-    BarrageSpeed: 9
-    BarrageDuration: 3
-    AttackRange: 12
+    ReliveNumber: 0
+    PickupRange: 0
+    Luck: 0
+    Growth: 0
+    Greed: 0
+    Curse: 0
+    Reselect: 0
+    Skip: 0
+    Exclude: 0
+    description: "\u53CC\u53D1\u98DE\u9556"
+  - MaxHp: 0
+    Heal: 0
+    Vampire: 0
+    Defense: 0
+    MoveSpeed: 0
     Strength: 20
-    description: "\u98DE\u884C\u901F\u5EA6\u63D0\u5347"
-  - AttackRate: 1.1
-    BarrageCount: 2
+    AttackRate: 1.2
     BarrageSpeed: 9
     BarrageDuration: 3
     AttackRange: 12
+    BarrageCD: 0
+    BarrageCount: 2
+    ReliveNumber: 0
+    PickupRange: 0
+    Luck: 0
+    Growth: 0
+    Greed: 0
+    Curse: 0
+    Reselect: 0
+    Skip: 0
+    Exclude: 0
+    description: "\u98DE\u884C\u901F\u5EA6\u63D0\u5347"
+  - MaxHp: 0
+    Heal: 0
+    Vampire: 0
+    Defense: 0
+    MoveSpeed: 0
     Strength: 24
+    AttackRate: 1.1
+    BarrageSpeed: 9
+    BarrageDuration: 3
+    AttackRange: 12
+    BarrageCD: 0
+    BarrageCount: 2
+    ReliveNumber: 0
+    PickupRange: 0
+    Luck: 0
+    Growth: 0
+    Greed: 0
+    Curse: 0
+    Reselect: 0
+    Skip: 0
+    Exclude: 0
     description: "\u653B\u51FB\u529B\u63D0\u5347"
-  - AttackRate: 1
-    BarrageCount: 3
+  - MaxHp: 0
+    Heal: 0
+    Vampire: 0
+    Defense: 0
+    MoveSpeed: 0
+    Strength: 24
+    AttackRate: 1
     BarrageSpeed: 9
     BarrageDuration: 3
     AttackRange: 10
-    Strength: 24
-    description: "\u4E09\u53D1\u98DE\u9553"
-  - AttackRate: 1
+    BarrageCD: 0
     BarrageCount: 3
-    BarrageSpeed: 10
-    BarrageDuration: 3.5
-    AttackRange: 10
+    ReliveNumber: 0
+    PickupRange: 0
+    Luck: 0
+    Growth: 0
+    Greed: 0
+    Curse: 0
+    Reselect: 0
+    Skip: 0
+    Exclude: 0
+    description: "\u4E09\u53D1\u98DE\u9556"
+  - MaxHp: 0
+    Heal: 0
+    Vampire: 0
+    Defense: 0
+    MoveSpeed: 0
     Strength: 30
-    description: "\u7A7F\u900F\u529B\u63D0\u5347"
-  - AttackRate: 0.9
-    BarrageCount: 3
+    AttackRate: 1
     BarrageSpeed: 10
     BarrageDuration: 3.5
     AttackRange: 10
+    BarrageCD: 0
+    BarrageCount: 3
+    ReliveNumber: 0
+    PickupRange: 0
+    Luck: 0
+    Growth: 0
+    Greed: 0
+    Curse: 0
+    Reselect: 0
+    Skip: 0
+    Exclude: 0
+    description: "\u7A7F\u900F\u529B\u63D0\u5347"
+  - MaxHp: 0
+    Heal: 0
+    Vampire: 0
+    Defense: 0
+    MoveSpeed: 0
     Strength: 38
-    description: "\u98DE\u9553\u6781\u9650"
+    AttackRate: 0.9
+    BarrageSpeed: 10
+    BarrageDuration: 3.5
+    AttackRange: 10
+    BarrageCD: 0
+    BarrageCount: 3
+    ReliveNumber: 0
+    PickupRange: 0
+    Luck: 0
+    Growth: 0
+    Greed: 0
+    Curse: 0
+    Reselect: 0
+    Skip: 0
+    Exclude: 0
+    description: "\u98DE\u9556\u6781\u9650"

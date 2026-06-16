@@ -226,6 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b28148be8a3283488eb0e731e514d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SpriteRenderer: {fileID: 6846203974331397709}
+  m_DamageAnimation: {fileID: 0}
   m_EnemyData:
     hp: 10
     speed: 1

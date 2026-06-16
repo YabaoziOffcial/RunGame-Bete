@@ -3,6 +3,7 @@ using UnityEngine;
 /// <summary>玩家实体：移动、受击表现、碰撞上报；不写 Model，经 GameController 处理玩法。</summary>
 public class Player : ThingBase
 {
+    [SerializeField] SpriteRenderer m_SpriteRenderer;
     public Transform BulletPool, PlayerHPFill;
 
     private Animation m_MoveAnimation;
@@ -56,6 +57,7 @@ public class Player : ThingBase
 
         Stats.ApplyDamage(damage);
         RefreshHpBar();
+        PlayDamageFlash();
 
         if (Stats.IsAlive) return true;
 
@@ -99,5 +101,28 @@ public class Player : ThingBase
         state.time = 0f;
         m_MoveAnimation.Sample();
         m_MoveAnimation.Stop(clipName);
+    }
+
+    private void PlayDamageFlash()
+    {
+        if (m_SpriteRenderer != null)
+        {
+            StartCoroutine(DamageFlashRoutine());
+        }
+    }
+
+    private System.Collections.IEnumerator DamageFlashRoutine()
+    {
+        const float duration = 0.1f;
+        float elapsed = 0f;
+        m_SpriteRenderer.color = Color.red;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+            m_SpriteRenderer.color = new Color(1f, t, t, 1f);
+            yield return null;
+        }
+        m_SpriteRenderer.color = Color.white;
     }
 }

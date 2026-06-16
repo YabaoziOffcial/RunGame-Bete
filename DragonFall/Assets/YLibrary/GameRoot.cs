@@ -23,16 +23,18 @@ namespace YBZ.Core
             GameController.Instance.Init();
             Debug.Log("GameRoot Initialized!");
 
-            // MVC 示例：Awake 里只 Init/写 Model；开 UI 放到 Start，等 UIManager 等 Mono 单例 Awake 完成
-            // TestController.Instance.Init();
-            // TestController.Instance.SetTestString("Hello World");
+            MapManager mapManager = FindObjectOfType<MapManager>();
+            if (mapManager != null)
+            {
+                mapManager.Init();
+            }
         }
 
         public void Start()
         {
             Debug.Log("GameRoot Start!");
-            GameController.Instance.GameStart();
-
+            // 先打开主菜单，游戏由 MainPanel 的"开始"按钮驱动
+            UIManager.Instance.OpenUI<MainPanel>();
             // TestView 示例：需 Resources/Prefab/UI/TestView.prefab，正式局内可不开
             // TestController.Instance.OpenTestView();
         }
